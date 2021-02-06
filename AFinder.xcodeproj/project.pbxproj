@@ -8,14 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		25CBE70A25CE4FBA00598C28 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CBE70925CE4FBA00598C28 /* AppDelegate.swift */; };
-		25CBE70C25CE4FBA00598C28 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CBE70B25CE4FBA00598C28 /* SceneDelegate.swift */; };
-		25CBE70E25CE4FBA00598C28 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CBE70D25CE4FBA00598C28 /* ViewController.swift */; };
-		25CBE71125CE4FBA00598C28 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25CBE70F25CE4FBA00598C28 /* Main.storyboard */; };
 		25CBE71425CE4FBA00598C28 /* AFinder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 25CBE71225CE4FBA00598C28 /* AFinder.xcdatamodeld */; };
 		25CBE71625CE4FBB00598C28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25CBE71525CE4FBB00598C28 /* Assets.xcassets */; };
 		25CBE71925CE4FBB00598C28 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25CBE71725CE4FBB00598C28 /* LaunchScreen.storyboard */; };
 		25CBE72425CE4FBB00598C28 /* AFinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CBE72325CE4FBB00598C28 /* AFinderTests.swift */; };
 		25CBE72F25CE4FBB00598C28 /* AFinderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CBE72E25CE4FBB00598C28 /* AFinderUITests.swift */; };
+		25CBE74F25CE553F00598C28 /* WelcomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CBE74825CE553F00598C28 /* WelcomePresenter.swift */; };
+		25CBE75025CE553F00598C28 /* WelcomeLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CBE74925CE553F00598C28 /* WelcomeLocalDataManager.swift */; };
+		25CBE75125CE553F00598C28 /* WelcomeProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CBE74A25CE553F00598C28 /* WelcomeProtocols.swift */; };
+		25CBE75225CE553F00598C28 /* WelcomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CBE74B25CE553F00598C28 /* WelcomeInteractor.swift */; };
+		25CBE75325CE553F00598C28 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CBE74C25CE553F00598C28 /* WelcomeView.swift */; };
+		25CBE75425CE553F00598C28 /* WelcomeRemoteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CBE74D25CE553F00598C28 /* WelcomeRemoteDataManager.swift */; };
+		25CBE75525CE553F00598C28 /* WelcomeWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CBE74E25CE553F00598C28 /* WelcomeWireFrame.swift */; };
+		25CBE75A25CE559C00598C28 /* WelcomeView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25CBE75925CE559C00598C28 /* WelcomeView.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,9 +43,6 @@
 /* Begin PBXFileReference section */
 		25CBE70625CE4FBA00598C28 /* AFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25CBE70925CE4FBA00598C28 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		25CBE70B25CE4FBA00598C28 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		25CBE70D25CE4FBA00598C28 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		25CBE71025CE4FBA00598C28 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		25CBE71325CE4FBA00598C28 /* AFinder.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AFinder.xcdatamodel; sourceTree = "<group>"; };
 		25CBE71525CE4FBB00598C28 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		25CBE71825CE4FBB00598C28 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +53,14 @@
 		25CBE72A25CE4FBB00598C28 /* AFinderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AFinderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		25CBE72E25CE4FBB00598C28 /* AFinderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFinderUITests.swift; sourceTree = "<group>"; };
 		25CBE73025CE4FBB00598C28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		25CBE74825CE553F00598C28 /* WelcomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePresenter.swift; sourceTree = "<group>"; };
+		25CBE74925CE553F00598C28 /* WelcomeLocalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeLocalDataManager.swift; sourceTree = "<group>"; };
+		25CBE74A25CE553F00598C28 /* WelcomeProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeProtocols.swift; sourceTree = "<group>"; };
+		25CBE74B25CE553F00598C28 /* WelcomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeInteractor.swift; sourceTree = "<group>"; };
+		25CBE74C25CE553F00598C28 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		25CBE74D25CE553F00598C28 /* WelcomeRemoteDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeRemoteDataManager.swift; sourceTree = "<group>"; };
+		25CBE74E25CE553F00598C28 /* WelcomeWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeWireFrame.swift; sourceTree = "<group>"; };
+		25CBE75925CE559C00598C28 /* WelcomeView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WelcomeView.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,10 +111,9 @@
 		25CBE70825CE4FBA00598C28 /* AFinder */ = {
 			isa = PBXGroup;
 			children = (
+				25CBE74625CE552800598C28 /* Modules */,
+				25CBE74525CE552200598C28 /* Utils */,
 				25CBE70925CE4FBA00598C28 /* AppDelegate.swift */,
-				25CBE70B25CE4FBA00598C28 /* SceneDelegate.swift */,
-				25CBE70D25CE4FBA00598C28 /* ViewController.swift */,
-				25CBE70F25CE4FBA00598C28 /* Main.storyboard */,
 				25CBE71525CE4FBB00598C28 /* Assets.xcassets */,
 				25CBE71725CE4FBB00598C28 /* LaunchScreen.storyboard */,
 				25CBE71A25CE4FBB00598C28 /* Info.plist */,
@@ -129,6 +138,36 @@
 				25CBE73025CE4FBB00598C28 /* Info.plist */,
 			);
 			path = AFinderUITests;
+			sourceTree = "<group>";
+		};
+		25CBE74525CE552200598C28 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		25CBE74625CE552800598C28 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				25CBE74725CE552C00598C28 /* Welcome */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		25CBE74725CE552C00598C28 /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				25CBE74825CE553F00598C28 /* WelcomePresenter.swift */,
+				25CBE74925CE553F00598C28 /* WelcomeLocalDataManager.swift */,
+				25CBE74A25CE553F00598C28 /* WelcomeProtocols.swift */,
+				25CBE74B25CE553F00598C28 /* WelcomeInteractor.swift */,
+				25CBE74C25CE553F00598C28 /* WelcomeView.swift */,
+				25CBE75925CE559C00598C28 /* WelcomeView.storyboard */,
+				25CBE74D25CE553F00598C28 /* WelcomeRemoteDataManager.swift */,
+				25CBE74E25CE553F00598C28 /* WelcomeWireFrame.swift */,
+			);
+			path = Welcome;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,9 +273,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25CBE75A25CE559C00598C28 /* WelcomeView.storyboard in Resources */,
 				25CBE71925CE4FBB00598C28 /* LaunchScreen.storyboard in Resources */,
 				25CBE71625CE4FBB00598C28 /* Assets.xcassets in Resources */,
-				25CBE71125CE4FBA00598C28 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,10 +300,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				25CBE70E25CE4FBA00598C28 /* ViewController.swift in Sources */,
+				25CBE75125CE553F00598C28 /* WelcomeProtocols.swift in Sources */,
+				25CBE75025CE553F00598C28 /* WelcomeLocalDataManager.swift in Sources */,
+				25CBE75225CE553F00598C28 /* WelcomeInteractor.swift in Sources */,
+				25CBE75525CE553F00598C28 /* WelcomeWireFrame.swift in Sources */,
+				25CBE75325CE553F00598C28 /* WelcomeView.swift in Sources */,
+				25CBE74F25CE553F00598C28 /* WelcomePresenter.swift in Sources */,
+				25CBE75425CE553F00598C28 /* WelcomeRemoteDataManager.swift in Sources */,
 				25CBE71425CE4FBA00598C28 /* AFinder.xcdatamodeld in Sources */,
 				25CBE70A25CE4FBA00598C28 /* AppDelegate.swift in Sources */,
-				25CBE70C25CE4FBA00598C28 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,14 +344,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		25CBE70F25CE4FBA00598C28 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				25CBE71025CE4FBA00598C28 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		25CBE71725CE4FBB00598C28 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -443,6 +479,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2H6U8YU5DR;
 				INFOPLIST_FILE = AFinder/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -462,6 +499,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2H6U8YU5DR;
 				INFOPLIST_FILE = AFinder/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
