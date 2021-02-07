@@ -18,9 +18,13 @@ class WelcomeView: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.presenter?.viewDidLoad()
     }
 }
 
 extension WelcomeView: WelcomeViewProtocol {
     // TODO: implement view output methods
+    func setUpBackground(){
+        self.view.backgroundColor = UIColor(named: "WelcomeBackgroundColor")
+    }
 }

@@ -12,6 +12,8 @@ import UIKit
 protocol WelcomeViewProtocol: class {
     // PRESENTER -> VIEW
     var presenter: WelcomePresenterProtocol? { get set }
+    
+    func setUpBackground()
 }
 
 protocol WelcomeWireFrameProtocol: class {
@@ -39,10 +41,6 @@ protocol WelcomeInteractorInputProtocol: class {
     var remoteDatamanager: WelcomeRemoteDataManagerInputProtocol? { get set }
 }
 
-protocol WelcomeDataManagerInputProtocol: class {
-    // INTERACTOR -> DATAMANAGER
-}
-
 protocol WelcomeRemoteDataManagerInputProtocol: class {
     // INTERACTOR -> REMOTEDATAMANAGER
     var remoteRequestHandler: WelcomeRemoteDataManagerOutputProtocol? { get set }
@@ -54,4 +52,9 @@ protocol WelcomeRemoteDataManagerOutputProtocol: class {
 
 protocol WelcomeLocalDataManagerInputProtocol: class {
     // INTERACTOR -> LOCALDATAMANAGER
+    var localRequestHandler: WelcomeLocalDataManagerOutputProtocol? { get set }
+}
+
+protocol WelcomeLocalDataManagerOutputProtocol: class {
+    // LOCALDATAMANAGER -> INTERACTOR
 }

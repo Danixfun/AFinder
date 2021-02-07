@@ -21,6 +21,13 @@
 		25CBE75425CE553F00598C28 /* WelcomeRemoteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CBE74D25CE553F00598C28 /* WelcomeRemoteDataManager.swift */; };
 		25CBE75525CE553F00598C28 /* WelcomeWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CBE74E25CE553F00598C28 /* WelcomeWireFrame.swift */; };
 		25CBE75A25CE559C00598C28 /* WelcomeView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25CBE75925CE559C00598C28 /* WelcomeView.storyboard */; };
+		25CBE77225CE62BC00598C28 /* MapPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CBE76B25CE62BC00598C28 /* MapPresenter.swift */; };
+		25CBE77325CE62BC00598C28 /* MapLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CBE76C25CE62BC00598C28 /* MapLocalDataManager.swift */; };
+		25CBE77425CE62BC00598C28 /* MapProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CBE76D25CE62BC00598C28 /* MapProtocols.swift */; };
+		25CBE77525CE62BC00598C28 /* MapInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CBE76E25CE62BC00598C28 /* MapInteractor.swift */; };
+		25CBE77625CE62BC00598C28 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CBE76F25CE62BC00598C28 /* MapView.swift */; };
+		25CBE77725CE62BC00598C28 /* MapRemoteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CBE77025CE62BC00598C28 /* MapRemoteDataManager.swift */; };
+		25CBE77825CE62BC00598C28 /* MapWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CBE77125CE62BC00598C28 /* MapWireFrame.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +68,13 @@
 		25CBE74D25CE553F00598C28 /* WelcomeRemoteDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeRemoteDataManager.swift; sourceTree = "<group>"; };
 		25CBE74E25CE553F00598C28 /* WelcomeWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeWireFrame.swift; sourceTree = "<group>"; };
 		25CBE75925CE559C00598C28 /* WelcomeView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WelcomeView.storyboard; sourceTree = "<group>"; };
+		25CBE76B25CE62BC00598C28 /* MapPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPresenter.swift; sourceTree = "<group>"; };
+		25CBE76C25CE62BC00598C28 /* MapLocalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapLocalDataManager.swift; sourceTree = "<group>"; };
+		25CBE76D25CE62BC00598C28 /* MapProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapProtocols.swift; sourceTree = "<group>"; };
+		25CBE76E25CE62BC00598C28 /* MapInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapInteractor.swift; sourceTree = "<group>"; };
+		25CBE76F25CE62BC00598C28 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		25CBE77025CE62BC00598C28 /* MapRemoteDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRemoteDataManager.swift; sourceTree = "<group>"; };
+		25CBE77125CE62BC00598C28 /* MapWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapWireFrame.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +164,7 @@
 		25CBE74625CE552800598C28 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				25CBE76A25CE62AA00598C28 /* Map */,
 				25CBE74725CE552C00598C28 /* Welcome */,
 			);
 			path = Modules;
@@ -168,6 +183,20 @@
 				25CBE74E25CE553F00598C28 /* WelcomeWireFrame.swift */,
 			);
 			path = Welcome;
+			sourceTree = "<group>";
+		};
+		25CBE76A25CE62AA00598C28 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				25CBE76B25CE62BC00598C28 /* MapPresenter.swift */,
+				25CBE76C25CE62BC00598C28 /* MapLocalDataManager.swift */,
+				25CBE76D25CE62BC00598C28 /* MapProtocols.swift */,
+				25CBE76E25CE62BC00598C28 /* MapInteractor.swift */,
+				25CBE76F25CE62BC00598C28 /* MapView.swift */,
+				25CBE77025CE62BC00598C28 /* MapRemoteDataManager.swift */,
+				25CBE77125CE62BC00598C28 /* MapWireFrame.swift */,
+			);
+			path = Map;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -305,8 +334,15 @@
 				25CBE75225CE553F00598C28 /* WelcomeInteractor.swift in Sources */,
 				25CBE75525CE553F00598C28 /* WelcomeWireFrame.swift in Sources */,
 				25CBE75325CE553F00598C28 /* WelcomeView.swift in Sources */,
+				25CBE77325CE62BC00598C28 /* MapLocalDataManager.swift in Sources */,
 				25CBE74F25CE553F00598C28 /* WelcomePresenter.swift in Sources */,
+				25CBE77725CE62BC00598C28 /* MapRemoteDataManager.swift in Sources */,
+				25CBE77625CE62BC00598C28 /* MapView.swift in Sources */,
+				25CBE77525CE62BC00598C28 /* MapInteractor.swift in Sources */,
 				25CBE75425CE553F00598C28 /* WelcomeRemoteDataManager.swift in Sources */,
+				25CBE77425CE62BC00598C28 /* MapProtocols.swift in Sources */,
+				25CBE77225CE62BC00598C28 /* MapPresenter.swift in Sources */,
+				25CBE77825CE62BC00598C28 /* MapWireFrame.swift in Sources */,
 				25CBE71425CE4FBA00598C28 /* AFinder.xcdatamodeld in Sources */,
 				25CBE70A25CE4FBA00598C28 /* AppDelegate.swift in Sources */,
 			);
