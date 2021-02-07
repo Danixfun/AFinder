@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -29,21 +30,67 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4cW-Qg-7WS" customClass="AFPrimaryButton" customModule="AFinder" customModuleProvider="target">
+                                <rect key="frame" x="32" y="790" width="350" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="hat-ZS-H14"/>
+                                </constraints>
+                                <state key="normal" title="Next"/>
+                            </button>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minValue="1" maxValue="20" translatesAutoresizingMaskIntoConstraints="NO" id="dQ5-ch-Qws">
+                                <rect key="frame" x="30" y="728" width="354" height="31"/>
+                                <color key="minimumTrackTintColor" name="SliderMinColor"/>
+                                <connections>
+                                    <action selector="rangeDidChange:" destination="TVH-kC-SYs" eventType="valueChanged" id="JkH-jI-xAd"/>
+                                </connections>
+                            </slider>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BYs-rO-eh8">
+                                <rect key="frame" x="64" y="213" width="286" height="286"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="BYs-rO-eh8" secondAttribute="height" multiplier="1:1" id="akg-8M-48e"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IGR-DY-28i">
+                                <rect key="frame" x="195.5" y="692" width="23" height="20"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="DMv-wP-Ipj"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="PXx-29-61b" firstAttribute="top" secondItem="0zh-HD-qWn" secondAttribute="bottom" constant="8" id="58X-2p-qKW"/>
+                            <constraint firstItem="DMv-wP-Ipj" firstAttribute="trailing" secondItem="dQ5-ch-Qws" secondAttribute="trailing" constant="32" id="8jx-Gv-1hy"/>
+                            <constraint firstItem="dQ5-ch-Qws" firstAttribute="leading" secondItem="DMv-wP-Ipj" secondAttribute="leading" constant="32" id="ARq-p5-3lI"/>
                             <constraint firstAttribute="trailing" secondItem="PXx-29-61b" secondAttribute="trailing" constant="32" id="Bt3-wO-9Hy"/>
+                            <constraint firstItem="IGR-DY-28i" firstAttribute="centerX" secondItem="4cW-Qg-7WS" secondAttribute="centerX" id="Fhe-ZU-BrH"/>
+                            <constraint firstItem="BYs-rO-eh8" firstAttribute="top" secondItem="PXx-29-61b" secondAttribute="bottom" constant="32" id="Fjb-53-psr"/>
+                            <constraint firstItem="DMv-wP-Ipj" firstAttribute="bottom" secondItem="4cW-Qg-7WS" secondAttribute="bottom" constant="32" id="IMj-0c-mRS"/>
                             <constraint firstItem="0zh-HD-qWn" firstAttribute="top" secondItem="DMv-wP-Ipj" secondAttribute="top" constant="32" id="UVb-xu-Aif"/>
+                            <constraint firstItem="dQ5-ch-Qws" firstAttribute="top" secondItem="IGR-DY-28i" secondAttribute="bottom" constant="16" id="Uzc-ti-368"/>
+                            <constraint firstItem="BYs-rO-eh8" firstAttribute="leading" secondItem="DMv-wP-Ipj" secondAttribute="leading" constant="64" id="dNi-cj-3iS"/>
+                            <constraint firstItem="4cW-Qg-7WS" firstAttribute="top" secondItem="dQ5-ch-Qws" secondAttribute="bottom" constant="32" id="l5x-np-2Oi"/>
+                            <constraint firstItem="DMv-wP-Ipj" firstAttribute="trailing" secondItem="4cW-Qg-7WS" secondAttribute="trailing" constant="32" id="mt3-nU-OcE"/>
+                            <constraint firstItem="DMv-wP-Ipj" firstAttribute="trailing" secondItem="BYs-rO-eh8" secondAttribute="trailing" constant="64" id="qs5-X6-WNP"/>
                             <constraint firstItem="0zh-HD-qWn" firstAttribute="leading" secondItem="DMv-wP-Ipj" secondAttribute="leading" constant="32" id="sKl-iM-TIi"/>
                             <constraint firstItem="PXx-29-61b" firstAttribute="leading" secondItem="0zh-HD-qWn" secondAttribute="leading" id="sjJ-7o-SXz"/>
+                            <constraint firstItem="4cW-Qg-7WS" firstAttribute="leading" secondItem="DMv-wP-Ipj" secondAttribute="leading" constant="32" id="wuL-Xi-2el"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="nextButton" destination="4cW-Qg-7WS" id="Ugv-gF-7Z7"/>
+                        <outlet property="rangeAnalogyView" destination="BYs-rO-eh8" id="Zt6-Gm-wZf"/>
+                        <outlet property="rangeLabel" destination="IGR-DY-28i" id="fXL-2e-jMv"/>
+                        <outlet property="rangeSlider" destination="dQ5-ch-Qws" id="PbO-8H-zbf"/>
+                        <outlet property="subtitleLabel" destination="PXx-29-61b" id="3Vw-du-C92"/>
+                        <outlet property="titleLabel" destination="0zh-HD-qWn" id="0av-Xe-ab6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6PM-nr-vYx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-191" y="-546"/>
+            <point key="canvasLocation" x="-191.30434782608697" y="-546.42857142857144"/>
         </scene>
         <!--Onboarding View-->
         <scene sceneID="8Du-po-wQC">
@@ -164,6 +211,9 @@
         </scene>
     </scenes>
     <resources>
+        <namedColor name="SliderMinColor">
+            <color red="0.34200000762939453" green="0.69999998807907104" blue="0.91100001335144043" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

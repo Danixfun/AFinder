@@ -12,6 +12,9 @@ import UIKit
 protocol OBStepTwoViewProtocol: class {
     // PRESENTER -> VIEW
     var presenter: OBStepTwoPresenterProtocol? { get set }
+    func setUpViews()
+    func loadCurrentRange()
+    func updateRangeView(km: Int, circleRadius: CGFloat)
 }
 
 protocol OBStepTwoWireFrameProtocol: class {
@@ -26,10 +29,13 @@ protocol OBStepTwoPresenterProtocol: class {
     var wireFrame: OBStepTwoWireFrameProtocol? { get set }
     
     func viewDidLoad()
+    func viewDidLayoutSubviews()
+    func rangeDidChange(sender: UISlider)
 }
 
 protocol OBStepTwoInteractorOutputProtocol: class {
-// INTERACTOR -> PRESENTER
+    // INTERACTOR -> PRESENTER
+    func updateRangeView(km: Int, circleRadius: CGFloat)
 }
 
 protocol OBStepTwoInteractorInputProtocol: class {
@@ -37,6 +43,8 @@ protocol OBStepTwoInteractorInputProtocol: class {
     var presenter: OBStepTwoInteractorOutputProtocol? { get set }
     var localDatamanager: OBStepTwoLocalDataManagerInputProtocol? { get set }
     var remoteDatamanager: OBStepTwoRemoteDataManagerInputProtocol? { get set }
+    
+    func rangeDidChange(sender: UISlider)
 }
 
 protocol OBStepTwoRemoteDataManagerInputProtocol: class {

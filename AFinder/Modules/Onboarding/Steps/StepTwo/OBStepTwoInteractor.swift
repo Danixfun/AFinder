@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class OBStepTwoInteractor: OBStepTwoInteractorInputProtocol {
 
@@ -14,6 +15,12 @@ class OBStepTwoInteractor: OBStepTwoInteractorInputProtocol {
     weak var presenter: OBStepTwoInteractorOutputProtocol?
     var localDatamanager: OBStepTwoLocalDataManagerInputProtocol?
     var remoteDatamanager: OBStepTwoRemoteDataManagerInputProtocol?
+    
+    // MARK: Functions
+    func rangeDidChange(sender: UISlider) {
+        let value = Int(sender.value)
+        self.presenter?.updateRangeView(km: value, circleRadius: CGFloat(value))
+    }
 
 }
 

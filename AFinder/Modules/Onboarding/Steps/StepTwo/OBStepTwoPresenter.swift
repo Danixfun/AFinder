@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class OBStepTwoPresenter  {
     
@@ -14,15 +15,29 @@ class OBStepTwoPresenter  {
     weak var view: OBStepTwoViewProtocol?
     var interactor: OBStepTwoInteractorInputProtocol?
     var wireFrame: OBStepTwoWireFrameProtocol?
-    
+    var once: Bool = false
 }
 
 extension OBStepTwoPresenter: OBStepTwoPresenterProtocol {
     // TODO: implement presenter methods
     func viewDidLoad() {
+        self.view?.loadCurrentRange()
+    }
+    
+    func viewDidLayoutSubviews() {
+        if !once {
+            once = true
+            self.view?.setUpViews()
+        }
+    }
+    
+    func rangeDidChange(sender: UISlider) {
+        self.interactor?.rangeDidChange(sender: sender)
     }
 }
 
 extension OBStepTwoPresenter: OBStepTwoInteractorOutputProtocol {
-    // TODO: implement interactor output methods
+    func updateRangeView(km: Int, circleRadius: CGFloat) {
+        self.view?.updateRangeView(km: km, circleRadius: circleRadius)
+    }
 }
