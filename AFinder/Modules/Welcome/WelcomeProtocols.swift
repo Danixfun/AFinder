@@ -21,6 +21,7 @@ protocol WelcomeViewProtocol: class {
 protocol WelcomeWireFrameProtocol: class {
     // PRESENTER -> WIREFRAME
     static func createWelcomeModule() -> UIViewController
+    func openOnboardingAction(from view: WelcomeViewProtocol)
 }
 
 protocol WelcomePresenterProtocol: class {
@@ -30,6 +31,7 @@ protocol WelcomePresenterProtocol: class {
     var wireFrame: WelcomeWireFrameProtocol? { get set }
     
     func viewDidLoad()
+    func openOnboardingAction()
 }
 
 protocol WelcomeInteractorOutputProtocol: class {

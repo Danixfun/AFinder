@@ -25,6 +25,10 @@ extension WelcomePresenter: WelcomePresenterProtocol {
         self.view?.setUpButtons()
         self.view?.setUpAnimation()
     }
+    
+    func openOnboardingAction(){
+        self.wireFrame?.openOnboardingAction(from: self.view!)
+    }
 }
 
 extension WelcomePresenter: WelcomeInteractorOutputProtocol {

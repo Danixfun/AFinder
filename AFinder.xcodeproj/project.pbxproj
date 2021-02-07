@@ -14,6 +14,38 @@
 		2548273425CFA58800268327 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 2548273325CFA58800268327 /* Lottie */; };
 		2548274025CFA8A200268327 /* welcome_airplane.json in Resources */ = {isa = PBXBuildFile; fileRef = 2548273F25CFA8A200268327 /* welcome_airplane.json */; };
 		2548274825CFAA9100268327 /* AFSecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2548274725CFAA9100268327 /* AFSecondaryButton.swift */; };
+		2548275D25CFB1C400268327 /* OnboardingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2548275625CFB1C400268327 /* OnboardingPresenter.swift */; };
+		2548275E25CFB1C400268327 /* OnboardingLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2548275725CFB1C400268327 /* OnboardingLocalDataManager.swift */; };
+		2548275F25CFB1C400268327 /* OnboardingProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2548275825CFB1C400268327 /* OnboardingProtocols.swift */; };
+		2548276025CFB1C400268327 /* OnboardingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2548275925CFB1C400268327 /* OnboardingInteractor.swift */; };
+		2548276225CFB1C400268327 /* OnboardingRemoteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2548275B25CFB1C400268327 /* OnboardingRemoteDataManager.swift */; };
+		2548276325CFB1C400268327 /* OnboardingWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2548275C25CFB1C400268327 /* OnboardingWireFrame.swift */; };
+		2548276825CFB1D300268327 /* OnboardingView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2548276725CFB1D300268327 /* OnboardingView.storyboard */; };
+		2548277025CFB25C00268327 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2548276F25CFB25C00268327 /* OnboardingView.swift */; };
+		2548279125CFC01D00268327 /* OnboardingStepProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2548279025CFC01D00268327 /* OnboardingStepProtocol.swift */; };
+		2548279625CFCAE500268327 /* gps_permission.json in Resources */ = {isa = PBXBuildFile; fileRef = 2548279525CFCAE500268327 /* gps_permission.json */; };
+		254827A525CFCCC200268327 /* OBStepOnePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2548279E25CFCCC200268327 /* OBStepOnePresenter.swift */; };
+		254827A625CFCCC200268327 /* OBStepOneLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2548279F25CFCCC200268327 /* OBStepOneLocalDataManager.swift */; };
+		254827A725CFCCC200268327 /* OBStepOneProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254827A025CFCCC200268327 /* OBStepOneProtocols.swift */; };
+		254827A825CFCCC200268327 /* OBStepOneInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254827A125CFCCC200268327 /* OBStepOneInteractor.swift */; };
+		254827A925CFCCC200268327 /* OBStepOneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254827A225CFCCC200268327 /* OBStepOneView.swift */; };
+		254827AA25CFCCC200268327 /* OBStepOneRemoteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254827A325CFCCC200268327 /* OBStepOneRemoteDataManager.swift */; };
+		254827AB25CFCCC200268327 /* OBStepOneWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254827A425CFCCC200268327 /* OBStepOneWireFrame.swift */; };
+		254827BA25CFCDF700268327 /* OBStepTwoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254827B325CFCDF700268327 /* OBStepTwoPresenter.swift */; };
+		254827BB25CFCDF700268327 /* OBStepTwoLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254827B425CFCDF700268327 /* OBStepTwoLocalDataManager.swift */; };
+		254827BC25CFCDF700268327 /* OBStepTwoProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254827B525CFCDF700268327 /* OBStepTwoProtocols.swift */; };
+		254827BD25CFCDF700268327 /* OBStepTwoInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254827B625CFCDF700268327 /* OBStepTwoInteractor.swift */; };
+		254827BE25CFCDF700268327 /* OBStepTwoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254827B725CFCDF700268327 /* OBStepTwoView.swift */; };
+		254827BF25CFCDF700268327 /* OBStepTwoRemoteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254827B825CFCDF700268327 /* OBStepTwoRemoteDataManager.swift */; };
+		254827C025CFCDF700268327 /* OBStepTwoWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254827B925CFCDF700268327 /* OBStepTwoWireFrame.swift */; };
+		254827CF25CFCE1000268327 /* OBStepThreePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254827C825CFCE1000268327 /* OBStepThreePresenter.swift */; };
+		254827D025CFCE1000268327 /* OBStepThreeLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254827C925CFCE1000268327 /* OBStepThreeLocalDataManager.swift */; };
+		254827D125CFCE1000268327 /* OBStepThreeProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254827CA25CFCE1000268327 /* OBStepThreeProtocols.swift */; };
+		254827D225CFCE1000268327 /* OBStepThreeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254827CB25CFCE1000268327 /* OBStepThreeInteractor.swift */; };
+		254827D325CFCE1000268327 /* OBStepThreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254827CC25CFCE1000268327 /* OBStepThreeView.swift */; };
+		254827D425CFCE1000268327 /* OBStepThreeRemoteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254827CD25CFCE1000268327 /* OBStepThreeRemoteDataManager.swift */; };
+		254827D525CFCE1000268327 /* OBStepThreeWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254827CE25CFCE1000268327 /* OBStepThreeWireFrame.swift */; };
+		254827DD25CFCF2B00268327 /* AnimationWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254827DC25CFCF2B00268327 /* AnimationWrapper.swift */; };
 		25CBE70A25CE4FBA00598C28 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CBE70925CE4FBA00598C28 /* AppDelegate.swift */; };
 		25CBE71425CE4FBA00598C28 /* AFinder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 25CBE71225CE4FBA00598C28 /* AFinder.xcdatamodeld */; };
 		25CBE71625CE4FBB00598C28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25CBE71525CE4FBB00598C28 /* Assets.xcassets */; };
@@ -55,6 +87,38 @@
 		2548272725CF9DE600268327 /* FontHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontHelper.swift; sourceTree = "<group>"; };
 		2548273F25CFA8A200268327 /* welcome_airplane.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = welcome_airplane.json; sourceTree = "<group>"; };
 		2548274725CFAA9100268327 /* AFSecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFSecondaryButton.swift; sourceTree = "<group>"; };
+		2548275625CFB1C400268327 /* OnboardingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPresenter.swift; sourceTree = "<group>"; };
+		2548275725CFB1C400268327 /* OnboardingLocalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingLocalDataManager.swift; sourceTree = "<group>"; };
+		2548275825CFB1C400268327 /* OnboardingProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingProtocols.swift; sourceTree = "<group>"; };
+		2548275925CFB1C400268327 /* OnboardingInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingInteractor.swift; sourceTree = "<group>"; };
+		2548275B25CFB1C400268327 /* OnboardingRemoteDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingRemoteDataManager.swift; sourceTree = "<group>"; };
+		2548275C25CFB1C400268327 /* OnboardingWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWireFrame.swift; sourceTree = "<group>"; };
+		2548276725CFB1D300268327 /* OnboardingView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnboardingView.storyboard; sourceTree = "<group>"; };
+		2548276F25CFB25C00268327 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		2548279025CFC01D00268327 /* OnboardingStepProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingStepProtocol.swift; sourceTree = "<group>"; };
+		2548279525CFCAE500268327 /* gps_permission.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = gps_permission.json; sourceTree = "<group>"; };
+		2548279E25CFCCC200268327 /* OBStepOnePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OBStepOnePresenter.swift; sourceTree = "<group>"; };
+		2548279F25CFCCC200268327 /* OBStepOneLocalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OBStepOneLocalDataManager.swift; sourceTree = "<group>"; };
+		254827A025CFCCC200268327 /* OBStepOneProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OBStepOneProtocols.swift; sourceTree = "<group>"; };
+		254827A125CFCCC200268327 /* OBStepOneInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OBStepOneInteractor.swift; sourceTree = "<group>"; };
+		254827A225CFCCC200268327 /* OBStepOneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OBStepOneView.swift; sourceTree = "<group>"; };
+		254827A325CFCCC200268327 /* OBStepOneRemoteDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OBStepOneRemoteDataManager.swift; sourceTree = "<group>"; };
+		254827A425CFCCC200268327 /* OBStepOneWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OBStepOneWireFrame.swift; sourceTree = "<group>"; };
+		254827B325CFCDF700268327 /* OBStepTwoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OBStepTwoPresenter.swift; sourceTree = "<group>"; };
+		254827B425CFCDF700268327 /* OBStepTwoLocalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OBStepTwoLocalDataManager.swift; sourceTree = "<group>"; };
+		254827B525CFCDF700268327 /* OBStepTwoProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OBStepTwoProtocols.swift; sourceTree = "<group>"; };
+		254827B625CFCDF700268327 /* OBStepTwoInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OBStepTwoInteractor.swift; sourceTree = "<group>"; };
+		254827B725CFCDF700268327 /* OBStepTwoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OBStepTwoView.swift; sourceTree = "<group>"; };
+		254827B825CFCDF700268327 /* OBStepTwoRemoteDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OBStepTwoRemoteDataManager.swift; sourceTree = "<group>"; };
+		254827B925CFCDF700268327 /* OBStepTwoWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OBStepTwoWireFrame.swift; sourceTree = "<group>"; };
+		254827C825CFCE1000268327 /* OBStepThreePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OBStepThreePresenter.swift; sourceTree = "<group>"; };
+		254827C925CFCE1000268327 /* OBStepThreeLocalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OBStepThreeLocalDataManager.swift; sourceTree = "<group>"; };
+		254827CA25CFCE1000268327 /* OBStepThreeProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OBStepThreeProtocols.swift; sourceTree = "<group>"; };
+		254827CB25CFCE1000268327 /* OBStepThreeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OBStepThreeInteractor.swift; sourceTree = "<group>"; };
+		254827CC25CFCE1000268327 /* OBStepThreeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OBStepThreeView.swift; sourceTree = "<group>"; };
+		254827CD25CFCE1000268327 /* OBStepThreeRemoteDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OBStepThreeRemoteDataManager.swift; sourceTree = "<group>"; };
+		254827CE25CFCE1000268327 /* OBStepThreeWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OBStepThreeWireFrame.swift; sourceTree = "<group>"; };
+		254827DC25CFCF2B00268327 /* AnimationWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationWrapper.swift; sourceTree = "<group>"; };
 		25CBE70625CE4FBA00598C28 /* AFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25CBE70925CE4FBA00598C28 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		25CBE71325CE4FBA00598C28 /* AFinder.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AFinder.xcdatamodel; sourceTree = "<group>"; };
@@ -112,22 +176,93 @@
 			path = Internationalization;
 			sourceTree = "<group>";
 		};
-		2548271E25CF9AB100268327 /* UI */ = {
+		2548271E25CF9AB100268327 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
 				2548271F25CF9C6800268327 /* AFPrimaryButton.swift */,
 				2548274725CFAA9100268327 /* AFSecondaryButton.swift */,
 				2548272725CF9DE600268327 /* FontHelper.swift */,
+				254827DC25CFCF2B00268327 /* AnimationWrapper.swift */,
 			);
-			path = UI;
+			path = UIComponents;
 			sourceTree = "<group>";
 		};
 		2548273E25CFA88A00268327 /* LottieAnimations */ = {
 			isa = PBXGroup;
 			children = (
+				2548279525CFCAE500268327 /* gps_permission.json */,
 				2548273F25CFA8A200268327 /* welcome_airplane.json */,
 			);
 			path = LottieAnimations;
+			sourceTree = "<group>";
+		};
+		2548275525CFB1B300268327 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				2548277D25CFBBD500268327 /* Steps */,
+				2548275625CFB1C400268327 /* OnboardingPresenter.swift */,
+				2548275725CFB1C400268327 /* OnboardingLocalDataManager.swift */,
+				2548275825CFB1C400268327 /* OnboardingProtocols.swift */,
+				2548275925CFB1C400268327 /* OnboardingInteractor.swift */,
+				2548276F25CFB25C00268327 /* OnboardingView.swift */,
+				2548276725CFB1D300268327 /* OnboardingView.storyboard */,
+				2548275B25CFB1C400268327 /* OnboardingRemoteDataManager.swift */,
+				2548275C25CFB1C400268327 /* OnboardingWireFrame.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		2548277D25CFBBD500268327 /* Steps */ = {
+			isa = PBXGroup;
+			children = (
+				2548279D25CFCCAC00268327 /* StepOne */,
+				254827B225CFCDE200268327 /* StepTwo */,
+				254827C725CFCDFD00268327 /* StepThree */,
+				2548279025CFC01D00268327 /* OnboardingStepProtocol.swift */,
+			);
+			path = Steps;
+			sourceTree = "<group>";
+		};
+		2548279D25CFCCAC00268327 /* StepOne */ = {
+			isa = PBXGroup;
+			children = (
+				2548279E25CFCCC200268327 /* OBStepOnePresenter.swift */,
+				2548279F25CFCCC200268327 /* OBStepOneLocalDataManager.swift */,
+				254827A025CFCCC200268327 /* OBStepOneProtocols.swift */,
+				254827A125CFCCC200268327 /* OBStepOneInteractor.swift */,
+				254827A225CFCCC200268327 /* OBStepOneView.swift */,
+				254827A325CFCCC200268327 /* OBStepOneRemoteDataManager.swift */,
+				254827A425CFCCC200268327 /* OBStepOneWireFrame.swift */,
+			);
+			path = StepOne;
+			sourceTree = "<group>";
+		};
+		254827B225CFCDE200268327 /* StepTwo */ = {
+			isa = PBXGroup;
+			children = (
+				254827B325CFCDF700268327 /* OBStepTwoPresenter.swift */,
+				254827B425CFCDF700268327 /* OBStepTwoLocalDataManager.swift */,
+				254827B525CFCDF700268327 /* OBStepTwoProtocols.swift */,
+				254827B625CFCDF700268327 /* OBStepTwoInteractor.swift */,
+				254827B725CFCDF700268327 /* OBStepTwoView.swift */,
+				254827B825CFCDF700268327 /* OBStepTwoRemoteDataManager.swift */,
+				254827B925CFCDF700268327 /* OBStepTwoWireFrame.swift */,
+			);
+			path = StepTwo;
+			sourceTree = "<group>";
+		};
+		254827C725CFCDFD00268327 /* StepThree */ = {
+			isa = PBXGroup;
+			children = (
+				254827C825CFCE1000268327 /* OBStepThreePresenter.swift */,
+				254827C925CFCE1000268327 /* OBStepThreeLocalDataManager.swift */,
+				254827CA25CFCE1000268327 /* OBStepThreeProtocols.swift */,
+				254827CB25CFCE1000268327 /* OBStepThreeInteractor.swift */,
+				254827CC25CFCE1000268327 /* OBStepThreeView.swift */,
+				254827CD25CFCE1000268327 /* OBStepThreeRemoteDataManager.swift */,
+				254827CE25CFCE1000268327 /* OBStepThreeWireFrame.swift */,
+			);
+			path = StepThree;
 			sourceTree = "<group>";
 		};
 		25CBE6FD25CE4FBA00598C28 = {
@@ -186,7 +321,7 @@
 		25CBE74525CE552200598C28 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				2548271E25CF9AB100268327 /* UI */,
+				2548271E25CF9AB100268327 /* UIComponents */,
 				2548270925CF970A00268327 /* Internationalization */,
 			);
 			path = Utils;
@@ -195,6 +330,7 @@
 		25CBE74625CE552800598C28 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				2548275525CFB1B300268327 /* Onboarding */,
 				25CBE74725CE552C00598C28 /* Welcome */,
 			);
 			path = Modules;
@@ -325,7 +461,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2548276825CFB1D300268327 /* OnboardingView.storyboard in Resources */,
 				25CBE75A25CE559C00598C28 /* WelcomeView.storyboard in Resources */,
+				2548279625CFCAE500268327 /* gps_permission.json in Resources */,
 				2548271425CF994000268327 /* Localizable.strings in Resources */,
 				25CBE71925CE4FBB00598C28 /* LaunchScreen.storyboard in Resources */,
 				25CBE71625CE4FBB00598C28 /* Assets.xcassets in Resources */,
@@ -354,19 +492,49 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2548279125CFC01D00268327 /* OnboardingStepProtocol.swift in Sources */,
 				25CBE75125CE553F00598C28 /* WelcomeProtocols.swift in Sources */,
+				254827A825CFCCC200268327 /* OBStepOneInteractor.swift in Sources */,
+				254827DD25CFCF2B00268327 /* AnimationWrapper.swift in Sources */,
+				254827D025CFCE1000268327 /* OBStepThreeLocalDataManager.swift in Sources */,
+				254827AA25CFCCC200268327 /* OBStepOneRemoteDataManager.swift in Sources */,
+				254827D125CFCE1000268327 /* OBStepThreeProtocols.swift in Sources */,
 				25CBE75025CE553F00598C28 /* WelcomeLocalDataManager.swift in Sources */,
 				2548271025CF989100268327 /* LocalizableHelper.swift in Sources */,
 				25CBE75225CE553F00598C28 /* WelcomeInteractor.swift in Sources */,
 				25CBE75525CE553F00598C28 /* WelcomeWireFrame.swift in Sources */,
 				2548274825CFAA9100268327 /* AFSecondaryButton.swift in Sources */,
 				2548272025CF9C6800268327 /* AFPrimaryButton.swift in Sources */,
+				254827BE25CFCDF700268327 /* OBStepTwoView.swift in Sources */,
 				2548272825CF9DE600268327 /* FontHelper.swift in Sources */,
+				254827BB25CFCDF700268327 /* OBStepTwoLocalDataManager.swift in Sources */,
+				2548276325CFB1C400268327 /* OnboardingWireFrame.swift in Sources */,
+				254827D525CFCE1000268327 /* OBStepThreeWireFrame.swift in Sources */,
+				2548275E25CFB1C400268327 /* OnboardingLocalDataManager.swift in Sources */,
+				254827A925CFCCC200268327 /* OBStepOneView.swift in Sources */,
 				25CBE75325CE553F00598C28 /* WelcomeView.swift in Sources */,
 				25CBE74F25CE553F00598C28 /* WelcomePresenter.swift in Sources */,
+				254827CF25CFCE1000268327 /* OBStepThreePresenter.swift in Sources */,
+				2548276225CFB1C400268327 /* OnboardingRemoteDataManager.swift in Sources */,
+				254827D425CFCE1000268327 /* OBStepThreeRemoteDataManager.swift in Sources */,
 				25CBE75425CE553F00598C28 /* WelcomeRemoteDataManager.swift in Sources */,
+				254827A525CFCCC200268327 /* OBStepOnePresenter.swift in Sources */,
+				254827AB25CFCCC200268327 /* OBStepOneWireFrame.swift in Sources */,
+				2548277025CFB25C00268327 /* OnboardingView.swift in Sources */,
+				254827BD25CFCDF700268327 /* OBStepTwoInteractor.swift in Sources */,
+				254827D225CFCE1000268327 /* OBStepThreeInteractor.swift in Sources */,
+				254827BF25CFCDF700268327 /* OBStepTwoRemoteDataManager.swift in Sources */,
+				2548275F25CFB1C400268327 /* OnboardingProtocols.swift in Sources */,
+				2548275D25CFB1C400268327 /* OnboardingPresenter.swift in Sources */,
+				254827BC25CFCDF700268327 /* OBStepTwoProtocols.swift in Sources */,
+				254827D325CFCE1000268327 /* OBStepThreeView.swift in Sources */,
+				254827A625CFCCC200268327 /* OBStepOneLocalDataManager.swift in Sources */,
+				254827BA25CFCDF700268327 /* OBStepTwoPresenter.swift in Sources */,
+				254827C025CFCDF700268327 /* OBStepTwoWireFrame.swift in Sources */,
 				25CBE71425CE4FBA00598C28 /* AFinder.xcdatamodeld in Sources */,
 				25CBE70A25CE4FBA00598C28 /* AppDelegate.swift in Sources */,
+				254827A725CFCCC200268327 /* OBStepOneProtocols.swift in Sources */,
+				2548276025CFB1C400268327 /* OnboardingInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

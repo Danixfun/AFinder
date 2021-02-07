@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Step Two View-->
+        <scene sceneID="tPr-eh-75i">
+            <objects>
+                <viewController storyboardIdentifier="OnboardingStepTwo" id="TVH-kC-SYs" customClass="OBStepTwoView" customModule="AFinder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yN1-96-7Vc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set a range" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0zh-HD-qWn">
+                                <rect key="frame" x="32" y="76" width="194.5" height="41.5"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="36"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't worry, you can always change it later!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PXx-29-61b">
+                                <rect key="frame" x="32" y="125.5" width="350" height="55.5"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="DMv-wP-Ipj"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="PXx-29-61b" firstAttribute="top" secondItem="0zh-HD-qWn" secondAttribute="bottom" constant="8" id="58X-2p-qKW"/>
+                            <constraint firstAttribute="trailing" secondItem="PXx-29-61b" secondAttribute="trailing" constant="32" id="Bt3-wO-9Hy"/>
+                            <constraint firstItem="0zh-HD-qWn" firstAttribute="top" secondItem="DMv-wP-Ipj" secondAttribute="top" constant="32" id="UVb-xu-Aif"/>
+                            <constraint firstItem="0zh-HD-qWn" firstAttribute="leading" secondItem="DMv-wP-Ipj" secondAttribute="leading" constant="32" id="sKl-iM-TIi"/>
+                            <constraint firstItem="PXx-29-61b" firstAttribute="leading" secondItem="0zh-HD-qWn" secondAttribute="leading" id="sjJ-7o-SXz"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6PM-nr-vYx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-191" y="-546"/>
+        </scene>
+        <!--Onboarding View-->
+        <scene sceneID="8Du-po-wQC">
+            <objects>
+                <pageViewController storyboardIdentifier="OnboardingPageView" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Nqf-yu-KCi" customClass="OnboardingView" customModule="AFinder" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PoS-hb-E0h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1661" y="-546"/>
+        </scene>
+        <!--Step One View-->
+        <scene sceneID="iUB-75-5ZS">
+            <objects>
+                <viewController storyboardIdentifier="OnboardingStepOne" id="ZS6-PS-E5c" customClass="OBStepOneView" customModule="AFinder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Qyz-cA-x89">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Permission" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Hk-W3-rnH">
+                                <rect key="frame" x="32" y="76" width="194.5" height="41.5"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="36"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please, grant us the permission to know your location. That way we can find airports accurately!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kch-dr-e8P">
+                                <rect key="frame" x="32" y="125.5" width="350" height="83"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We do not share your location with third parties." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RzF-nt-iHs">
+                                <rect key="frame" x="32" y="240.5" width="350" height="39.5"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qrt-Mg-aar" customClass="AFPrimaryButton" customModule="AFinder" customModuleProvider="target">
+                                <rect key="frame" x="32" y="790" width="350" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="kvL-I2-pdj"/>
+                                </constraints>
+                                <state key="normal" title="Grant"/>
+                                <connections>
+                                    <action selector="gpsPermissionAction:" destination="ZS6-PS-E5c" eventType="touchUpInside" id="j2c-zo-cbu"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AVd-yo-NaH">
+                                <rect key="frame" x="32" y="312" width="350" height="446"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Gx0-uo-r7Z"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="8Hk-W3-rnH" firstAttribute="leading" secondItem="Gx0-uo-r7Z" secondAttribute="leading" constant="32" id="1AA-mE-vAN"/>
+                            <constraint firstItem="Qrt-Mg-aar" firstAttribute="top" secondItem="AVd-yo-NaH" secondAttribute="bottom" constant="32" id="5La-dM-V9p"/>
+                            <constraint firstItem="8Hk-W3-rnH" firstAttribute="top" secondItem="Gx0-uo-r7Z" secondAttribute="top" constant="32" id="H6v-Gm-Wag"/>
+                            <constraint firstItem="RzF-nt-iHs" firstAttribute="leading" secondItem="Kch-dr-e8P" secondAttribute="leading" id="MKz-P5-6TH"/>
+                            <constraint firstItem="AVd-yo-NaH" firstAttribute="leading" secondItem="Gx0-uo-r7Z" secondAttribute="leading" constant="32" id="Q51-dm-ggQ"/>
+                            <constraint firstItem="RzF-nt-iHs" firstAttribute="top" secondItem="Kch-dr-e8P" secondAttribute="bottom" constant="32" id="T9F-uK-eNy"/>
+                            <constraint firstAttribute="trailing" secondItem="Kch-dr-e8P" secondAttribute="trailing" constant="32" id="YgR-Zs-ViB"/>
+                            <constraint firstItem="Gx0-uo-r7Z" firstAttribute="trailing" secondItem="Qrt-Mg-aar" secondAttribute="trailing" constant="32" id="ZIV-HL-ygj"/>
+                            <constraint firstItem="AVd-yo-NaH" firstAttribute="top" secondItem="RzF-nt-iHs" secondAttribute="bottom" constant="32" id="bG8-1V-xWL"/>
+                            <constraint firstItem="Kch-dr-e8P" firstAttribute="top" secondItem="8Hk-W3-rnH" secondAttribute="bottom" constant="8" id="byD-hR-NaW"/>
+                            <constraint firstItem="Qrt-Mg-aar" firstAttribute="leading" secondItem="Gx0-uo-r7Z" secondAttribute="leading" constant="32" id="dfD-x0-aPf"/>
+                            <constraint firstAttribute="trailing" secondItem="RzF-nt-iHs" secondAttribute="trailing" constant="32" id="e7n-Lt-e5z"/>
+                            <constraint firstItem="Kch-dr-e8P" firstAttribute="leading" secondItem="8Hk-W3-rnH" secondAttribute="leading" id="epH-Qc-Gyl"/>
+                            <constraint firstItem="Gx0-uo-r7Z" firstAttribute="trailing" secondItem="AVd-yo-NaH" secondAttribute="trailing" constant="32" id="jQq-aH-0vD"/>
+                            <constraint firstItem="Gx0-uo-r7Z" firstAttribute="bottom" secondItem="Qrt-Mg-aar" secondAttribute="bottom" constant="32" id="yaE-C1-OJw"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="animationContainer" destination="AVd-yo-NaH" id="uMC-Yk-0YV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="35z-Jz-Xi6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-923.1884057971015" y="-546.42857142857144"/>
+        </scene>
+        <!--Step Three View-->
+        <scene sceneID="cLP-ex-FCt">
+            <objects>
+                <viewController storyboardIdentifier="OnboardingStepThree" id="MoQ-5E-a6S" customClass="OBStepThreeView" customModule="AFinder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6ya-eg-Y2K">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find an airport" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5kd-0C-jtu">
+                                <rect key="frame" x="32" y="76" width="252" height="42"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="36"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click on one to see more relevant information about it." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="snV-Hd-Dxl">
+                                <rect key="frame" x="32" y="126" width="350" height="55.5"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6hU-h1-2O7"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="snV-Hd-Dxl" firstAttribute="leading" secondItem="5kd-0C-jtu" secondAttribute="leading" id="4GL-xT-cFe"/>
+                            <constraint firstItem="5kd-0C-jtu" firstAttribute="leading" secondItem="6hU-h1-2O7" secondAttribute="leading" constant="32" id="Bf3-W1-4xo"/>
+                            <constraint firstItem="snV-Hd-Dxl" firstAttribute="top" secondItem="5kd-0C-jtu" secondAttribute="bottom" constant="8" id="Mvv-Yg-3GC"/>
+                            <constraint firstAttribute="trailing" secondItem="snV-Hd-Dxl" secondAttribute="trailing" constant="32" id="hKT-IP-1uq"/>
+                            <constraint firstItem="5kd-0C-jtu" firstAttribute="top" secondItem="6hU-h1-2O7" secondAttribute="top" constant="32" id="hLD-tL-my3"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ytv-4o-qJO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="561" y="-546"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -18,6 +18,11 @@ class WelcomeView: UIViewController {
     @IBOutlet weak var skipButton: AFSecondaryButton!
     @IBOutlet weak var animationContainer: UIView!
     
+    // MARK: IBAction
+    @IBAction func openOnboardingAction(_ sender: Any) {
+        self.presenter?.openOnboardingAction()
+    }
+    
     // MARK: Properties
     var presenter: WelcomePresenterProtocol?
     
@@ -44,20 +49,6 @@ extension WelcomeView: WelcomeViewProtocol {
     }
     
     func setUpAnimation(){
-        let animationJSONName = "welcome_airplane"
-        let animation = Animation.named(animationJSONName)
-        let animationView = AnimationView(animation: animation)
-        let animationViewSide:CGFloat = animationContainer.bounds.size.width
-        
-        animationContainer.addSubview(animationView)
-        animationView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            animationView.centerXAnchor.constraint(equalTo: animationContainer.centerXAnchor),
-            animationView.centerYAnchor.constraint(equalTo: animationContainer.centerYAnchor),
-            animationView.heightAnchor.constraint(equalToConstant: animationViewSide),
-            animationView.widthAnchor.constraint(equalToConstant: animationViewSide)
-        ])
-        animationView.loopMode = .repeat(.infinity)
-        animationView.play()
+        AnimationWrapper.setUpAnimation(in: self.animationContainer, withFile: "welcome_airplane")
     }
 }
