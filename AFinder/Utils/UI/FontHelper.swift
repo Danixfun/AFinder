@@ -12,16 +12,22 @@ class FontHelper {
     //MARK:  Init
     static let shared = FontHelper()
     private init(){
-        globalButtonTextSize = 16.0
+        primaryButtonTextSize = 16.0
+        secondaryButtonTextSize = 14.0
     }
     
     //MARK:  Global constants
     let globalFontName = "Helvetica"
-    let globalButtonTextSize: CGFloat
+    let primaryButtonTextSize: CGFloat
+    let secondaryButtonTextSize: CGFloat
     
     //MARK:  Global fonts
     var primaryButton: UIFont {
-        return UIFont(name: globalFontName, size: globalButtonTextSize)!
+        return UIFont(name: globalFontName, size: primaryButtonTextSize)!
+    }
+    
+    var secondaryButton: UIFont {
+        return UIFont(name: globalFontName, size: secondaryButtonTextSize)!
     }
     
 }

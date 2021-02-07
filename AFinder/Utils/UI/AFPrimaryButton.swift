@@ -27,8 +27,8 @@ class AFPrimaryButton: UIButton {
     
     //MARK: Private Functions
     private func sharedSetup(){
-        backgroundColor = UIColor(named: "PrimaryColor")
-        setTitleColor(UIColor(named: "BodyTextColor"), for: .normal)
+        backgroundColor = UIColor(named: "PrimaryButtonBackgroundColor")
+        setTitleColor(UIColor(named: "PrimaryButtonTextColor"), for: .normal)
         titleLabel?.font = FontHelper.shared.primaryButton
         layer.cornerRadius = 8.0
         layer.masksToBounds = true

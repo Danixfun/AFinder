@@ -12,6 +12,8 @@
 		2548272025CF9C6800268327 /* AFPrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2548271F25CF9C6800268327 /* AFPrimaryButton.swift */; };
 		2548272825CF9DE600268327 /* FontHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2548272725CF9DE600268327 /* FontHelper.swift */; };
 		2548273425CFA58800268327 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 2548273325CFA58800268327 /* Lottie */; };
+		2548274025CFA8A200268327 /* welcome_airplane.json in Resources */ = {isa = PBXBuildFile; fileRef = 2548273F25CFA8A200268327 /* welcome_airplane.json */; };
+		2548274825CFAA9100268327 /* AFSecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2548274725CFAA9100268327 /* AFSecondaryButton.swift */; };
 		25CBE70A25CE4FBA00598C28 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CBE70925CE4FBA00598C28 /* AppDelegate.swift */; };
 		25CBE71425CE4FBA00598C28 /* AFinder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 25CBE71225CE4FBA00598C28 /* AFinder.xcdatamodeld */; };
 		25CBE71625CE4FBB00598C28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25CBE71525CE4FBB00598C28 /* Assets.xcassets */; };
@@ -51,6 +53,8 @@
 		2548271A25CF994F00268327 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2548271F25CF9C6800268327 /* AFPrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFPrimaryButton.swift; sourceTree = "<group>"; };
 		2548272725CF9DE600268327 /* FontHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontHelper.swift; sourceTree = "<group>"; };
+		2548273F25CFA8A200268327 /* welcome_airplane.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = welcome_airplane.json; sourceTree = "<group>"; };
+		2548274725CFAA9100268327 /* AFSecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFSecondaryButton.swift; sourceTree = "<group>"; };
 		25CBE70625CE4FBA00598C28 /* AFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25CBE70925CE4FBA00598C28 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		25CBE71325CE4FBA00598C28 /* AFinder.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AFinder.xcdatamodel; sourceTree = "<group>"; };
@@ -112,9 +116,18 @@
 			isa = PBXGroup;
 			children = (
 				2548271F25CF9C6800268327 /* AFPrimaryButton.swift */,
+				2548274725CFAA9100268327 /* AFSecondaryButton.swift */,
 				2548272725CF9DE600268327 /* FontHelper.swift */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		2548273E25CFA88A00268327 /* LottieAnimations */ = {
+			isa = PBXGroup;
+			children = (
+				2548273F25CFA8A200268327 /* welcome_airplane.json */,
+			);
+			path = LottieAnimations;
 			sourceTree = "<group>";
 		};
 		25CBE6FD25CE4FBA00598C28 = {
@@ -142,6 +155,7 @@
 			children = (
 				25CBE74625CE552800598C28 /* Modules */,
 				25CBE74525CE552200598C28 /* Utils */,
+				2548273E25CFA88A00268327 /* LottieAnimations */,
 				25CBE70925CE4FBA00598C28 /* AppDelegate.swift */,
 				25CBE71525CE4FBB00598C28 /* Assets.xcassets */,
 				25CBE71725CE4FBB00598C28 /* LaunchScreen.storyboard */,
@@ -315,6 +329,7 @@
 				2548271425CF994000268327 /* Localizable.strings in Resources */,
 				25CBE71925CE4FBB00598C28 /* LaunchScreen.storyboard in Resources */,
 				25CBE71625CE4FBB00598C28 /* Assets.xcassets in Resources */,
+				2548274025CFA8A200268327 /* welcome_airplane.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +359,7 @@
 				2548271025CF989100268327 /* LocalizableHelper.swift in Sources */,
 				25CBE75225CE553F00598C28 /* WelcomeInteractor.swift in Sources */,
 				25CBE75525CE553F00598C28 /* WelcomeWireFrame.swift in Sources */,
+				2548274825CFAA9100268327 /* AFSecondaryButton.swift in Sources */,
 				2548272025CF9C6800268327 /* AFPrimaryButton.swift in Sources */,
 				2548272825CF9DE600268327 /* FontHelper.swift in Sources */,
 				25CBE75325CE553F00598C28 /* WelcomeView.swift in Sources */,

@@ -23,6 +23,7 @@ extension WelcomePresenter: WelcomePresenterProtocol {
         self.view?.setUpLabels()
         self.view?.setUpBackground()
         self.view?.setUpButtons()
+        self.view?.setUpAnimation()
     }
 }
 

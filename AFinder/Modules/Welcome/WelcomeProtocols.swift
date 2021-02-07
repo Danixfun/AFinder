@@ -15,6 +15,7 @@ protocol WelcomeViewProtocol: class {
     func setUpBackground()
     func setUpLabels()
     func setUpButtons()
+    func setUpAnimation()
 }
 
 protocol WelcomeWireFrameProtocol: class {
