@@ -23,7 +23,6 @@
 		2548276825CFB1D300268327 /* OnboardingView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2548276725CFB1D300268327 /* OnboardingView.storyboard */; };
 		2548277025CFB25C00268327 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2548276F25CFB25C00268327 /* OnboardingView.swift */; };
 		2548279125CFC01D00268327 /* OnboardingStepProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2548279025CFC01D00268327 /* OnboardingStepProtocol.swift */; };
-		2548279625CFCAE500268327 /* gps_permission.json in Resources */ = {isa = PBXBuildFile; fileRef = 2548279525CFCAE500268327 /* gps_permission.json */; };
 		254827A525CFCCC200268327 /* OBStepOnePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2548279E25CFCCC200268327 /* OBStepOnePresenter.swift */; };
 		254827A625CFCCC200268327 /* OBStepOneLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2548279F25CFCCC200268327 /* OBStepOneLocalDataManager.swift */; };
 		254827A725CFCCC200268327 /* OBStepOneProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254827A025CFCCC200268327 /* OBStepOneProtocols.swift */; };
@@ -46,6 +45,11 @@
 		254827D425CFCE1000268327 /* OBStepThreeRemoteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254827CD25CFCE1000268327 /* OBStepThreeRemoteDataManager.swift */; };
 		254827D525CFCE1000268327 /* OBStepThreeWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254827CE25CFCE1000268327 /* OBStepThreeWireFrame.swift */; };
 		254827DD25CFCF2B00268327 /* AnimationWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254827DC25CFCF2B00268327 /* AnimationWrapper.swift */; };
+		256143E825D059AF00F851E7 /* no_airports_found.json in Resources */ = {isa = PBXBuildFile; fileRef = 256143E625D059AF00F851E7 /* no_airports_found.json */; };
+		256143E925D059AF00F851E7 /* gps_permission.json in Resources */ = {isa = PBXBuildFile; fileRef = 256143E725D059AF00F851E7 /* gps_permission.json */; };
+		256143F125D059E600F851E7 /* no_gps.json in Resources */ = {isa = PBXBuildFile; fileRef = 256143F025D059E600F851E7 /* no_gps.json */; };
+		256143F725D0610400F851E7 /* NotiNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256143F625D0610400F851E7 /* NotiNames.swift */; };
+		256143FF25D0616900F851E7 /* OnboardingSteps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256143FE25D0616900F851E7 /* OnboardingSteps.swift */; };
 		25CBE70A25CE4FBA00598C28 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CBE70925CE4FBA00598C28 /* AppDelegate.swift */; };
 		25CBE71425CE4FBA00598C28 /* AFinder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 25CBE71225CE4FBA00598C28 /* AFinder.xcdatamodeld */; };
 		25CBE71625CE4FBB00598C28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25CBE71525CE4FBB00598C28 /* Assets.xcassets */; };
@@ -96,7 +100,6 @@
 		2548276725CFB1D300268327 /* OnboardingView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnboardingView.storyboard; sourceTree = "<group>"; };
 		2548276F25CFB25C00268327 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		2548279025CFC01D00268327 /* OnboardingStepProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingStepProtocol.swift; sourceTree = "<group>"; };
-		2548279525CFCAE500268327 /* gps_permission.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = gps_permission.json; sourceTree = "<group>"; };
 		2548279E25CFCCC200268327 /* OBStepOnePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OBStepOnePresenter.swift; sourceTree = "<group>"; };
 		2548279F25CFCCC200268327 /* OBStepOneLocalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OBStepOneLocalDataManager.swift; sourceTree = "<group>"; };
 		254827A025CFCCC200268327 /* OBStepOneProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OBStepOneProtocols.swift; sourceTree = "<group>"; };
@@ -119,6 +122,11 @@
 		254827CD25CFCE1000268327 /* OBStepThreeRemoteDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OBStepThreeRemoteDataManager.swift; sourceTree = "<group>"; };
 		254827CE25CFCE1000268327 /* OBStepThreeWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OBStepThreeWireFrame.swift; sourceTree = "<group>"; };
 		254827DC25CFCF2B00268327 /* AnimationWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationWrapper.swift; sourceTree = "<group>"; };
+		256143E625D059AF00F851E7 /* no_airports_found.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = no_airports_found.json; sourceTree = "<group>"; };
+		256143E725D059AF00F851E7 /* gps_permission.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = gps_permission.json; path = "../../../../AFind assets/gps_permission.json"; sourceTree = "<group>"; };
+		256143F025D059E600F851E7 /* no_gps.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = no_gps.json; sourceTree = "<group>"; };
+		256143F625D0610400F851E7 /* NotiNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotiNames.swift; sourceTree = "<group>"; };
+		256143FE25D0616900F851E7 /* OnboardingSteps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSteps.swift; sourceTree = "<group>"; };
 		25CBE70625CE4FBA00598C28 /* AFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25CBE70925CE4FBA00598C28 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		25CBE71325CE4FBA00598C28 /* AFinder.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AFinder.xcdatamodel; sourceTree = "<group>"; };
@@ -190,7 +198,9 @@
 		2548273E25CFA88A00268327 /* LottieAnimations */ = {
 			isa = PBXGroup;
 			children = (
-				2548279525CFCAE500268327 /* gps_permission.json */,
+				256143F025D059E600F851E7 /* no_gps.json */,
+				256143E725D059AF00F851E7 /* gps_permission.json */,
+				256143E625D059AF00F851E7 /* no_airports_found.json */,
 				2548273F25CFA8A200268327 /* welcome_airplane.json */,
 			);
 			path = LottieAnimations;
@@ -208,6 +218,7 @@
 				2548276725CFB1D300268327 /* OnboardingView.storyboard */,
 				2548275B25CFB1C400268327 /* OnboardingRemoteDataManager.swift */,
 				2548275C25CFB1C400268327 /* OnboardingWireFrame.swift */,
+				256143FE25D0616900F851E7 /* OnboardingSteps.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -263,6 +274,14 @@
 				254827CE25CFCE1000268327 /* OBStepThreeWireFrame.swift */,
 			);
 			path = StepThree;
+			sourceTree = "<group>";
+		};
+		256143F525D060F100F851E7 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				256143F625D0610400F851E7 /* NotiNames.swift */,
+			);
+			path = Notifications;
 			sourceTree = "<group>";
 		};
 		25CBE6FD25CE4FBA00598C28 = {
@@ -321,6 +340,7 @@
 		25CBE74525CE552200598C28 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				256143F525D060F100F851E7 /* Notifications */,
 				2548271E25CF9AB100268327 /* UIComponents */,
 				2548270925CF970A00268327 /* Internationalization */,
 			);
@@ -461,9 +481,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				256143E925D059AF00F851E7 /* gps_permission.json in Resources */,
 				2548276825CFB1D300268327 /* OnboardingView.storyboard in Resources */,
+				256143F125D059E600F851E7 /* no_gps.json in Resources */,
+				256143E825D059AF00F851E7 /* no_airports_found.json in Resources */,
 				25CBE75A25CE559C00598C28 /* WelcomeView.storyboard in Resources */,
-				2548279625CFCAE500268327 /* gps_permission.json in Resources */,
 				2548271425CF994000268327 /* Localizable.strings in Resources */,
 				25CBE71925CE4FBB00598C28 /* LaunchScreen.storyboard in Resources */,
 				25CBE71625CE4FBB00598C28 /* Assets.xcassets in Resources */,
@@ -499,6 +521,7 @@
 				254827D025CFCE1000268327 /* OBStepThreeLocalDataManager.swift in Sources */,
 				254827AA25CFCCC200268327 /* OBStepOneRemoteDataManager.swift in Sources */,
 				254827D125CFCE1000268327 /* OBStepThreeProtocols.swift in Sources */,
+				256143FF25D0616900F851E7 /* OnboardingSteps.swift in Sources */,
 				25CBE75025CE553F00598C28 /* WelcomeLocalDataManager.swift in Sources */,
 				2548271025CF989100268327 /* LocalizableHelper.swift in Sources */,
 				25CBE75225CE553F00598C28 /* WelcomeInteractor.swift in Sources */,
@@ -508,6 +531,7 @@
 				254827BE25CFCDF700268327 /* OBStepTwoView.swift in Sources */,
 				2548272825CF9DE600268327 /* FontHelper.swift in Sources */,
 				254827BB25CFCDF700268327 /* OBStepTwoLocalDataManager.swift in Sources */,
+				256143F725D0610400F851E7 /* NotiNames.swift in Sources */,
 				2548276325CFB1C400268327 /* OnboardingWireFrame.swift in Sources */,
 				254827D525CFCE1000268327 /* OBStepThreeWireFrame.swift in Sources */,
 				2548275E25CFB1C400268327 /* OnboardingLocalDataManager.swift in Sources */,

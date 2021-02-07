@@ -11,6 +11,7 @@ import UIKit
 
 class OBStepOneWireFrame: OBStepOneWireFrameProtocol {
 
+    // MARK: Init
     class func createOBStepOneModule(step: OnboardingSteps) -> UIViewController {
         if let view = mainStoryboard.instantiateViewController(withIdentifier: step.storyboardId) as? OBStepOneView {
             let presenter: OBStepOnePresenterProtocol & OBStepOneInteractorOutputProtocol = OBStepOnePresenter()
@@ -37,6 +38,20 @@ class OBStepOneWireFrame: OBStepOneWireFrameProtocol {
     
     static var mainStoryboard: UIStoryboard {
         return UIStoryboard(name: "OnboardingView", bundle: Bundle.main)
+    }
+    
+    // MARK: Functions
+    func openSettings() {
+        guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
+            return
+        }
+        if UIApplication.shared.canOpenURL(settingsUrl) {
+            UIApplication.shared.open(settingsUrl, completionHandler: nil)
+        }
+    }
+    
+    func nextStep() {
+        NotificationCenter.default.post(name: NotiNames.nextOnboardingStep, object: nil, userInfo: ["goto":OnboardingSteps.StepTwo])
     }
     
 }

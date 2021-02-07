@@ -7,34 +7,6 @@
 
 import UIKit
 
-enum OnboardingSteps: CaseIterable {
-    case StepOne
-    case StepTwo
-    case StepThree
-    
-    var storyboardId: String{
-        switch self {
-        case .StepOne:
-            return "OnboardingStepOne"
-        case .StepTwo:
-            return "OnboardingStepTwo"
-        case .StepThree:
-            return "OnboardingStepThree"
-        }
-    }
-    
-    var id: Int{
-        switch self {
-        case .StepOne:
-            return 0
-        case .StepTwo:
-            return 1
-        case .StepThree:
-            return 2
-        }
-    }
-}
-
 class OnboardingView: UIPageViewController {
     
     // MARK: Properties
@@ -42,10 +14,8 @@ class OnboardingView: UIPageViewController {
     lazy var firstStepViewController = {
         return stepsViewControllers.first as! UIViewController
     }()
-    private var currentIndex: Int = 0
     private var steps:[OnboardingSteps] = OnboardingSteps.allCases
     private var stepsViewControllers = [OnboardingStepProtocol]()
-    private let numberOfViews = 3
     
     // MARK: Init
     override func viewDidLoad() {
@@ -75,7 +45,11 @@ extension OnboardingView: OnboardingViewProtocol {
             stepsViewControllers.append(stepThree)
         }
         self.setViewControllers([firstStepViewController], direction: .forward, animated: true, completion: nil)
-        self.dataSource = self
+    }
+    
+    func updateStep(index: Int) {
+        let newVC = stepsViewControllers[index] as! UIViewController
+        self.setViewControllers([newVC], direction: .forward, animated: true, completion: nil)
     }
     
     /// corrects scrollview frame to allow for full-screen view controller pages
@@ -87,54 +61,7 @@ extension OnboardingView: OnboardingViewProtocol {
         }
         super.viewDidLayoutSubviews()
     }
-}
-
-// MARK: UIPageViewControllerDataSource
-extension OnboardingView: UIPageViewControllerDataSource {
-    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        
-        let stepViewController = viewController as? OnboardingStepProtocol
-        
-        guard var currentIndex = stepViewController?.index else {
-            return nil
-        }
-        
-        self.currentIndex = currentIndex
-        
-        if currentIndex == 0 {
-            return nil
-        }
-        
-        currentIndex -= 1
-        
-        return stepsViewControllers[currentIndex] as? UIViewController
-        
-    }
     
-    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        let stepViewController = viewController as? OnboardingStepProtocol
-        
-        guard var currentIndex = stepViewController?.index else {
-            return nil
-        }
-        
-        self.currentIndex = currentIndex
-        
-        if currentIndex == self.stepsViewControllers.count - 1 {
-            return nil
-        }
-        
-        currentIndex += 1
-        
-        return stepsViewControllers[currentIndex] as? UIViewController
-    }
     
-    func presentationCount(for pageViewController: UIPageViewController) -> Int {
-        return self.stepsViewControllers.count
-    }
-    
-    func presentationIndex(for pageViewController: UIPageViewController) -> Int {
-        return self.currentIndex
-    }
 }
 

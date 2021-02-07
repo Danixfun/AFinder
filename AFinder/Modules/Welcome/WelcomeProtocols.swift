@@ -12,7 +12,6 @@ import UIKit
 protocol WelcomeViewProtocol: class {
     // PRESENTER -> VIEW
     var presenter: WelcomePresenterProtocol? { get set }
-    func setUpBackground()
     func setUpLabels()
     func setUpButtons()
     func setUpAnimation()
@@ -31,6 +30,7 @@ protocol WelcomePresenterProtocol: class {
     var wireFrame: WelcomeWireFrameProtocol? { get set }
     
     func viewDidLoad()
+    func viewDidLayoutSubviews()
     func openOnboardingAction()
 }
 

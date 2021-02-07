@@ -31,13 +31,14 @@ class WelcomeView: UIViewController {
         super.viewDidLoad()
         self.presenter?.viewDidLoad()
     }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.presenter?.viewDidLayoutSubviews()
+    }
 }
 
 extension WelcomeView: WelcomeViewProtocol {
-    func setUpBackground() {
-        
-    }
-    
     func setUpLabels() {
         self.titleLabel.text = "Airport Finder".localized()
         self.sloganLabel.text = "Just find it!".localized()

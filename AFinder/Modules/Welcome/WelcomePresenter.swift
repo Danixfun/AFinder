@@ -21,12 +21,14 @@ extension WelcomePresenter: WelcomePresenterProtocol {
     // TODO: implement presenter methods
     func viewDidLoad() {
         self.view?.setUpLabels()
-        self.view?.setUpBackground()
         self.view?.setUpButtons()
+    }
+    
+    func viewDidLayoutSubviews() {
         self.view?.setUpAnimation()
     }
     
-    func openOnboardingAction(){
+    func openOnboardingAction() {
         self.wireFrame?.openOnboardingAction(from: self.view!)
     }
 }

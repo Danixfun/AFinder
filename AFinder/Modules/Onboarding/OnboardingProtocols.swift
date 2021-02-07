@@ -14,6 +14,7 @@ protocol OnboardingViewProtocol: class {
     var presenter: OnboardingPresenterProtocol? { get set }
     func setUpViews()
     func fixLayoutSubviews()
+    func updateStep(index: Int)
 }
 
 protocol OnboardingWireFrameProtocol: class {
@@ -33,6 +34,7 @@ protocol OnboardingPresenterProtocol: class {
 
 protocol OnboardingInteractorOutputProtocol: class {
 // INTERACTOR -> PRESENTER
+    func updateStep(index: Int)
 }
 
 protocol OnboardingInteractorInputProtocol: class {
@@ -40,6 +42,8 @@ protocol OnboardingInteractorInputProtocol: class {
     var presenter: OnboardingInteractorOutputProtocol? { get set }
     var localDatamanager: OnboardingLocalDataManagerInputProtocol? { get set }
     var remoteDatamanager: OnboardingRemoteDataManagerInputProtocol? { get set }
+    
+    func setUpNotifications()
 }
 
 protocol OnboardingRemoteDataManagerInputProtocol: class {

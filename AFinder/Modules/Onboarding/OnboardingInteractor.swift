@@ -14,6 +14,17 @@ class OnboardingInteractor: OnboardingInteractorInputProtocol {
     weak var presenter: OnboardingInteractorOutputProtocol?
     var localDatamanager: OnboardingLocalDataManagerInputProtocol?
     var remoteDatamanager: OnboardingRemoteDataManagerInputProtocol?
+    
+    // MARK: Functions
+    func setUpNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(self.nextStep(n:)), name: NotiNames.nextOnboardingStep, object: nil)
+    }
+    
+    @objc func nextStep(n: Notification){
+        if let newIndex:Int = (n.userInfo?["goto"] as? OnboardingSteps)?.id {
+            self.presenter?.updateStep(index: newIndex)
+        }
+    }
 
 }
 

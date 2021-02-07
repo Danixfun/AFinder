@@ -116,6 +116,10 @@
                     </view>
                     <connections>
                         <outlet property="animationContainer" destination="AVd-yo-NaH" id="uMC-Yk-0YV"/>
+                        <outlet property="disclaimerLabel" destination="RzF-nt-iHs" id="1Qc-JQ-b2o"/>
+                        <outlet property="messageLabel" destination="Kch-dr-e8P" id="T2n-Rd-W5Y"/>
+                        <outlet property="stepOneButton" destination="Qrt-Mg-aar" id="hNw-vb-8Bj"/>
+                        <outlet property="titleLabel" destination="8Hk-W3-rnH" id="x66-eY-EIa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="35z-Jz-Xi6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

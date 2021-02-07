@@ -21,6 +21,7 @@ extension OnboardingPresenter: OnboardingPresenterProtocol {
     // TODO: implement presenter methods
     func viewDidLoad() {
         self.view?.setUpViews()
+        self.interactor?.setUpNotifications()
     }
     
     func viewDidLayoutSubviews() {
@@ -30,4 +31,7 @@ extension OnboardingPresenter: OnboardingPresenterProtocol {
 
 extension OnboardingPresenter: OnboardingInteractorOutputProtocol {
     // TODO: implement interactor output methods
+    func updateStep(index: Int) {
+        self.view?.updateStep(index: index)
+    }
 }

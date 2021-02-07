@@ -14,16 +14,38 @@ class OBStepOnePresenter  {
     weak var view: OBStepOneViewProtocol?
     var interactor: OBStepOneInteractorInputProtocol?
     var wireFrame: OBStepOneWireFrameProtocol?
+    var once: Bool = false
     
 }
 
 extension OBStepOnePresenter: OBStepOnePresenterProtocol {
     // TODO: implement presenter methods
     func viewDidLoad() {
-        self.view?.setUpAnimation()
+        
+    }
+    
+    func viewDidLayoutSubviews() {
+        if !once {
+            once = true
+            self.view?.setUpAnimation()
+        }
+    }
+    
+    func requestGPSPermission() {
+        self.interactor?.requestGPSPermission()
+    }
+    
+    func nextStep() {
+        self.wireFrame?.nextStep()
     }
 }
 
 extension OBStepOnePresenter: OBStepOneInteractorOutputProtocol {
-    // TODO: implement interactor output methods
+    func gpsPermissionResponse(success: Bool) {
+        self.view?.handleGPSPermissionReponse(success: success)
+    }
+    
+    func openSettings() {
+        self.wireFrame?.openSettings()
+    }
 }

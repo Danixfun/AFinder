@@ -13,11 +13,14 @@ protocol OBStepOneViewProtocol: class {
     // PRESENTER -> VIEW
     var presenter: OBStepOnePresenterProtocol? { get set }
     func setUpAnimation()
+    func handleGPSPermissionReponse(success: Bool)
 }
 
 protocol OBStepOneWireFrameProtocol: class {
     // PRESENTER -> WIREFRAME
     static func createOBStepOneModule(step: OnboardingSteps) -> UIViewController
+    func openSettings()
+    func nextStep()
 }
 
 protocol OBStepOnePresenterProtocol: class {
@@ -27,10 +30,15 @@ protocol OBStepOnePresenterProtocol: class {
     var wireFrame: OBStepOneWireFrameProtocol? { get set }
     
     func viewDidLoad()
+    func viewDidLayoutSubviews()
+    func requestGPSPermission()
+    func nextStep()
 }
 
 protocol OBStepOneInteractorOutputProtocol: class {
-// INTERACTOR -> PRESENTER
+    // INTERACTOR -> PRESENTER
+    func gpsPermissionResponse(success: Bool)
+    func openSettings()
 }
 
 protocol OBStepOneInteractorInputProtocol: class {
@@ -38,6 +46,8 @@ protocol OBStepOneInteractorInputProtocol: class {
     var presenter: OBStepOneInteractorOutputProtocol? { get set }
     var localDatamanager: OBStepOneLocalDataManagerInputProtocol? { get set }
     var remoteDatamanager: OBStepOneRemoteDataManagerInputProtocol? { get set }
+    
+    func requestGPSPermission()
 }
 
 protocol OBStepOneRemoteDataManagerInputProtocol: class {
