@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2548271025CF989100268327 /* LocalizableHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2548270F25CF989100268327 /* LocalizableHelper.swift */; };
+		2548271425CF994000268327 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2548271625CF994000268327 /* Localizable.strings */; };
+		2548272025CF9C6800268327 /* AFPrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2548271F25CF9C6800268327 /* AFPrimaryButton.swift */; };
+		2548272825CF9DE600268327 /* FontHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2548272725CF9DE600268327 /* FontHelper.swift */; };
 		25CBE70A25CE4FBA00598C28 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CBE70925CE4FBA00598C28 /* AppDelegate.swift */; };
 		25CBE71425CE4FBA00598C28 /* AFinder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 25CBE71225CE4FBA00598C28 /* AFinder.xcdatamodeld */; };
 		25CBE71625CE4FBB00598C28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25CBE71525CE4FBB00598C28 /* Assets.xcassets */; };
@@ -41,6 +45,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2548270F25CF989100268327 /* LocalizableHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizableHelper.swift; sourceTree = "<group>"; };
+		2548271525CF994000268327 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2548271A25CF994F00268327 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2548271F25CF9C6800268327 /* AFPrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFPrimaryButton.swift; sourceTree = "<group>"; };
+		2548272725CF9DE600268327 /* FontHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontHelper.swift; sourceTree = "<group>"; };
 		25CBE70625CE4FBA00598C28 /* AFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25CBE70925CE4FBA00598C28 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		25CBE71325CE4FBA00598C28 /* AFinder.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AFinder.xcdatamodel; sourceTree = "<group>"; };
@@ -88,6 +97,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2548270925CF970A00268327 /* Internationalization */ = {
+			isa = PBXGroup;
+			children = (
+				2548271625CF994000268327 /* Localizable.strings */,
+				2548270F25CF989100268327 /* LocalizableHelper.swift */,
+			);
+			path = Internationalization;
+			sourceTree = "<group>";
+		};
+		2548271E25CF9AB100268327 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				2548271F25CF9C6800268327 /* AFPrimaryButton.swift */,
+				2548272725CF9DE600268327 /* FontHelper.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 		25CBE6FD25CE4FBA00598C28 = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +170,8 @@
 		25CBE74525CE552200598C28 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				2548271E25CF9AB100268327 /* UI */,
+				2548270925CF970A00268327 /* Internationalization */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -255,6 +284,7 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
 			);
 			mainGroup = 25CBE6FD25CE4FBA00598C28;
 			productRefGroup = 25CBE70725CE4FBA00598C28 /* Products */;
@@ -274,6 +304,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				25CBE75A25CE559C00598C28 /* WelcomeView.storyboard in Resources */,
+				2548271425CF994000268327 /* Localizable.strings in Resources */,
 				25CBE71925CE4FBB00598C28 /* LaunchScreen.storyboard in Resources */,
 				25CBE71625CE4FBB00598C28 /* Assets.xcassets in Resources */,
 			);
@@ -302,8 +333,11 @@
 			files = (
 				25CBE75125CE553F00598C28 /* WelcomeProtocols.swift in Sources */,
 				25CBE75025CE553F00598C28 /* WelcomeLocalDataManager.swift in Sources */,
+				2548271025CF989100268327 /* LocalizableHelper.swift in Sources */,
 				25CBE75225CE553F00598C28 /* WelcomeInteractor.swift in Sources */,
 				25CBE75525CE553F00598C28 /* WelcomeWireFrame.swift in Sources */,
+				2548272025CF9C6800268327 /* AFPrimaryButton.swift in Sources */,
+				2548272825CF9DE600268327 /* FontHelper.swift in Sources */,
 				25CBE75325CE553F00598C28 /* WelcomeView.swift in Sources */,
 				25CBE74F25CE553F00598C28 /* WelcomePresenter.swift in Sources */,
 				25CBE75425CE553F00598C28 /* WelcomeRemoteDataManager.swift in Sources */,
@@ -344,6 +378,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		2548271625CF994000268327 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2548271525CF994000268327 /* en */,
+				2548271A25CF994F00268327 /* es */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		25CBE71725CE4FBB00598C28 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -359,6 +402,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -420,6 +464,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

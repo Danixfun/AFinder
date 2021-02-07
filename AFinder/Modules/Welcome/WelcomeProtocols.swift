@@ -12,6 +12,9 @@ import UIKit
 protocol WelcomeViewProtocol: class {
     // PRESENTER -> VIEW
     var presenter: WelcomePresenterProtocol? { get set }
+    func setUpBackground()
+    func setUpLabels()
+    func setUpButtons()
 }
 
 protocol WelcomeWireFrameProtocol: class {

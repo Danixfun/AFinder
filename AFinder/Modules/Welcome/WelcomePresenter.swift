@@ -20,6 +20,9 @@ class WelcomePresenter  {
 extension WelcomePresenter: WelcomePresenterProtocol {
     // TODO: implement presenter methods
     func viewDidLoad() {
+        self.view?.setUpLabels()
+        self.view?.setUpBackground()
+        self.view?.setUpButtons()
     }
 }
 
