@@ -10,7 +10,8 @@ import Foundation
 import UIKit
 
 class OBStepTwoWireFrame: OBStepTwoWireFrameProtocol {
-
+    
+    //MARK: Init
     class func createOBStepTwoModule(step: OnboardingSteps) -> UIViewController {
         if let view = mainStoryboard.instantiateViewController(withIdentifier: step.storyboardId) as? OBStepTwoView {
             let presenter: OBStepTwoPresenterProtocol & OBStepTwoInteractorOutputProtocol = OBStepTwoPresenter()
@@ -37,6 +38,11 @@ class OBStepTwoWireFrame: OBStepTwoWireFrameProtocol {
     
     static var mainStoryboard: UIStoryboard {
         return UIStoryboard(name: "OnboardingView", bundle: Bundle.main)
+    }
+    
+    // MARK: Functions
+    func nextStep() {
+        NotificationCenter.default.post(name: NotiNames.nextOnboardingStep, object: nil, userInfo: ["goto":OnboardingSteps.StepThree, "direction":UIPageViewController.NavigationDirection.forward])
     }
     
 }

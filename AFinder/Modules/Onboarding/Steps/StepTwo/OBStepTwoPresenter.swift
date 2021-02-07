@@ -22,17 +22,24 @@ extension OBStepTwoPresenter: OBStepTwoPresenterProtocol {
     // TODO: implement presenter methods
     func viewDidLoad() {
         self.view?.loadCurrentRange()
+        self.view?.setUpLabels()
+        self.view?.setUpButtons()
     }
     
     func viewDidLayoutSubviews() {
         if !once {
             once = true
-            self.view?.setUpViews()
+            self.view?.setUpRangeCircleView()
         }
     }
     
     func rangeDidChange(sender: UISlider) {
         self.interactor?.rangeDidChange(sender: sender)
+    }
+    
+    func nextStep(range: Int) {
+        self.interactor?.saveRange(range: range)
+        self.wireFrame?.nextStep()
     }
 }
 

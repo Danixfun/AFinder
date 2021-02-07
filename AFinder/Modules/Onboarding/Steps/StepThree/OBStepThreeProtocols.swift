@@ -12,11 +12,16 @@ import UIKit
 protocol OBStepThreeViewProtocol: class {
     // PRESENTER -> VIEW
     var presenter: OBStepThreePresenterProtocol? { get set }
+    func setUpLabels()
+    func setUpButtons()
+    func setUpAnimation()
 }
 
 protocol OBStepThreeWireFrameProtocol: class {
     // PRESENTER -> WIREFRAME
     static func createOBStepThreeModule(step: OnboardingSteps) -> UIViewController
+    func doneButtonAction()
+    func backButtonAction()
 }
 
 protocol OBStepThreePresenterProtocol: class {
@@ -26,6 +31,9 @@ protocol OBStepThreePresenterProtocol: class {
     var wireFrame: OBStepThreeWireFrameProtocol? { get set }
     
     func viewDidLoad()
+    func viewDidLayoutSubviews()
+    func doneButtonAction()
+    func backButtonAction()
 }
 
 protocol OBStepThreeInteractorOutputProtocol: class {

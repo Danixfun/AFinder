@@ -50,6 +50,9 @@
 		256143F125D059E600F851E7 /* no_gps.json in Resources */ = {isa = PBXBuildFile; fileRef = 256143F025D059E600F851E7 /* no_gps.json */; };
 		256143F725D0610400F851E7 /* NotiNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256143F625D0610400F851E7 /* NotiNames.swift */; };
 		256143FF25D0616900F851E7 /* OnboardingSteps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256143FE25D0616900F851E7 /* OnboardingSteps.swift */; };
+		2561440425D099FC00F851E7 /* airplane_landing.json in Resources */ = {isa = PBXBuildFile; fileRef = 2561440325D099FC00F851E7 /* airplane_landing.json */; };
+		2561440925D09B8B00F851E7 /* RangeCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2561440825D09B8B00F851E7 /* RangeCircleView.swift */; };
+		2561440F25D09DD100F851E7 /* UserPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2561440E25D09DD100F851E7 /* UserPreferences.swift */; };
 		25CBE70A25CE4FBA00598C28 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CBE70925CE4FBA00598C28 /* AppDelegate.swift */; };
 		25CBE71425CE4FBA00598C28 /* AFinder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 25CBE71225CE4FBA00598C28 /* AFinder.xcdatamodeld */; };
 		25CBE71625CE4FBB00598C28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25CBE71525CE4FBB00598C28 /* Assets.xcassets */; };
@@ -127,6 +130,9 @@
 		256143F025D059E600F851E7 /* no_gps.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = no_gps.json; sourceTree = "<group>"; };
 		256143F625D0610400F851E7 /* NotiNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotiNames.swift; sourceTree = "<group>"; };
 		256143FE25D0616900F851E7 /* OnboardingSteps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSteps.swift; sourceTree = "<group>"; };
+		2561440325D099FC00F851E7 /* airplane_landing.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = airplane_landing.json; sourceTree = "<group>"; };
+		2561440825D09B8B00F851E7 /* RangeCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangeCircleView.swift; sourceTree = "<group>"; };
+		2561440E25D09DD100F851E7 /* UserPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferences.swift; sourceTree = "<group>"; };
 		25CBE70625CE4FBA00598C28 /* AFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25CBE70925CE4FBA00598C28 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		25CBE71325CE4FBA00598C28 /* AFinder.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AFinder.xcdatamodel; sourceTree = "<group>"; };
@@ -198,6 +204,7 @@
 		2548273E25CFA88A00268327 /* LottieAnimations */ = {
 			isa = PBXGroup;
 			children = (
+				2561440325D099FC00F851E7 /* airplane_landing.json */,
 				256143F025D059E600F851E7 /* no_gps.json */,
 				256143E725D059AF00F851E7 /* gps_permission.json */,
 				256143E625D059AF00F851E7 /* no_airports_found.json */,
@@ -258,6 +265,7 @@
 				254827B725CFCDF700268327 /* OBStepTwoView.swift */,
 				254827B825CFCDF700268327 /* OBStepTwoRemoteDataManager.swift */,
 				254827B925CFCDF700268327 /* OBStepTwoWireFrame.swift */,
+				2561440825D09B8B00F851E7 /* RangeCircleView.swift */,
 			);
 			path = StepTwo;
 			sourceTree = "<group>";
@@ -282,6 +290,14 @@
 				256143F625D0610400F851E7 /* NotiNames.swift */,
 			);
 			path = Notifications;
+			sourceTree = "<group>";
+		};
+		2561440D25D09DC600F851E7 /* UserPreferences */ = {
+			isa = PBXGroup;
+			children = (
+				2561440E25D09DD100F851E7 /* UserPreferences.swift */,
+			);
+			path = UserPreferences;
 			sourceTree = "<group>";
 		};
 		25CBE6FD25CE4FBA00598C28 = {
@@ -340,6 +356,7 @@
 		25CBE74525CE552200598C28 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				2561440D25D09DC600F851E7 /* UserPreferences */,
 				256143F525D060F100F851E7 /* Notifications */,
 				2548271E25CF9AB100268327 /* UIComponents */,
 				2548270925CF970A00268327 /* Internationalization */,
@@ -488,6 +505,7 @@
 				25CBE75A25CE559C00598C28 /* WelcomeView.storyboard in Resources */,
 				2548271425CF994000268327 /* Localizable.strings in Resources */,
 				25CBE71925CE4FBB00598C28 /* LaunchScreen.storyboard in Resources */,
+				2561440425D099FC00F851E7 /* airplane_landing.json in Resources */,
 				25CBE71625CE4FBB00598C28 /* Assets.xcassets in Resources */,
 				2548274025CFA8A200268327 /* welcome_airplane.json in Resources */,
 			);
@@ -527,7 +545,9 @@
 				25CBE75225CE553F00598C28 /* WelcomeInteractor.swift in Sources */,
 				25CBE75525CE553F00598C28 /* WelcomeWireFrame.swift in Sources */,
 				2548274825CFAA9100268327 /* AFSecondaryButton.swift in Sources */,
+				2561440F25D09DD100F851E7 /* UserPreferences.swift in Sources */,
 				2548272025CF9C6800268327 /* AFPrimaryButton.swift in Sources */,
+				2561440925D09B8B00F851E7 /* RangeCircleView.swift in Sources */,
 				254827BE25CFCDF700268327 /* OBStepTwoView.swift in Sources */,
 				2548272825CF9DE600268327 /* FontHelper.swift in Sources */,
 				254827BB25CFCDF700268327 /* OBStepTwoLocalDataManager.swift in Sources */,

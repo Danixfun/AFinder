@@ -10,4 +10,6 @@ import Foundation
 
 struct NotiNames {
     static let nextOnboardingStep = NSNotification.Name("nextOnboardingStep")
+    static let finishOnboarding = NSNotification.Name("finishOnboarding")
+    static let quitOnboarding = NSNotification.Name("quitOnboarding")
 }

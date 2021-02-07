@@ -14,8 +14,10 @@ class OBStepTwoView: UIViewController, OnboardingStepProtocol {
     // MARK: Properties
     var presenter: OBStepTwoPresenterProtocol?
     var index: Int = 0
-    var rangleCircle = RangeCircleView()
+    var rangeCircle = RangeCircleView()
     var currentRange: Int = 10
+    let minRange: Int = 1
+    let maxRange: Int = 20
     var currentRangeString: String {
         if currentRange == 1 {
             return "\(currentRange) km"
@@ -36,6 +38,11 @@ class OBStepTwoView: UIViewController, OnboardingStepProtocol {
         self.presenter?.rangeDidChange(sender: sender as! UISlider)
     }
     
+    @IBAction func nextAction(_ sender: Any) {
+        self.presenter?.nextStep(range: currentRange)
+    }
+    
+    
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,14 +57,24 @@ class OBStepTwoView: UIViewController, OnboardingStepProtocol {
 
 extension OBStepTwoView: OBStepTwoViewProtocol {
     // TODO: implement view output methods
-    func setUpViews() {
-        rangleCircle = RangeCircleView(frame: rangeAnalogyView.bounds, circleRadius: CGFloat(currentRange))
-        rangeAnalogyView.addSubview(rangleCircle)
-        rangleCircle.setNeedsDisplay()
-        rangeAnalogyView.setNeedsDisplay()
+    func setUpLabels() {
+        self.titleLabel.text = "Set a range".localized()
+        self.subtitleLabel.text = "Set a range later".localized()
+    }
+    
+    func setUpButtons() {
+        self.nextButton.setQuick(title: "Next")
+    }
+    
+    func setUpRangeCircleView() {
+        rangeCircle = RangeCircleView(frame: rangeAnalogyView.bounds, circleRadius: CGFloat(currentRange))
+        rangeAnalogyView.addSubview(rangeCircle)
+        rangeCircle.setNeedsDisplay()
     }
     
     func loadCurrentRange() {
+        rangeSlider.minimumValue = Float(minRange)
+        rangeSlider.maximumValue = Float(maxRange)
         rangeSlider.value = Float(currentRange)
         self.rangeLabel.text = currentRangeString
     }
@@ -65,71 +82,6 @@ extension OBStepTwoView: OBStepTwoViewProtocol {
     func updateRangeView(km: Int, circleRadius: CGFloat) {
         self.currentRange = km
         self.rangeLabel.text = currentRangeString
-        self.rangleCircle.circleRadius = circleRadius
+        self.rangeCircle.circleRadius = circleRadius
     }
-}
-
-extension OBStepTwoView: UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
-}
-
-
-class RangeCircleView: UIView {
-    
-    // MARK: Properties
-    var circleRadius:CGFloat = 10 {
-        didSet{
-            self.setNeedsDisplay()
-        }
-    }
-    
-    lazy var circleSizes: [CGFloat] = {
-        var temp = [CGFloat]()
-        for i in (0...20).reversed(){
-            temp.append(CGFloat(i+2))
-        }
-        return temp
-    }()
-    
-    // MARK: Init
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        backgroundColor = UIColor.clear
-    }
-    
-    init(frame: CGRect, circleRadius: CGFloat) {
-        super.init(frame: frame)
-        backgroundColor = UIColor.clear
-        self.circleRadius = circleRadius
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    override func draw(_ rect: CGRect) {
-        // Get the Graphics Context
-        if let context = UIGraphicsGetCurrentContext() {
-            
-            // Set the circle outerline-width
-            context.setLineWidth(5.0);
-            
-            // Set the circle outerline-colour
-            context.setStrokeColor(UIColor.systemRed.cgColor)
-            
-            // Create Circle
-            let center = CGPoint(x: frame.size.width/2, y: frame.size.height/2)
-            let radius = (frame.size.width - 10) / circleSizes[Int(circleRadius)]
-            context.addArc(center: center, radius: radius, startAngle: 0.0, endAngle: .pi * 2.0, clockwise: true)
-                
-            // Draw
-            context.strokePath()
-        }
-    }
-    
-    
-    
 }

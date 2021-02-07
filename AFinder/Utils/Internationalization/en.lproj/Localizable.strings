@@ -1,5 +1,16 @@
 
 "Airport Finder" = "Airport Finder";
 "Just find it!" = "Just find it!";
-"How does it works?" = "How does it works?";
+"Let's go!" = "¡Vamos!";
 "Skip" = "Skip";
+"Permission" = "Permission";
+"Permission message" = "Please, grant the application to know your location. That way we can find airports accurately!";
+"Permission disclaimer" = "We do not share your location with third parties.";
+"Grant" = "Grant";
+"Set a range" = "Set a range";
+"Set a range later" = "Don't worry, you can always change it later!";
+"Next" = "Next";
+"Find an airport" = "Find an airport";
+"Select one" = "Select one to see more relevant information about it.";
+"Done" = "Done";
+"Back" = "Back";

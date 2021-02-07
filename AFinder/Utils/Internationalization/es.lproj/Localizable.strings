@@ -1,5 +1,16 @@
 
 "Airport Finder" = "Airport Finder";
 "Just find it!" = "Sólo encuéntralo";
-"How it works?" = "¿Cómo funciona?";
+"Let's go!" = "¡Vamos!";
 "Skip" = "Saltar";
+"Permission" = "Permiso";
+"Permission message" = "Por favor, dale permiso a la app para saber tu ubicación. ¡Así podremos encontrar los aeropuertos con precisión!";
+"Permission disclaimer" = "No compartimos tu ubicación con terceros.";
+"Grant" = "Permitir";
+"Set a range" = "Establece un rango";
+"Set a range later" = "No te preocupes, puedes cambiarlo después.";
+"Next" = "Siguiente";
+"Find an airport" = "Encuentra un aeropuerto";
+"Select one" = "Selecciona uno para ver más información relevante sobre él.";
+"Done" = "Listo";
+"Back" = "Atrás";

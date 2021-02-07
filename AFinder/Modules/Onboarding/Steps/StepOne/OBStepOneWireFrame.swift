@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class OBStepOneWireFrame: OBStepOneWireFrameProtocol {
-
+    
     // MARK: Init
     class func createOBStepOneModule(step: OnboardingSteps) -> UIViewController {
         if let view = mainStoryboard.instantiateViewController(withIdentifier: step.storyboardId) as? OBStepOneView {
@@ -51,7 +51,11 @@ class OBStepOneWireFrame: OBStepOneWireFrameProtocol {
     }
     
     func nextStep() {
-        NotificationCenter.default.post(name: NotiNames.nextOnboardingStep, object: nil, userInfo: ["goto":OnboardingSteps.StepTwo])
+        NotificationCenter.default.post(name: NotiNames.nextOnboardingStep, object: nil, userInfo: ["goto":OnboardingSteps.StepTwo, "direction":UIPageViewController.NavigationDirection.forward])
+    }
+    
+    func backButtonAction() {
+        NotificationCenter.default.post(name: NotiNames.quitOnboarding, object: nil, userInfo: nil)
     }
     
 }

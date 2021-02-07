@@ -15,7 +15,6 @@ class WelcomeView: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var sloganLabel: UILabel!
     @IBOutlet weak var startButton: AFPrimaryButton!
-    @IBOutlet weak var skipButton: AFSecondaryButton!
     @IBOutlet weak var animationContainer: UIView!
     
     // MARK: IBAction
@@ -45,8 +44,7 @@ extension WelcomeView: WelcomeViewProtocol {
     }
     
     func setUpButtons() {
-        self.startButton.setQuick(title: "How it works?")
-        self.skipButton.setQuick(title: "Skip")
+        self.startButton.setQuick(title: "Let's go!")
     }
     
     func setUpAnimation(){

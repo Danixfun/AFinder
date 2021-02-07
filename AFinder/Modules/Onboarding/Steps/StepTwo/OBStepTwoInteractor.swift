@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class OBStepTwoInteractor: OBStepTwoInteractorInputProtocol {
-
+    
     // MARK: Properties
     weak var presenter: OBStepTwoInteractorOutputProtocol?
     var localDatamanager: OBStepTwoLocalDataManagerInputProtocol?
@@ -20,6 +20,10 @@ class OBStepTwoInteractor: OBStepTwoInteractorInputProtocol {
     func rangeDidChange(sender: UISlider) {
         let value = Int(sender.value)
         self.presenter?.updateRangeView(km: value, circleRadius: CGFloat(value))
+    }
+    
+    func saveRange(range: Int) {
+        UserDefaults.standard.set(range, forKey: UserPreferences.RangeKey)
     }
 
 }

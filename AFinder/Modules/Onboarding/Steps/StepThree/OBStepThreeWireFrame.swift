@@ -10,7 +10,8 @@ import Foundation
 import UIKit
 
 class OBStepThreeWireFrame: OBStepThreeWireFrameProtocol {
-
+    
+    // MARK: Init
     class func createOBStepThreeModule(step: OnboardingSteps) -> UIViewController {
         if let view = mainStoryboard.instantiateViewController(withIdentifier: step.storyboardId) as? OBStepThreeView {
             let presenter: OBStepThreePresenterProtocol & OBStepThreeInteractorOutputProtocol = OBStepThreePresenter()
@@ -37,6 +38,15 @@ class OBStepThreeWireFrame: OBStepThreeWireFrameProtocol {
     
     static var mainStoryboard: UIStoryboard {
         return UIStoryboard(name: "OnboardingView", bundle: Bundle.main)
+    }
+    
+    // MARK: Functions
+    func doneButtonAction() {
+        NotificationCenter.default.post(name: NotiNames.finishOnboarding, object: nil, userInfo: nil)
+    }
+    
+    func backButtonAction() {
+        NotificationCenter.default.post(name: NotiNames.nextOnboardingStep, object: nil, userInfo: ["goto":OnboardingSteps.StepTwo, "direction":UIPageViewController.NavigationDirection.reverse])
     }
     
 }

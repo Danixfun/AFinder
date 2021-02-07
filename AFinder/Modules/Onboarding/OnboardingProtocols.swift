@@ -14,12 +14,13 @@ protocol OnboardingViewProtocol: class {
     var presenter: OnboardingPresenterProtocol? { get set }
     func setUpViews()
     func fixLayoutSubviews()
-    func updateStep(index: Int)
+    func updateStep(index: Int, direction: UIPageViewController.NavigationDirection)
 }
 
 protocol OnboardingWireFrameProtocol: class {
     // PRESENTER -> WIREFRAME
     static func createOnboardingModule() -> UIViewController
+    func dismiss(view: OnboardingViewProtocol)
 }
 
 protocol OnboardingPresenterProtocol: class {
@@ -34,7 +35,8 @@ protocol OnboardingPresenterProtocol: class {
 
 protocol OnboardingInteractorOutputProtocol: class {
 // INTERACTOR -> PRESENTER
-    func updateStep(index: Int)
+    func updateStep(index: Int, direction: UIPageViewController.NavigationDirection)
+    func dismiss()
 }
 
 protocol OnboardingInteractorInputProtocol: class {

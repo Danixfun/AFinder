@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class OnboardingPresenter  {
     
@@ -31,7 +32,11 @@ extension OnboardingPresenter: OnboardingPresenterProtocol {
 
 extension OnboardingPresenter: OnboardingInteractorOutputProtocol {
     // TODO: implement interactor output methods
-    func updateStep(index: Int) {
-        self.view?.updateStep(index: index)
+    func updateStep(index: Int, direction: UIPageViewController.NavigationDirection) {
+        self.view?.updateStep(index: index, direction: direction)
+    }
+    
+    func dismiss() {
+        self.wireFrame?.dismiss(view: self.view!)
     }
 }

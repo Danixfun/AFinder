@@ -21,7 +21,8 @@ class OBStepOnePresenter  {
 extension OBStepOnePresenter: OBStepOnePresenterProtocol {
     // TODO: implement presenter methods
     func viewDidLoad() {
-        
+        self.view?.setUpLabels()
+        self.view?.setUpButtons()
     }
     
     func viewDidLayoutSubviews() {
@@ -38,6 +39,11 @@ extension OBStepOnePresenter: OBStepOnePresenterProtocol {
     func nextStep() {
         self.wireFrame?.nextStep()
     }
+    
+    func backButtonAction() {
+        self.wireFrame?.backButtonAction()
+    }
+    
 }
 
 extension OBStepOnePresenter: OBStepOneInteractorOutputProtocol {

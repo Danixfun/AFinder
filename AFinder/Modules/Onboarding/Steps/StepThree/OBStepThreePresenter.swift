@@ -14,12 +14,30 @@ class OBStepThreePresenter  {
     weak var view: OBStepThreeViewProtocol?
     var interactor: OBStepThreeInteractorInputProtocol?
     var wireFrame: OBStepThreeWireFrameProtocol?
+    var once: Bool = false
     
 }
 
 extension OBStepThreePresenter: OBStepThreePresenterProtocol {
     // TODO: implement presenter methods
     func viewDidLoad() {
+        self.view?.setUpButtons()
+        self.view?.setUpLabels()
+    }
+    
+    func viewDidLayoutSubviews() {
+        if !once {
+            once = true
+            self.view?.setUpAnimation()
+        }
+    }
+    
+    func doneButtonAction() {
+        self.wireFrame?.doneButtonAction()
+    }
+    
+    func backButtonAction() {
+        self.wireFrame?.backButtonAction()
     }
 }
 

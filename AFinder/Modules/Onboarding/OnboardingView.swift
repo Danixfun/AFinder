@@ -47,9 +47,9 @@ extension OnboardingView: OnboardingViewProtocol {
         self.setViewControllers([firstStepViewController], direction: .forward, animated: true, completion: nil)
     }
     
-    func updateStep(index: Int) {
+    func updateStep(index: Int, direction: UIPageViewController.NavigationDirection) {
         let newVC = stepsViewControllers[index] as! UIViewController
-        self.setViewControllers([newVC], direction: .forward, animated: true, completion: nil)
+        self.setViewControllers([newVC], direction: direction, animated: true, completion: nil)
     }
     
     /// corrects scrollview frame to allow for full-screen view controller pages

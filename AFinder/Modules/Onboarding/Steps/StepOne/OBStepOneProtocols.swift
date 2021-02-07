@@ -14,6 +14,8 @@ protocol OBStepOneViewProtocol: class {
     var presenter: OBStepOnePresenterProtocol? { get set }
     func setUpAnimation()
     func handleGPSPermissionReponse(success: Bool)
+    func setUpLabels()
+    func setUpButtons()
 }
 
 protocol OBStepOneWireFrameProtocol: class {
@@ -21,6 +23,7 @@ protocol OBStepOneWireFrameProtocol: class {
     static func createOBStepOneModule(step: OnboardingSteps) -> UIViewController
     func openSettings()
     func nextStep()
+    func backButtonAction()
 }
 
 protocol OBStepOnePresenterProtocol: class {
@@ -33,6 +36,7 @@ protocol OBStepOnePresenterProtocol: class {
     func viewDidLayoutSubviews()
     func requestGPSPermission()
     func nextStep()
+    func backButtonAction()
 }
 
 protocol OBStepOneInteractorOutputProtocol: class {

@@ -18,10 +18,15 @@ class OBStepOneView: UIViewController, OnboardingStepProtocol {
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var disclaimerLabel: UILabel!
     @IBOutlet weak var stepOneButton: AFPrimaryButton!
+    @IBOutlet weak var backButton: AFSecondaryButton!
     
     // MARK: IBAction
     @IBAction func gpsPermissionAction(_ sender: Any) {
         self.presenter?.requestGPSPermission()
+    }
+    
+    @IBAction func backButtonAction(_ sender: Any) {
+        self.presenter?.backButtonAction()
     }
     
     // MARK: Properties
@@ -42,6 +47,18 @@ class OBStepOneView: UIViewController, OnboardingStepProtocol {
 
 extension OBStepOneView: OBStepOneViewProtocol {
     // TODO: implement view output methods
+    
+    func setUpLabels() {
+        titleLabel.text = "Permission".localized()
+        messageLabel.text = "Permission message".localized()
+        disclaimerLabel.text = "Permission disclaimer".localized()
+    }
+    
+    func setUpButtons() {
+        self.backButton.setQuick(title: "Back")
+        self.stepOneButton.setQuick(title: "Grant")
+    }
+    
     func setUpAnimation() {
         AnimationWrapper.setUpAnimation(in: self.animationContainer, withFile: "gps_permission")
     }

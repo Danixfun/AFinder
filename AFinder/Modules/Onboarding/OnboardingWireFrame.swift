@@ -10,7 +10,8 @@ import Foundation
 import UIKit
 
 class OnboardingWireFrame: OnboardingWireFrameProtocol {
-
+    
+    // MARK: Init
     class func createOnboardingModule() -> UIViewController {
         
         if let pageViewController = mainStoryboard.instantiateViewController(withIdentifier: "OnboardingPageView") as? OnboardingView {
@@ -42,4 +43,10 @@ class OnboardingWireFrame: OnboardingWireFrameProtocol {
         return UIStoryboard(name: "OnboardingView", bundle: Bundle.main)
     }
     
+    // MARK: Functions
+    func dismiss(view: OnboardingViewProtocol) {
+        if let actualView = view as? OnboardingView {
+            actualView.dismiss(animated: true, completion: nil)
+        }
+    }
 }
