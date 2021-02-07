@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,6 +11,7 @@
 		2548271425CF994000268327 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2548271625CF994000268327 /* Localizable.strings */; };
 		2548272025CF9C6800268327 /* AFPrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2548271F25CF9C6800268327 /* AFPrimaryButton.swift */; };
 		2548272825CF9DE600268327 /* FontHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2548272725CF9DE600268327 /* FontHelper.swift */; };
+		2548273425CFA58800268327 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 2548273325CFA58800268327 /* Lottie */; };
 		25CBE70A25CE4FBA00598C28 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CBE70925CE4FBA00598C28 /* AppDelegate.swift */; };
 		25CBE71425CE4FBA00598C28 /* AFinder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 25CBE71225CE4FBA00598C28 /* AFinder.xcdatamodeld */; };
 		25CBE71625CE4FBB00598C28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25CBE71525CE4FBB00598C28 /* Assets.xcassets */; };
@@ -77,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2548273425CFA58800268327 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,6 +217,9 @@
 			dependencies = (
 			);
 			name = AFinder;
+			packageProductDependencies = (
+				2548273325CFA58800268327 /* Lottie */,
+			);
 			productName = AFinder;
 			productReference = 25CBE70625CE4FBA00598C28 /* AFinder.app */;
 			productType = "com.apple.product-type.application";
@@ -287,6 +292,9 @@
 				es,
 			);
 			mainGroup = 25CBE6FD25CE4FBA00598C28;
+			packageReferences = (
+				2548273225CFA58800268327 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			productRefGroup = 25CBE70725CE4FBA00598C28 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -522,6 +530,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = 2H6U8YU5DR;
 				INFOPLIST_FILE = AFinder/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -542,6 +551,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = 2H6U8YU5DR;
 				INFOPLIST_FILE = AFinder/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -680,6 +690,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2548273225CFA58800268327 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2548273325CFA58800268327 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2548273225CFA58800268327 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		25CBE71225CE4FBA00598C28 /* AFinder.xcdatamodeld */ = {
