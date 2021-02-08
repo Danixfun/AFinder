@@ -19,7 +19,6 @@ class MapView: UIViewController {
 
     // MARK: Properties
     var presenter: MapPresenterProtocol?
-    var locationManager = CLLocationManager()
     var airports: AirportResponse?
     
     // MARK: IBOutlet
@@ -143,7 +142,6 @@ extension MapView: MapViewProtocol {
             self.listButton.isHidden = true
             self.appSettingsButton.isHidden = true
             self.noGPSContainer.isHidden = false
-
         }
     }
     
@@ -159,33 +157,6 @@ extension MapView: MapViewProtocol {
     
 }
 
-// MARK: - CLLocationManagerDelegate
-extension MapView: CLLocationManagerDelegate{
-    
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        switch status {
-        case .notDetermined, .restricted, .denied:
-            self.presenter?.deniedMap()
-        case .authorizedAlways, .authorizedWhenInUse:
-            self.presenter?.grantMap()
-            if let location = manager.location {
-                self.presenter?.findAirports(location: location)
-            }
-            
-        @unknown default:
-            break
-        }
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let location = locations.last{
-            // Set current position on map
-            mapContainer.centerToLocation(location)
-            // Everything is ready to start fetching results
-            self.presenter?.findAirports(location: location)
-        }
-    }
-}
 
 // MARK: - MKMapViewDelegate
 extension MapView: MKMapViewDelegate {

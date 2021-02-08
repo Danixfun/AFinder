@@ -53,7 +53,6 @@ class OnboardingWireFrame: OnboardingWireFrameProtocol {
     func finish(view: OnboardingViewProtocol) {
         if let actualView = view as? OnboardingView {
             actualView.dismiss(animated: true, completion: {
-                UserDefaults.standard.set(false, forKey: UserPreferences.OnboardingAvailableKey)
                 NotificationCenter.default.post(name: NotiNames.openMapView, object: nil, userInfo: nil)
             })
         }

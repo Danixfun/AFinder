@@ -33,6 +33,7 @@ extension OBStepThreePresenter: OBStepThreePresenterProtocol {
     }
     
     func doneButtonAction() {
+        self.interactor?.doneButtonAction()
         self.wireFrame?.doneButtonAction()
     }
     

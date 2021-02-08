@@ -14,6 +14,10 @@ class OBStepThreeInteractor: OBStepThreeInteractorInputProtocol {
     weak var presenter: OBStepThreeInteractorOutputProtocol?
     var localDatamanager: OBStepThreeLocalDataManagerInputProtocol?
     var remoteDatamanager: OBStepThreeRemoteDataManagerInputProtocol?
+    
+    func doneButtonAction(){
+        self.localDatamanager?.disableOnboarding()
+    }
 
 }
 

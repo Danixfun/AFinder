@@ -80,7 +80,22 @@ extension MapInteractor: MapRemoteDataManagerOutputProtocol {
     }
 }
 
-
-extension MapInteractor: CLLocationManagerDelegate {
+extension MapInteractor: CLLocationManagerDelegate{
     
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        switch status {
+        case .notDetermined, .restricted, .denied:
+            self.presenter?.hideMap()
+        case .authorizedAlways, .authorizedWhenInUse:
+            self.presenter?.showMap()
+            self.searchAirports()
+        @unknown default:
+            break
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        self.searchAirports()
+    }
 }
+

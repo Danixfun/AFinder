@@ -37,7 +37,7 @@ protocol OBStepThreePresenterProtocol: class {
 }
 
 protocol OBStepThreeInteractorOutputProtocol: class {
-// INTERACTOR -> PRESENTER
+    // INTERACTOR -> PRESENTER
 }
 
 protocol OBStepThreeInteractorInputProtocol: class {
@@ -45,6 +45,8 @@ protocol OBStepThreeInteractorInputProtocol: class {
     var presenter: OBStepThreeInteractorOutputProtocol? { get set }
     var localDatamanager: OBStepThreeLocalDataManagerInputProtocol? { get set }
     var remoteDatamanager: OBStepThreeRemoteDataManagerInputProtocol? { get set }
+    
+    func doneButtonAction()
 }
 
 protocol OBStepThreeRemoteDataManagerInputProtocol: class {
@@ -59,6 +61,7 @@ protocol OBStepThreeRemoteDataManagerOutputProtocol: class {
 protocol OBStepThreeLocalDataManagerInputProtocol: class {
     // INTERACTOR -> LOCALDATAMANAGER
     var localRequestHandler: OBStepThreeLocalDataManagerOutputProtocol? { get set }
+    func disableOnboarding()
 }
 
 protocol OBStepThreeLocalDataManagerOutputProtocol: class {

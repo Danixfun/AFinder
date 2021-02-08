@@ -12,4 +12,7 @@ class OBStepThreeLocalDataManager:OBStepThreeLocalDataManagerInputProtocol {
     
     var localRequestHandler: OBStepThreeLocalDataManagerOutputProtocol?
     
+    func disableOnboarding() {
+        UserDefaults.standard.set(false, forKey: UserPreferences.OnboardingAvailableKey)
+    }
 }

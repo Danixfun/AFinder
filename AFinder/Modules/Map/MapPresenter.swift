@@ -82,5 +82,13 @@ extension MapPresenter: MapInteractorOutputProtocol {
     func centerMapWith(location: CLLocation, range: Int){
         self.view?.centerMapWith(location: location, range: range)
     }
+    
+    func showMap(){
+        self.view?.grantMap()
+    }
+    
+    func hideMap() {
+        self.view?.deniedMap()
+    }
 
 }

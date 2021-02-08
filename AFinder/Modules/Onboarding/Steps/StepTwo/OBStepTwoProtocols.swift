@@ -64,6 +64,8 @@ protocol OBStepTwoRemoteDataManagerOutputProtocol: class {
 protocol OBStepTwoLocalDataManagerInputProtocol: class {
     // INTERACTOR -> LOCALDATAMANAGER
     var localRequestHandler: OBStepTwoLocalDataManagerOutputProtocol? { get set }
+    
+    func saveRange(range: Int)
 }
 
 protocol OBStepTwoLocalDataManagerOutputProtocol: class {

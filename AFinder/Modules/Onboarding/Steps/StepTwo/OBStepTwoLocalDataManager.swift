@@ -12,4 +12,7 @@ class OBStepTwoLocalDataManager:OBStepTwoLocalDataManagerInputProtocol {
     
     var localRequestHandler: OBStepTwoLocalDataManagerOutputProtocol?
     
+    func saveRange(range: Int) {
+        UserDefaults.standard.set(range, forKey: UserPreferences.RangeKey)
+    }
 }

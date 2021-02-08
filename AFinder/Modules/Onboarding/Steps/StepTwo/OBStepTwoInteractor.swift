@@ -23,9 +23,9 @@ class OBStepTwoInteractor: OBStepTwoInteractorInputProtocol {
     }
     
     func saveRange(range: Int) {
-        UserDefaults.standard.set(range, forKey: UserPreferences.RangeKey)
+        self.localDatamanager?.saveRange(range: range)
     }
-
+    
 }
 
 extension OBStepTwoInteractor: OBStepTwoRemoteDataManagerOutputProtocol {
