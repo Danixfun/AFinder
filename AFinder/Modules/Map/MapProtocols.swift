@@ -14,7 +14,9 @@ protocol MapViewProtocol: class {
     // PRESENTER -> VIEW
     var presenter: MapPresenterProtocol? { get set }
     func centerMapWith(range: Int)
-    func foundAirports(airports:AirportResponse?, error: AirportFetchError)
+    func foundAirports(airports:AirportResponse)
+    func emptyAirports()
+    func errorLoadingAirports()
     func deniedMap()
     func grantMap()
     func setUpNoGPSContainer()
@@ -43,7 +45,9 @@ protocol MapPresenterProtocol: class {
 
 protocol MapInteractorOutputProtocol: class {
     // INTERACTOR -> PRESENTER
-    func foundAirports(airports:AirportResponse?, error: AirportFetchError)
+    func foundAirports(airports:AirportResponse)
+    func emptyAirports()
+    func errorLoadingAirports()
     func currentRange(range: Int)
 }
 

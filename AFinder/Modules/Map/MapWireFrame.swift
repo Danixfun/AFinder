@@ -29,7 +29,6 @@ class MapWireFrame: MapWireFrameProtocol {
             remoteDataManager.remoteRequestHandler = interactor
             return view
         }
-        
         return UIViewController()
     }
     

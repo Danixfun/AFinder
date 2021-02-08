@@ -10,6 +10,7 @@ import Foundation
 import CoreLocation
 
 class MapInteractor: MapInteractorInputProtocol {
+    
     // MARK: Properties
     weak var presenter: MapInteractorOutputProtocol?
     var localDatamanager: MapLocalDataManagerInputProtocol?
@@ -29,12 +30,24 @@ class MapInteractor: MapInteractorInputProtocol {
         }
         return RadiusRangeValues.defaultValue//Default value to prevent errors
     }
-
 }
 
 extension MapInteractor: MapRemoteDataManagerOutputProtocol {
     // TODO: Implement use case methods
     func foundAirports(airports: AirportResponse?, error: AirportFetchError) {
-        self.presenter?.foundAirports(airports: airports, error: error)
+        if error == .None{
+            guard let airports = airports else {
+                self.presenter?.emptyAirports()
+                return
+            }
+            self.presenter?.foundAirports(airports: airports)
+        }
+        else if error == .Empty{
+            self.presenter?.emptyAirports()
+        }
+        else if error == .ServerError {
+            self.presenter?.errorLoadingAirports()
+        }
+        
     }
 }

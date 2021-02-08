@@ -52,7 +52,7 @@ class MapRemoteDataManager:MapRemoteDataManagerInputProtocol {
                 })
             }
             else{
-                // ServerError
+                // ServerError or NoWifi
                 self.remoteRequestHandler?.foundAirports(airports: nil, error: .ServerError)
             }
         })

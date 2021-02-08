@@ -43,16 +43,27 @@ extension MapPresenter: MapPresenterProtocol {
     }
     
     func refreshAction() {
-        
+        self.interactor?.getCurrentRange()
     }
 }
 
 extension MapPresenter: MapInteractorOutputProtocol {
-    func foundAirports(airports: AirportResponse?, error: AirportFetchError) {
-        self.view?.foundAirports(airports: airports, error: error)
+    func foundAirports(airports: AirportResponse) {
+        self.view?.grantMap()
+        self.view?.foundAirports(airports: airports)
+    }
+    
+    func emptyAirports() {
+        self.view?.grantMap()
+        self.view?.emptyAirports()
+    }
+    
+    func errorLoadingAirports() {
+        self.view?.errorLoadingAirports()
     }
     
     func currentRange(range: Int) {
         self.view?.centerMapWith(range: range)
     }
+    
 }

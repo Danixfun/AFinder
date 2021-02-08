@@ -34,6 +34,7 @@ class MapView: UIViewController {
     }
     
     @IBAction func refreshAction(_ sender: Any) {
+        self.presenter?.refreshAction()
     }
     
     // MARK: Lifecycle
@@ -62,25 +63,6 @@ extension MapView: MapViewProtocol {
         self.noWiFiContainer.center = self.view.center
     }
     
-    // Populate the map with airports
-    func foundAirports(airports: AirportResponse?, error: AirportFetchError) {
-        // Remove all current annotations
-        mapContainer.removeAnnotations(mapContainer.annotations)
-        // Add new annotations
-        guard let foundAirports = airports else {
-            return
-        }
-        
-        for a in foundAirports.data {
-            let newAirportPin = AirportPin(
-                title: a.name,
-                coordinate: CLLocationCoordinate2D(latitude: a.geoCode.latitude, longitude: a.geoCode.longitude))
-            DispatchQueue.main.async {
-                self.mapContainer.addAnnotation(newAirportPin)
-            }
-        }
-    }
-    
     // Center the user based on its location and fetch airports
     func centerMapWith(range: Int) {
         locationManager.delegate = self
@@ -99,16 +81,52 @@ extension MapView: MapViewProtocol {
         self.presenter?.findAirports(location: currentLocation)
     }
     
+    // Populate the map with airports
+    func foundAirports(airports: AirportResponse) {
+        // Remove all current annotations
+        mapContainer.removeAnnotations(mapContainer.annotations)
+        // Add new annotations
+        
+        for a in airports.data {
+            let newAirportPin = AirportPin(
+                title: a.name,
+                coordinate: CLLocationCoordinate2D(latitude: a.geoCode.latitude, longitude: a.geoCode.longitude))
+            DispatchQueue.main.async {
+                self.mapContainer.addAnnotation(newAirportPin)
+            }
+        }
+    }
+    
+    // No airports near by: Tell the user to make the range wider
+    func emptyAirports() {
+        print("Empty airports")
+    }
+    
+    // Show no connection message
+    func errorLoadingAirports() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: {
+            self.mapContainer.isHidden = true
+            self.noGPSContainer.isHidden = true
+            self.noWiFiContainer.isHidden = false
+        })
+    }
+
     func deniedMap() {
-        self.mapContainer.isHidden = true
-        self.noGPSContainer.isHidden = false
+        DispatchQueue.main.async {
+            self.mapContainer.isHidden = true
+            self.noWiFiContainer.isHidden = true
+            self.noGPSContainer.isHidden = false
+        }
     }
     
     func grantMap() {
-        self.mapContainer.isHidden = false
-        self.noGPSContainer.isHidden = true
+        DispatchQueue.main.async {
+            self.noGPSContainer.isHidden = true
+            self.noWiFiContainer.isHidden = true
+            self.mapContainer.isHidden = false
+        }
     }
-
+    
 }
 
 // MARK: - CLLocationManagerDelegate
@@ -123,6 +141,8 @@ extension MapView: CLLocationManagerDelegate{
         @unknown default:
             break
         }
+        
+        print("Status did change")
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
