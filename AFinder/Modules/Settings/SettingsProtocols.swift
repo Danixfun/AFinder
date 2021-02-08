@@ -14,6 +14,7 @@ protocol SettingsViewProtocol: class {
     var presenter: SettingsPresenterProtocol? { get set }
     func setUpLabels()
     func setUpButtons()
+    func setUpExitAreaView()
     func loadCurrentRange(range: Float, rangeText: String)
     func updateRangeLabel(rangeText: String)
 }
@@ -22,6 +23,7 @@ protocol SettingsWireFrameProtocol: class {
     // PRESENTER -> WIREFRAME
     static func createSettingsModule() -> UIViewController
     func dismiss(from view: SettingsViewProtocol, range: Float)
+    func quit(from view: SettingsViewProtocol)
 }
 
 protocol SettingsPresenterProtocol: class {
@@ -33,6 +35,7 @@ protocol SettingsPresenterProtocol: class {
     func viewDidLoad()
     func updateRange(range: Float)
     func updateMapAction(range: Float)
+    func dismissView()
 }
 
 protocol SettingsInteractorOutputProtocol: class {

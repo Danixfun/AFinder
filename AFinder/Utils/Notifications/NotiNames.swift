@@ -20,4 +20,7 @@ struct NotiNames {
     
     /// Tells WelcomeView to open MapView
     static let openMapView = NSNotification.Name("openMapView")
+    
+    /// Tells MapView to update airports AKA a new network call
+    static let updateMapWithNewRange = NSNotification.Name("updateMapWithNewRange")
 }

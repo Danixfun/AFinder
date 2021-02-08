@@ -13,7 +13,7 @@
         <!--Settings View-->
         <scene sceneID="EPy-tQ-qOU">
             <objects>
-                <viewController storyboardIdentifier="SettingsView" id="fgZ-xd-ipr" customClass="SettingsView" customModule="AFinder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingsView" modalPresentationStyle="overFullScreen" id="fgZ-xd-ipr" customClass="SettingsView" customModule="AFinder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gup-MD-jBA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -67,16 +67,25 @@
                                     <constraint firstAttribute="bottom" secondItem="Uq4-HG-EW5" secondAttribute="bottom" constant="32" id="xLr-CK-7FZ"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7rN-2V-eed">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="639"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="WRk-Tr-xmD"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.25147527761104432" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="7rN-2V-eed" firstAttribute="trailing" secondItem="WRk-Tr-xmD" secondAttribute="trailing" id="3Rf-ma-8PS"/>
                             <constraint firstItem="oVv-o5-Tun" firstAttribute="trailing" secondItem="WRk-Tr-xmD" secondAttribute="trailing" id="6kG-eO-XYx"/>
                             <constraint firstAttribute="bottom" secondItem="oVv-o5-Tun" secondAttribute="bottom" id="J5m-4d-ogZ"/>
+                            <constraint firstItem="7rN-2V-eed" firstAttribute="leading" secondItem="WRk-Tr-xmD" secondAttribute="leading" id="Lqa-wg-mCp"/>
+                            <constraint firstItem="7rN-2V-eed" firstAttribute="top" secondItem="gup-MD-jBA" secondAttribute="top" id="QJb-2c-NWC"/>
+                            <constraint firstItem="oVv-o5-Tun" firstAttribute="top" secondItem="7rN-2V-eed" secondAttribute="bottom" id="UYf-6W-6fm"/>
                             <constraint firstItem="oVv-o5-Tun" firstAttribute="leading" secondItem="WRk-Tr-xmD" secondAttribute="leading" id="ysd-bN-QnI"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="exitAreaContainer" destination="7rN-2V-eed" id="bGP-Mw-3wX"/>
                         <outlet property="rangeLabel" destination="azz-ha-8sN" id="dmi-7S-Es9"/>
                         <outlet property="rangeSlider" destination="8M9-U4-XcZ" id="8Xv-dQ-la5"/>
                         <outlet property="rangeValueLabel" destination="OPe-Q0-kMW" id="Phi-Wq-KeX"/>
@@ -85,7 +94,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vMh-h0-fLS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="91" y="-57"/>
+            <point key="canvasLocation" x="83" y="-54"/>
         </scene>
     </scenes>
     <resources>

@@ -22,6 +22,7 @@ extension SettingsPresenter: SettingsPresenterProtocol {
     func viewDidLoad() {
         self.view?.setUpLabels()
         self.view?.setUpButtons()
+        self.view?.setUpExitAreaView()
         self.interactor?.loadCurrentRange()
     }
     
@@ -32,6 +33,10 @@ extension SettingsPresenter: SettingsPresenterProtocol {
     func updateMapAction(range: Float) {
         self.interactor?.saveNewRange(range: range)
         self.wireFrame?.dismiss(from: self.view!, range: range)
+    }
+    
+    func dismissView() {
+        self.wireFrame?.quit(from: self.view!)
     }
 }
 

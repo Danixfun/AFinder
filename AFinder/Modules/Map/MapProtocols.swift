@@ -13,7 +13,7 @@ import CoreLocation
 protocol MapViewProtocol: class {
     // PRESENTER -> VIEW
     var presenter: MapPresenterProtocol? { get set }
-    func centerMapWith(range: Int)
+    func centerMapWith(location: CLLocation, range: Int)
     func foundAirports(airports:AirportResponse)
     func emptyAirports()
     func errorLoadingAirports()
@@ -42,9 +42,9 @@ protocol MapPresenterProtocol: class {
     func findAirports(location: CLLocation)
     func deniedMap()
     func grantMap()
+    func refreshAction()
     func openDeviceSettingsAction()
     func openAppSettings()
-    func refreshAction()
     func listButtonAction(airports: AirportResponse?)
 }
 
@@ -53,7 +53,7 @@ protocol MapInteractorOutputProtocol: class {
     func foundAirports(airports:AirportResponse)
     func emptyAirports()
     func errorLoadingAirports()
-    func currentRange(range: Int)
+    func locationDisabled()
 }
 
 protocol MapInteractorInputProtocol: class {
@@ -63,7 +63,9 @@ protocol MapInteractorInputProtocol: class {
     var remoteDatamanager: MapRemoteDataManagerInputProtocol? { get set }
     
     func findAirports(location: CLLocation)
-    func getCurrentRange()
+    func setUpNotifications()
+    func setUpLocationManager()
+    func refreshAction()
 }
 
 protocol MapRemoteDataManagerInputProtocol: class {
@@ -81,6 +83,8 @@ protocol MapRemoteDataManagerOutputProtocol: class {
 protocol MapLocalDataManagerInputProtocol: class {
     // INTERACTOR -> LOCALDATAMANAGER
     var localRequestHandler: MapLocalDataManagerOutputProtocol? { get set }
+    
+    func getRange()->Int
 }
 
 protocol MapLocalDataManagerOutputProtocol: class {

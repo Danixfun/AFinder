@@ -13,12 +13,14 @@ class SettingsView: UIViewController {
     
     // MARK: Properties
     var presenter: SettingsPresenterProtocol?
+    var exitAreaTapGesture:UITapGestureRecognizer?
     
     // MARK: IBOutlet
     @IBOutlet weak var updateActionButton: AFPrimaryButton!
     @IBOutlet weak var rangeLabel: UILabel!
     @IBOutlet weak var rangeValueLabel: UILabel!
     @IBOutlet weak var rangeSlider: UISlider!
+    @IBOutlet weak var exitAreaContainer: UIView!
     
     // MARK: IBAction
     @IBAction func updateMapAction(_ sender: Any) {
@@ -34,6 +36,11 @@ class SettingsView: UIViewController {
         super.viewDidLoad()
         self.presenter?.viewDidLoad()
     }
+    
+    @objc func dismissView() {
+        self.presenter?.dismissView()
+    }
+    
 }
 
 extension SettingsView: SettingsViewProtocol {
@@ -43,6 +50,11 @@ extension SettingsView: SettingsViewProtocol {
     
     func setUpButtons(){
         self.updateActionButton.setQuick(title: "Update")
+    }
+    
+    func setUpExitAreaView(){
+        exitAreaTapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissView))
+        exitAreaContainer.addGestureRecognizer(exitAreaTapGesture!)
     }
     
     func loadCurrentRange(range: Float, rangeText: String){

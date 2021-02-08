@@ -9,26 +9,53 @@
 import Foundation
 import CoreLocation
 
-class MapInteractor: MapInteractorInputProtocol {
+class MapInteractor:NSObject, MapInteractorInputProtocol {
     
     // MARK: Properties
     weak var presenter: MapInteractorOutputProtocol?
     var localDatamanager: MapLocalDataManagerInputProtocol?
     var remoteDatamanager: MapRemoteDataManagerInputProtocol?
+    var locationManager = CLLocationManager()
+    
+    func setUpLocationManager() {
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+        self.searchAirports()
+    }
     
     func findAirports(location: CLLocation) {
         self.remoteDatamanager?.findAirports(location: location, radius: rangeFromUserDefaults())
     }
     
-    func getCurrentRange() {
-        self.presenter?.currentRange(range: rangeFromUserDefaults())
+    func setUpNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(updateMapWithNewRange(n:)), name: NotiNames.updateMapWithNewRange, object: nil)
     }
-        
-    private func rangeFromUserDefaults()->Int{
-        if let range = UserDefaults.standard.value(forKey: UserPreferences.RangeKey) as? Int{
-            return range
+    
+    func refreshAction() {
+        self.searchAirports()
+    }
+    
+    private func searchAirports(){
+        if isLocationServiceEnabled() {
+            // Update map
+            guard let location = locationManager.location else {
+                return
+            }
+            self.findAirports(location: location)
         }
-        return RadiusRangeValues.defaultValue//Default value to prevent errors
+        else{
+            // deniedMap
+            self.presenter?.locationDisabled()
+        }
+    }
+    
+    //Cambiar a local data manager
+    private func rangeFromUserDefaults()->Int{
+        return self.localDatamanager?.getRange() ?? RadiusRangeValues.defaultValue
+    }
+    
+    @objc func updateMapWithNewRange(n: Notification) {
+        self.refreshAction()
     }
 }
 
@@ -50,4 +77,9 @@ extension MapInteractor: MapRemoteDataManagerOutputProtocol {
         }
         
     }
+}
+
+
+extension MapInteractor: CLLocationManagerDelegate {
+    
 }

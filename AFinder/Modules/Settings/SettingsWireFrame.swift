@@ -42,8 +42,14 @@ class SettingsWireFrame: SettingsWireFrameProtocol {
     func dismiss(from view: SettingsViewProtocol, range: Float) {
         if let actualView = view as? SettingsView {
             actualView.dismiss(animated: true, completion: {
-                // Send notification here
+                NotificationCenter.default.post(name: NotiNames.updateMapWithNewRange, object: nil)
             })
+        }
+    }
+    
+    func quit(from view: SettingsViewProtocol) {
+        if let actualView = view as? SettingsView {
+            actualView.dismiss(animated: true, completion: nil)
         }
     }
     

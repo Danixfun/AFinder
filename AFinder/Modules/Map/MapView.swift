@@ -77,6 +77,7 @@ extension MapView: MapViewProtocol {
     }
     
     func setUpMap() {
+        mapContainer.delegate = self
         mapContainer.register(
           AirportAnnotationView.self,
           forAnnotationViewWithReuseIdentifier:
@@ -93,20 +94,8 @@ extension MapView: MapViewProtocol {
     }
     
     // Center the user based on its location and fetch airports
-    func centerMapWith(range: Int) {
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-        
-        if !isLocationServiceEnabled() {
-            self.presenter?.deniedMap()
-            return
-        }
-        mapContainer.delegate = self
-        guard let currentLocation = locationManager.location else {
-            return
-        }
-        mapContainer.centerToLocation(currentLocation, regionRadius: CLLocationDistance(range))
-        self.presenter?.findAirports(location: currentLocation)
+    func centerMapWith(location: CLLocation, range: Int) {
+        mapContainer.centerToLocation(location, regionRadius: CLLocationDistance(range))
     }
     
     // Populate the map with airports
@@ -130,7 +119,10 @@ extension MapView: MapViewProtocol {
     
     // No airports near by: Tell the user to make the range wider
     func emptyAirports() {
-        print("Empty airports")
+        DispatchQueue.main.async {
+            self.mapContainer.removeAnnotations(self.mapContainer.annotations)
+        }
+        self.airports = nil
     }
     
     // Show no connection message

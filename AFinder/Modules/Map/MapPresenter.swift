@@ -25,7 +25,8 @@ extension MapPresenter: MapPresenterProtocol {
         self.view?.setUpMap()
         self.view?.setUpNoGPSContainer()
         self.view?.setUpNoWiFiContainer()
-        self.interactor?.getCurrentRange()
+        self.interactor?.setUpLocationManager()
+        self.interactor?.setUpNotifications()
     }
     
     func findAirports(location: CLLocation){
@@ -40,12 +41,12 @@ extension MapPresenter: MapPresenterProtocol {
         self.view?.grantMap()
     }
     
-    func openDeviceSettingsAction() {
-        self.wireFrame?.openDeviceSettingsAction()
+    func refreshAction(){
+        self.interactor?.refreshAction()
     }
     
-    func refreshAction() {
-        self.interactor?.getCurrentRange()
+    func openDeviceSettingsAction() {
+        self.wireFrame?.openDeviceSettingsAction()
     }
     
     func listButtonAction(airports: AirportResponse?) {
@@ -59,6 +60,7 @@ extension MapPresenter: MapPresenterProtocol {
 }
 
 extension MapPresenter: MapInteractorOutputProtocol {
+    
     func foundAirports(airports: AirportResponse) {
         self.view?.grantMap()
         self.view?.foundAirports(airports: airports)
@@ -73,8 +75,8 @@ extension MapPresenter: MapInteractorOutputProtocol {
         self.view?.errorLoadingAirports()
     }
     
-    func currentRange(range: Int) {
-        self.view?.centerMapWith(range: range)
+    func locationDisabled() {
+        self.deniedMap()
     }
-    
+
 }
