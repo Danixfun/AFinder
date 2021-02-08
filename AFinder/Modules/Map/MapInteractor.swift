@@ -41,6 +41,7 @@ class MapInteractor:NSObject, MapInteractorInputProtocol {
             guard let location = locationManager.location else {
                 return
             }
+            self.presenter?.centerMapWith(location: location, range: rangeFromUserDefaults())
             self.findAirports(location: location)
         }
         else{

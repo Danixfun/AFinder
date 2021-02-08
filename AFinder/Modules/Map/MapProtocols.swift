@@ -54,6 +54,7 @@ protocol MapInteractorOutputProtocol: class {
     func emptyAirports()
     func errorLoadingAirports()
     func locationDisabled()
+    func centerMapWith(location: CLLocation, range: Int)
 }
 
 protocol MapInteractorInputProtocol: class {

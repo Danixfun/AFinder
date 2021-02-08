@@ -78,5 +78,9 @@ extension MapPresenter: MapInteractorOutputProtocol {
     func locationDisabled() {
         self.deniedMap()
     }
+    
+    func centerMapWith(location: CLLocation, range: Int){
+        self.view?.centerMapWith(location: location, range: range)
+    }
 
 }
