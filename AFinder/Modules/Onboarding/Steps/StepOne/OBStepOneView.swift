@@ -68,10 +68,10 @@ extension OBStepOneView: OBStepOneViewProtocol {
             self.presenter?.nextStep()
         }
         else {
-            self.titleLabel.text = "Oh no!"
-            self.messageLabel.text = "It happens, but don't worry. Go to your device's settings, then search for the AFinder app and grant it permission to use location."
+            self.titleLabel.text = "Oh no permission".localized()
+            self.messageLabel.text = "It happens".localized()
             self.disclaimerLabel.isHidden = true
-            self.stepOneButton.setQuick(title: "Go to settings")
+            self.stepOneButton.setQuick(title: "Open settings")
             AnimationWrapper.setUpAnimation(in: self.animationContainer, withFile: "no_gps", repeatMode: 1)
         }
     }

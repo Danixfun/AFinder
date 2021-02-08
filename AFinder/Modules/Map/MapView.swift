@@ -18,8 +18,23 @@ class MapView: UIViewController {
     
     // MARK: IBOutlet
     @IBOutlet weak var mapContainer: MKMapView!
+    @IBOutlet weak var noGPSContainer: UIView!
+    @IBOutlet weak var noWiFiContainer: UIView!
+    @IBOutlet weak var cantFindYouLabel: UILabel!
+    @IBOutlet weak var cantFindYouInstructionsLabel: UILabel!
+    @IBOutlet weak var openSettingsButton: AFPrimaryButton!
+    @IBOutlet weak var connectionLostLabel: UILabel!
+    @IBOutlet weak var connectionLostAnimationContainer: UIView!
+    @IBOutlet weak var refreshButton: AFSecondaryButton!
     
     // MARK: IBAction
+    
+    @IBAction func openSettingsAction(_ sender: Any) {
+        self.presenter?.openSettingsAction()
+    }
+    
+    @IBAction func refreshAction(_ sender: Any) {
+    }
     
     // MARK: Lifecycle
     override func viewDidLoad() {
@@ -29,6 +44,24 @@ class MapView: UIViewController {
 }
 
 extension MapView: MapViewProtocol {
+    
+    func setUpNoGPSContainer() {
+        cantFindYouLabel.text = "CantFindYouLabel".localized()
+        cantFindYouInstructionsLabel.text = "CantFindYouInstructionsLabel".localized()
+        openSettingsButton.setQuick(title: "Open settings")
+        noGPSContainer.isHidden = true
+        self.view.addSubview(noGPSContainer)
+        self.noGPSContainer.center = self.view.center
+    }
+    
+    func setUpNoWiFiContainer() {
+        connectionLostLabel.text = "ConnectionLostLabel".localized()
+        refreshButton.setQuick(title: "Refresh")
+        noWiFiContainer.isHidden = true
+        self.view.addSubview(noWiFiContainer)
+        self.noWiFiContainer.center = self.view.center
+    }
+    
     // Populate the map with airports
     func foundAirports(airports: AirportResponse?, error: AirportFetchError) {
         // Remove all current annotations
@@ -50,7 +83,6 @@ extension MapView: MapViewProtocol {
     
     // Center the user based on its location and fetch airports
     func centerMapWith(range: Int) {
-        print("setup")
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
         
@@ -69,16 +101,17 @@ extension MapView: MapViewProtocol {
     
     func deniedMap() {
         self.mapContainer.isHidden = true
+        self.noGPSContainer.isHidden = false
     }
     
     func grantMap() {
         self.mapContainer.isHidden = false
+        self.noGPSContainer.isHidden = true
     }
-    
-    
+
 }
 
-
+// MARK: - CLLocationManagerDelegate
 extension MapView: CLLocationManagerDelegate{
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
@@ -105,6 +138,7 @@ extension MapView: CLLocationManagerDelegate{
     }
 }
 
+// MARK: - MKMapViewDelegate
 extension MapView: MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
@@ -139,8 +173,7 @@ extension MapView: MKMapViewDelegate {
     
 }
 
-
-/// regionRadius is on meters
+// MARK: - MapKitHelper
 private extension MKMapView {
     func centerToLocation(_ location: CLLocation, regionRadius: CLLocationDistance = 1) {
         let radius = regionRadius * 1000// 1000 meters in 1 kilometer

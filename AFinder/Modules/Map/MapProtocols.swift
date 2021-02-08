@@ -17,11 +17,14 @@ protocol MapViewProtocol: class {
     func foundAirports(airports:AirportResponse?, error: AirportFetchError)
     func deniedMap()
     func grantMap()
+    func setUpNoGPSContainer()
+    func setUpNoWiFiContainer()
 }
 
 protocol MapWireFrameProtocol: class {
     // PRESENTER -> WIREFRAME
     static func createMapModule() -> UIViewController
+    func openSettingsAction()
 }
 
 protocol MapPresenterProtocol: class {
@@ -34,6 +37,8 @@ protocol MapPresenterProtocol: class {
     func findAirports(location: CLLocation)
     func deniedMap()
     func grantMap()
+    func openSettingsAction()
+    func refreshAction()
 }
 
 protocol MapInteractorOutputProtocol: class {

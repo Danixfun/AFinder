@@ -22,6 +22,8 @@ extension MapPresenter: MapPresenterProtocol {
     // TODO: implement presenter methods
     func viewDidLoad() {
         self.interactor?.getCurrentRange()
+        self.view?.setUpNoGPSContainer()
+        self.view?.setUpNoWiFiContainer()
     }
     
     func findAirports(location: CLLocation){
@@ -34,6 +36,14 @@ extension MapPresenter: MapPresenterProtocol {
     
     func grantMap() {
         self.view?.grantMap()
+    }
+    
+    func openSettingsAction() {
+        self.wireFrame?.openSettingsAction()
+    }
+    
+    func refreshAction() {
+        
     }
 }
 

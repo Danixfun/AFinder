@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class MapWireFrame: MapWireFrameProtocol {
-
+    // MARK: Init
     class func createMapModule() -> UIViewController {
         if let view = mainStoryboard.instantiateViewController(withIdentifier: "MapView") as? MapView {
             let presenter: MapPresenterProtocol & MapInteractorOutputProtocol = MapPresenter()
@@ -35,6 +35,16 @@ class MapWireFrame: MapWireFrameProtocol {
     
     static var mainStoryboard: UIStoryboard {
         return UIStoryboard(name: "MapView", bundle: Bundle.main)
+    }
+    
+    // MARK: Functions
+    func openSettingsAction() {
+        guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
+            return
+        }
+        if UIApplication.shared.canOpenURL(settingsUrl) {
+            UIApplication.shared.open(settingsUrl, completionHandler: nil)
+        }
     }
     
 }

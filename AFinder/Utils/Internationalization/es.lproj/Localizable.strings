@@ -14,3 +14,10 @@
 "Select one" = "Selecciona uno para ver más información relevante sobre él.";
 "Done" = "Listo";
 "Back" = "Atrás";
+"Oh no permission" = "Oh no!";
+"It happens" = "Suela pasar, pero no te preocupes. Ve a la configuración de tu dispositivo, luego busca la app AFinder y otórgale permiso para usar la localización.";
+"Open settings" = "Open settings";
+"Refresh" = "Refresh";
+"CantFindYouLabel" = "No podemos encontrarte";
+"CantFindYouInstructionsLabel" = "Ve a la configuración de tu dispositivo, luego busca la app AFinder y otórgale permiso para usar la localización.";
+"ConnectionLostLabel" = "Conexión perdida";

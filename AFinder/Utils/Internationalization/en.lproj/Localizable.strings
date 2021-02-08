@@ -14,3 +14,10 @@
 "Select one" = "Select one to see more relevant information about it.";
 "Done" = "Done";
 "Back" = "Back";
+"Oh no permission" = "Oh no!";
+"It happens" = "It happens, but don't worry. Go to your device's settings, then search for the AFinder app and grant it permission to use location.";
+"Open settings" = "Open settings";
+"Refresh" = "Recargar";
+"CantFindYouLabel" = "We can't find you";
+"CantFindYouInstructionsLabel" = "Go to your device's settings, then search for the AFinder app and grant it permission to use location.";
+"ConnectionLostLabel" = "Connection lost";
