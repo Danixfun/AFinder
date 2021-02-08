@@ -27,6 +27,14 @@ extension MapPresenter: MapPresenterProtocol {
     func findAirports(location: CLLocation){
         self.interactor?.findAirports(location: location)
     }
+    
+    func deniedMap() {
+        self.view?.deniedMap()
+    }
+    
+    func grantMap() {
+        self.view?.grantMap()
+    }
 }
 
 extension MapPresenter: MapInteractorOutputProtocol {

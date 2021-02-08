@@ -15,6 +15,8 @@ protocol MapViewProtocol: class {
     var presenter: MapPresenterProtocol? { get set }
     func centerMapWith(range: Int)
     func foundAirports(airports:AirportResponse?, error: AirportFetchError)
+    func deniedMap()
+    func grantMap()
 }
 
 protocol MapWireFrameProtocol: class {
@@ -30,6 +32,8 @@ protocol MapPresenterProtocol: class {
     
     func viewDidLoad()
     func findAirports(location: CLLocation)
+    func deniedMap()
+    func grantMap()
 }
 
 protocol MapInteractorOutputProtocol: class {

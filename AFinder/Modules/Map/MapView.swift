@@ -29,7 +29,6 @@ class MapView: UIViewController {
 }
 
 extension MapView: MapViewProtocol {
-    
     // Populate the map with airports
     func foundAirports(airports: AirportResponse?, error: AirportFetchError) {
         // Remove all current annotations
@@ -49,6 +48,7 @@ extension MapView: MapViewProtocol {
         }
     }
     
+    // Center the user based on its location and fetch airports
     func centerMapWith(range: Int) {
         print("setup")
         locationManager.delegate = self
@@ -56,24 +56,40 @@ extension MapView: MapViewProtocol {
         
         if !isLocationServiceEnabled() {
             // Show no services enabled animation and open settings button
-            print("Location service is disabled")
+            self.presenter?.deniedMap()
             return
         }
         mapContainer.delegate = self
         guard let currentLocation = locationManager.location else {
             return
         }
+        mapContainer.centerToLocation(currentLocation, regionRadius: CLLocationDistance(range))
         self.presenter?.findAirports(location: currentLocation)
-        mapContainer.centerToLocation(currentLocation, regionRadius: CLLocationDistance(range*1000))
     }
+    
+    func deniedMap() {
+        self.mapContainer.isHidden = true
+    }
+    
+    func grantMap() {
+        self.mapContainer.isHidden = false
+    }
+    
+    
 }
 
 
 extension MapView: CLLocationManagerDelegate{
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        // Update UI based on status
-        print(status)
+        switch status {
+        case .notDetermined, .restricted, .denied:
+            self.presenter?.deniedMap()
+        case .authorizedAlways, .authorizedWhenInUse:
+            self.presenter?.grantMap()
+        @unknown default:
+            break
+        }
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -126,11 +142,12 @@ extension MapView: MKMapViewDelegate {
 
 /// regionRadius is on meters
 private extension MKMapView {
-    func centerToLocation(_ location: CLLocation, regionRadius: CLLocationDistance = 1000) {
+    func centerToLocation(_ location: CLLocation, regionRadius: CLLocationDistance = 1) {
+        let radius = regionRadius * 1000// 1000 meters in 1 kilometer
         let coordinateRegion = MKCoordinateRegion(
         center: location.coordinate,
-        latitudinalMeters: regionRadius,
-        longitudinalMeters: regionRadius)
+        latitudinalMeters: radius,
+        longitudinalMeters: radius)
 
         setRegion(coordinateRegion, animated: true)
     }
