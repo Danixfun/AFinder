@@ -53,6 +53,13 @@
 		2561440425D099FC00F851E7 /* airplane_landing.json in Resources */ = {isa = PBXBuildFile; fileRef = 2561440325D099FC00F851E7 /* airplane_landing.json */; };
 		2561440925D09B8B00F851E7 /* RangeCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2561440825D09B8B00F851E7 /* RangeCircleView.swift */; };
 		2561440F25D09DD100F851E7 /* UserPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2561440E25D09DD100F851E7 /* UserPreferences.swift */; };
+		2561441B25D0C2F200F851E7 /* MapPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2561441425D0C2F200F851E7 /* MapPresenter.swift */; };
+		2561441C25D0C2F200F851E7 /* MapLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2561441525D0C2F200F851E7 /* MapLocalDataManager.swift */; };
+		2561441D25D0C2F200F851E7 /* MapProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2561441625D0C2F200F851E7 /* MapProtocols.swift */; };
+		2561441E25D0C2F200F851E7 /* MapInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2561441725D0C2F200F851E7 /* MapInteractor.swift */; };
+		2561441F25D0C2F200F851E7 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2561441825D0C2F200F851E7 /* MapView.swift */; };
+		2561442025D0C2F200F851E7 /* MapRemoteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2561441925D0C2F200F851E7 /* MapRemoteDataManager.swift */; };
+		2561442125D0C2F200F851E7 /* MapWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2561441A25D0C2F200F851E7 /* MapWireFrame.swift */; };
 		25CBE70A25CE4FBA00598C28 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CBE70925CE4FBA00598C28 /* AppDelegate.swift */; };
 		25CBE71425CE4FBA00598C28 /* AFinder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 25CBE71225CE4FBA00598C28 /* AFinder.xcdatamodeld */; };
 		25CBE71625CE4FBB00598C28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25CBE71525CE4FBB00598C28 /* Assets.xcassets */; };
@@ -133,6 +140,13 @@
 		2561440325D099FC00F851E7 /* airplane_landing.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = airplane_landing.json; sourceTree = "<group>"; };
 		2561440825D09B8B00F851E7 /* RangeCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangeCircleView.swift; sourceTree = "<group>"; };
 		2561440E25D09DD100F851E7 /* UserPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferences.swift; sourceTree = "<group>"; };
+		2561441425D0C2F200F851E7 /* MapPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPresenter.swift; sourceTree = "<group>"; };
+		2561441525D0C2F200F851E7 /* MapLocalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapLocalDataManager.swift; sourceTree = "<group>"; };
+		2561441625D0C2F200F851E7 /* MapProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapProtocols.swift; sourceTree = "<group>"; };
+		2561441725D0C2F200F851E7 /* MapInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapInteractor.swift; sourceTree = "<group>"; };
+		2561441825D0C2F200F851E7 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		2561441925D0C2F200F851E7 /* MapRemoteDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRemoteDataManager.swift; sourceTree = "<group>"; };
+		2561441A25D0C2F200F851E7 /* MapWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapWireFrame.swift; sourceTree = "<group>"; };
 		25CBE70625CE4FBA00598C28 /* AFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25CBE70925CE4FBA00598C28 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		25CBE71325CE4FBA00598C28 /* AFinder.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AFinder.xcdatamodel; sourceTree = "<group>"; };
@@ -300,6 +314,20 @@
 			path = UserPreferences;
 			sourceTree = "<group>";
 		};
+		2561441325D0C2E700F851E7 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				2561441425D0C2F200F851E7 /* MapPresenter.swift */,
+				2561441525D0C2F200F851E7 /* MapLocalDataManager.swift */,
+				2561441625D0C2F200F851E7 /* MapProtocols.swift */,
+				2561441725D0C2F200F851E7 /* MapInteractor.swift */,
+				2561441825D0C2F200F851E7 /* MapView.swift */,
+				2561441925D0C2F200F851E7 /* MapRemoteDataManager.swift */,
+				2561441A25D0C2F200F851E7 /* MapWireFrame.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
 		25CBE6FD25CE4FBA00598C28 = {
 			isa = PBXGroup;
 			children = (
@@ -367,6 +395,7 @@
 		25CBE74625CE552800598C28 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				2561441325D0C2E700F851E7 /* Map */,
 				2548275525CFB1B300268327 /* Onboarding */,
 				25CBE74725CE552C00598C28 /* Welcome */,
 			);
@@ -538,19 +567,24 @@
 				254827DD25CFCF2B00268327 /* AnimationWrapper.swift in Sources */,
 				254827D025CFCE1000268327 /* OBStepThreeLocalDataManager.swift in Sources */,
 				254827AA25CFCCC200268327 /* OBStepOneRemoteDataManager.swift in Sources */,
+				2561441E25D0C2F200F851E7 /* MapInteractor.swift in Sources */,
 				254827D125CFCE1000268327 /* OBStepThreeProtocols.swift in Sources */,
 				256143FF25D0616900F851E7 /* OnboardingSteps.swift in Sources */,
 				25CBE75025CE553F00598C28 /* WelcomeLocalDataManager.swift in Sources */,
+				2561442025D0C2F200F851E7 /* MapRemoteDataManager.swift in Sources */,
 				2548271025CF989100268327 /* LocalizableHelper.swift in Sources */,
 				25CBE75225CE553F00598C28 /* WelcomeInteractor.swift in Sources */,
 				25CBE75525CE553F00598C28 /* WelcomeWireFrame.swift in Sources */,
+				2561441D25D0C2F200F851E7 /* MapProtocols.swift in Sources */,
 				2548274825CFAA9100268327 /* AFSecondaryButton.swift in Sources */,
 				2561440F25D09DD100F851E7 /* UserPreferences.swift in Sources */,
 				2548272025CF9C6800268327 /* AFPrimaryButton.swift in Sources */,
+				2561441F25D0C2F200F851E7 /* MapView.swift in Sources */,
 				2561440925D09B8B00F851E7 /* RangeCircleView.swift in Sources */,
 				254827BE25CFCDF700268327 /* OBStepTwoView.swift in Sources */,
 				2548272825CF9DE600268327 /* FontHelper.swift in Sources */,
 				254827BB25CFCDF700268327 /* OBStepTwoLocalDataManager.swift in Sources */,
+				2561442125D0C2F200F851E7 /* MapWireFrame.swift in Sources */,
 				256143F725D0610400F851E7 /* NotiNames.swift in Sources */,
 				2548276325CFB1C400268327 /* OnboardingWireFrame.swift in Sources */,
 				254827D525CFCE1000268327 /* OBStepThreeWireFrame.swift in Sources */,
@@ -567,10 +601,12 @@
 				2548277025CFB25C00268327 /* OnboardingView.swift in Sources */,
 				254827BD25CFCDF700268327 /* OBStepTwoInteractor.swift in Sources */,
 				254827D225CFCE1000268327 /* OBStepThreeInteractor.swift in Sources */,
+				2561441B25D0C2F200F851E7 /* MapPresenter.swift in Sources */,
 				254827BF25CFCDF700268327 /* OBStepTwoRemoteDataManager.swift in Sources */,
 				2548275F25CFB1C400268327 /* OnboardingProtocols.swift in Sources */,
 				2548275D25CFB1C400268327 /* OnboardingPresenter.swift in Sources */,
 				254827BC25CFCDF700268327 /* OBStepTwoProtocols.swift in Sources */,
+				2561441C25D0C2F200F851E7 /* MapLocalDataManager.swift in Sources */,
 				254827D325CFCE1000268327 /* OBStepThreeView.swift in Sources */,
 				254827A625CFCCC200268327 /* OBStepOneLocalDataManager.swift in Sources */,
 				254827BA25CFCDF700268327 /* OBStepTwoPresenter.swift in Sources */,
