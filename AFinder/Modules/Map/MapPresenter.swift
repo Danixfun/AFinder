@@ -22,9 +22,10 @@ extension MapPresenter: MapPresenterProtocol {
     
     // TODO: implement presenter methods
     func viewDidLoad() {
-        self.interactor?.getCurrentRange()
+        self.view?.setUpMap()
         self.view?.setUpNoGPSContainer()
         self.view?.setUpNoWiFiContainer()
+        self.interactor?.getCurrentRange()
     }
     
     func findAirports(location: CLLocation){

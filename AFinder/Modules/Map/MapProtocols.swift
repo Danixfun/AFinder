@@ -21,6 +21,7 @@ protocol MapViewProtocol: class {
     func grantMap()
     func setUpNoGPSContainer()
     func setUpNoWiFiContainer()
+    func setUpMap()
 }
 
 protocol MapWireFrameProtocol: class {

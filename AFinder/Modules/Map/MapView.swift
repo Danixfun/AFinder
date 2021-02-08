@@ -8,6 +8,8 @@
 
 // Radius free icon by FreePik from flaticons.com
 // Clipboard (AKA list) icon By dmitri13 from flaticons.com
+// Airport pin by DinosoftLabs from flaticons.com
+
 
 import Foundation
 import UIKit
@@ -72,6 +74,13 @@ extension MapView: MapViewProtocol {
         self.view.addSubview(noGPSContainer)
         self.noGPSContainer.center = self.view.center
         setUpButtons()
+    }
+    
+    func setUpMap() {
+        mapContainer.register(
+          AirportAnnotationView.self,
+          forAnnotationViewWithReuseIdentifier:
+            MKMapViewDefaultAnnotationViewReuseIdentifier)
     }
     
     func setUpNoWiFiContainer() {
@@ -178,11 +187,8 @@ extension MapView: CLLocationManagerDelegate{
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.last{
-            mapContainer.centerToLocation(location)
-            
             // Set current position on map
             mapContainer.centerToLocation(location)
-            
             // Everything is ready to start fetching results
             self.presenter?.findAirports(location: location)
         }
@@ -196,20 +202,20 @@ extension MapView: MKMapViewDelegate {
         guard let annotation = annotation as? AirportPin else {
             return nil
         }
-        let identifier = annotation.title ?? UUID().uuidString
-        var view: MKMarkerAnnotationView
-        if let dequeuedView = mapView.dequeueReusableAnnotationView(
-            withIdentifier: identifier) as? MKMarkerAnnotationView {
+        let identifier = "Something"
+        var view: AirportAnnotationView
+        if let dequeuedView = mapView.dequeueReusableAnnotationView (
+            withIdentifier: identifier) as? AirportAnnotationView {
             dequeuedView.annotation = annotation
             view = dequeuedView
         }
         else {
-            view = MKMarkerAnnotationView(
-            annotation: annotation,
-            reuseIdentifier: identifier)
+            view = AirportAnnotationView(annotation: annotation, reuseIdentifier: identifier)
             view.canShowCallout = true
             view.calloutOffset = CGPoint(x: -5, y: 5)
+            view.image = annotation.customPinImage
             view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+            
         }
         return view
     }
