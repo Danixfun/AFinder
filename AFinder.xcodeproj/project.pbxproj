@@ -81,6 +81,13 @@
 		25899FB425D1B0E900C7F043 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25899FB225D1B0E900C7F043 /* ListTableViewCell.swift */; };
 		25899FB525D1B0E900C7F043 /* ListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25899FB325D1B0E900C7F043 /* ListTableViewCell.xib */; };
 		25899FBB25D1C2E300C7F043 /* ImageScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25899FBA25D1C2E300C7F043 /* ImageScale.swift */; };
+		25899FCD25D1D7A400C7F043 /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25899FC625D1D7A400C7F043 /* SettingsPresenter.swift */; };
+		25899FCE25D1D7A400C7F043 /* SettingsLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25899FC725D1D7A400C7F043 /* SettingsLocalDataManager.swift */; };
+		25899FCF25D1D7A400C7F043 /* SettingsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25899FC825D1D7A400C7F043 /* SettingsProtocols.swift */; };
+		25899FD025D1D7A400C7F043 /* SettingsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25899FC925D1D7A400C7F043 /* SettingsInteractor.swift */; };
+		25899FD125D1D7A400C7F043 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25899FCA25D1D7A400C7F043 /* SettingsView.swift */; };
+		25899FD225D1D7A400C7F043 /* SettingsRemoteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25899FCB25D1D7A400C7F043 /* SettingsRemoteDataManager.swift */; };
+		25899FD325D1D7A400C7F043 /* SettingsWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25899FCC25D1D7A400C7F043 /* SettingsWireFrame.swift */; };
 		25CBE70A25CE4FBA00598C28 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CBE70925CE4FBA00598C28 /* AppDelegate.swift */; };
 		25CBE71425CE4FBA00598C28 /* AFinder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 25CBE71225CE4FBA00598C28 /* AFinder.xcdatamodeld */; };
 		25CBE71625CE4FBB00598C28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25CBE71525CE4FBB00598C28 /* Assets.xcassets */; };
@@ -189,6 +196,13 @@
 		25899FB225D1B0E900C7F043 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		25899FB325D1B0E900C7F043 /* ListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListTableViewCell.xib; sourceTree = "<group>"; };
 		25899FBA25D1C2E300C7F043 /* ImageScale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageScale.swift; sourceTree = "<group>"; };
+		25899FC625D1D7A400C7F043 /* SettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
+		25899FC725D1D7A400C7F043 /* SettingsLocalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLocalDataManager.swift; sourceTree = "<group>"; };
+		25899FC825D1D7A400C7F043 /* SettingsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsProtocols.swift; sourceTree = "<group>"; };
+		25899FC925D1D7A400C7F043 /* SettingsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsInteractor.swift; sourceTree = "<group>"; };
+		25899FCA25D1D7A400C7F043 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		25899FCB25D1D7A400C7F043 /* SettingsRemoteDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRemoteDataManager.swift; sourceTree = "<group>"; };
+		25899FCC25D1D7A400C7F043 /* SettingsWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsWireFrame.swift; sourceTree = "<group>"; };
 		25CBE70625CE4FBA00598C28 /* AFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25CBE70925CE4FBA00598C28 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		25CBE71325CE4FBA00598C28 /* AFinder.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AFinder.xcdatamodel; sourceTree = "<group>"; };
@@ -419,6 +433,20 @@
 			path = ImageResizable;
 			sourceTree = "<group>";
 		};
+		25899FC525D1D79200C7F043 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				25899FC625D1D7A400C7F043 /* SettingsPresenter.swift */,
+				25899FC725D1D7A400C7F043 /* SettingsLocalDataManager.swift */,
+				25899FC825D1D7A400C7F043 /* SettingsProtocols.swift */,
+				25899FC925D1D7A400C7F043 /* SettingsInteractor.swift */,
+				25899FCA25D1D7A400C7F043 /* SettingsView.swift */,
+				25899FCB25D1D7A400C7F043 /* SettingsRemoteDataManager.swift */,
+				25899FCC25D1D7A400C7F043 /* SettingsWireFrame.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		25CBE6FD25CE4FBA00598C28 = {
 			isa = PBXGroup;
 			children = (
@@ -489,6 +517,7 @@
 		25CBE74625CE552800598C28 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				25899FC525D1D79200C7F043 /* Settings */,
 				25899F9225D1A97600C7F043 /* List */,
 				2561441325D0C2E700F851E7 /* Map */,
 				2548275525CFB1B300268327 /* Onboarding */,
@@ -688,6 +717,8 @@
 				254827BE25CFCDF700268327 /* OBStepTwoView.swift in Sources */,
 				2548272825CF9DE600268327 /* FontHelper.swift in Sources */,
 				25899FBB25D1C2E300C7F043 /* ImageScale.swift in Sources */,
+				25899FD225D1D7A400C7F043 /* SettingsRemoteDataManager.swift in Sources */,
+				25899FCE25D1D7A400C7F043 /* SettingsLocalDataManager.swift in Sources */,
 				254827BB25CFCDF700268327 /* OBStepTwoLocalDataManager.swift in Sources */,
 				2561442125D0C2F200F851E7 /* MapWireFrame.swift in Sources */,
 				25899F9A25D1A98100C7F043 /* ListPresenter.swift in Sources */,
@@ -696,6 +727,7 @@
 				2548276325CFB1C400268327 /* OnboardingWireFrame.swift in Sources */,
 				254827D525CFCE1000268327 /* OBStepThreeWireFrame.swift in Sources */,
 				2548275E25CFB1C400268327 /* OnboardingLocalDataManager.swift in Sources */,
+				25899FD125D1D7A400C7F043 /* SettingsView.swift in Sources */,
 				25899FA025D1A98100C7F043 /* ListWireFrame.swift in Sources */,
 				25899F9C25D1A98100C7F043 /* ListProtocols.swift in Sources */,
 				2561445225D1053500F851E7 /* RadiusRangeValues.swift in Sources */,
@@ -710,8 +742,10 @@
 				25CBE75425CE553F00598C28 /* WelcomeRemoteDataManager.swift in Sources */,
 				254827A525CFCCC200268327 /* OBStepOnePresenter.swift in Sources */,
 				2561443E25D0E0AB00F851E7 /* AirportFetchError.swift in Sources */,
+				25899FD325D1D7A400C7F043 /* SettingsWireFrame.swift in Sources */,
 				25899FB425D1B0E900C7F043 /* ListTableViewCell.swift in Sources */,
 				254827AB25CFCCC200268327 /* OBStepOneWireFrame.swift in Sources */,
+				25899FD025D1D7A400C7F043 /* SettingsInteractor.swift in Sources */,
 				2548277025CFB25C00268327 /* OnboardingView.swift in Sources */,
 				254827BD25CFCDF700268327 /* OBStepTwoInteractor.swift in Sources */,
 				254827D225CFCE1000268327 /* OBStepThreeInteractor.swift in Sources */,
@@ -719,9 +753,11 @@
 				25899F9B25D1A98100C7F043 /* ListLocalDataManager.swift in Sources */,
 				254827BF25CFCDF700268327 /* OBStepTwoRemoteDataManager.swift in Sources */,
 				2548275F25CFB1C400268327 /* OnboardingProtocols.swift in Sources */,
+				25899FCD25D1D7A400C7F043 /* SettingsPresenter.swift in Sources */,
 				2548275D25CFB1C400268327 /* OnboardingPresenter.swift in Sources */,
 				254827BC25CFCDF700268327 /* OBStepTwoProtocols.swift in Sources */,
 				2561441C25D0C2F200F851E7 /* MapLocalDataManager.swift in Sources */,
+				25899FCF25D1D7A400C7F043 /* SettingsProtocols.swift in Sources */,
 				254827D325CFCE1000268327 /* OBStepThreeView.swift in Sources */,
 				254827A625CFCCC200268327 /* OBStepOneLocalDataManager.swift in Sources */,
 				254827BA25CFCDF700268327 /* OBStepTwoPresenter.swift in Sources */,

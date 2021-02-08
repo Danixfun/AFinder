@@ -35,6 +35,12 @@ class MapView: UIViewController {
     @IBOutlet weak var radiusButton: AFSecondaryCircularButton!
     @IBOutlet weak var listButton: AFPrimaryCircularButton!
     
+    @IBOutlet weak var updateRangeButton: AFPrimaryButton!
+    @IBOutlet weak var rangeSlider: UISlider!
+    @IBOutlet weak var rangeLabel: UILabel!
+    @IBOutlet var updateRangeContainer: UIView!
+    
+    
     // MARK: IBAction
     @IBAction func openSettingsAction(_ sender: Any) {
         self.presenter?.openSettingsAction()
@@ -45,12 +51,15 @@ class MapView: UIViewController {
     }
     
     @IBAction func radiusButtonAction(_ sender: Any) {
+        
     }
     
     @IBAction func listButtonAction(_ sender: Any) {
         self.presenter?.listButtonAction(airports: self.airports)
     }
     
+    @IBAction func updateRangeButtonAction(_ sender: Any) {
+    }
     
     // MARK: Lifecycle
     override func viewDidLoad() {
