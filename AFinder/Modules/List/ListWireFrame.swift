@@ -11,6 +11,7 @@ import UIKit
 
 class ListWireFrame: ListWireFrameProtocol {
 
+    // MARK: Init
     class func createListModule(airports: AirportResponse?) -> UIViewController {
         let navController = mainStoryboard.instantiateViewController(withIdentifier: "ListNavigationView")
         if let view = navController.children.first as? ListView {
@@ -37,6 +38,13 @@ class ListWireFrame: ListWireFrameProtocol {
     
     static var mainStoryboard: UIStoryboard {
         return UIStoryboard(name: "ListView", bundle: Bundle.main)
+    }
+    
+    // MARK: Functions
+    func dismiss(from view: ListViewProtocol) {
+        if let actualView = view as? UIViewController {
+            actualView.dismiss(animated: true, completion: nil)
+        }
     }
     
 }

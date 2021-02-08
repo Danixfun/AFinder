@@ -35,9 +35,14 @@
                     <navigationItem key="navigationItem" title="Airports found" id="zrv-uf-boE">
                         <barButtonItem key="leftBarButtonItem" title="Back" id="et8-nS-XaM">
                             <color key="tintColor" name="PrimaryButtonBackgroundColor"/>
+                            <connections>
+                                <action selector="backButtonAction:" destination="b77-lg-KjJ" id="wMB-dS-3Qz"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="backButton" destination="et8-nS-XaM" id="RZ7-HE-8hU"/>
+                        <outlet property="navigationBarComponent" destination="zrv-uf-boE" id="hAH-qg-pi3"/>
                         <outlet property="tableView" destination="paF-vQ-5zq" id="laS-PE-qqT"/>
                     </connections>
                 </viewController>

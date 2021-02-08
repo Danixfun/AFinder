@@ -20,7 +20,13 @@ class ListPresenter  {
 extension ListPresenter: ListPresenterProtocol {
     // TODO: implement presenter methods
     func viewDidLoad() {
+        self.view?.setUpButtons()
+        self.view?.setUpNavigationBarTitle()
         self.view?.setUpTableView()
+    }
+
+    func backButtonAction() {
+        self.wireFrame?.dismiss(from: self.view!)
     }
 }
 

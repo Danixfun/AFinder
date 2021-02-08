@@ -18,6 +18,13 @@ class ListView: UIViewController {
     
     // MARK: IBOutlet
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var backButton: UIBarButtonItem!
+    @IBOutlet weak var navigationBarComponent: UINavigationItem!
+    
+    // MARK: IBAction
+    @IBAction func backButtonAction(_ sender: Any) {
+        self.presenter?.backButtonAction()
+    }
     
     // MARK: Properties
     var presenter: ListPresenterProtocol?
@@ -31,7 +38,16 @@ class ListView: UIViewController {
 
 extension ListView: ListViewProtocol {
     // TODO: implement view output methods
-    func setUpTableView(){
+    
+    func setUpButtons() {
+        self.backButton.title = "Back".localized()
+    }
+    
+    func setUpNavigationBarTitle() {
+        navigationBarComponent.title = "Airports found".localized()
+    }
+    
+    func setUpTableView() {
         let nib = UINib(nibName: listTableViewCellID, bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: listTableViewCellID)
         tableView.delegate = self

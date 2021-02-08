@@ -224,8 +224,6 @@ extension MapView: MKMapViewDelegate {
         guard let airportPin = view.annotation as? AirportPin else {
             return
         }
-
-        print(airportPin.title!)
     }
     
 }

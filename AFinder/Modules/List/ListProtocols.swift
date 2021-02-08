@@ -13,11 +13,14 @@ protocol ListViewProtocol: class {
     // PRESENTER -> VIEW
     var presenter: ListPresenterProtocol? { get set }
     func setUpTableView()
+    func setUpButtons()
+    func setUpNavigationBarTitle()
 }
 
 protocol ListWireFrameProtocol: class {
     // PRESENTER -> WIREFRAME
     static func createListModule(airports: AirportResponse?) -> UIViewController
+    func dismiss(from view: ListViewProtocol)
 }
 
 protocol ListPresenterProtocol: class {
@@ -27,6 +30,7 @@ protocol ListPresenterProtocol: class {
     var wireFrame: ListWireFrameProtocol? { get set }
     
     func viewDidLoad()
+    func backButtonAction()
 }
 
 protocol ListInteractorOutputProtocol: class {
