@@ -70,6 +70,14 @@
 		25899F8425D19B2500C7F043 /* connection_lost.json in Resources */ = {isa = PBXBuildFile; fileRef = 25899F8325D19B2500C7F043 /* connection_lost.json */; };
 		25899F8925D1A3FB00C7F043 /* AFPrimaryCircularButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25899F8825D1A3FB00C7F043 /* AFPrimaryCircularButton.swift */; };
 		25899F8E25D1A86200C7F043 /* AFSecondaryCircularButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25899F8D25D1A86200C7F043 /* AFSecondaryCircularButton.swift */; };
+		25899F9A25D1A98100C7F043 /* ListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25899F9325D1A98100C7F043 /* ListPresenter.swift */; };
+		25899F9B25D1A98100C7F043 /* ListLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25899F9425D1A98100C7F043 /* ListLocalDataManager.swift */; };
+		25899F9C25D1A98100C7F043 /* ListProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25899F9525D1A98100C7F043 /* ListProtocols.swift */; };
+		25899F9D25D1A98100C7F043 /* ListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25899F9625D1A98100C7F043 /* ListInteractor.swift */; };
+		25899F9E25D1A98100C7F043 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25899F9725D1A98100C7F043 /* ListView.swift */; };
+		25899F9F25D1A98100C7F043 /* ListRemoteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25899F9825D1A98100C7F043 /* ListRemoteDataManager.swift */; };
+		25899FA025D1A98100C7F043 /* ListWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25899F9925D1A98100C7F043 /* ListWireFrame.swift */; };
+		25899FA525D1A98C00C7F043 /* ListView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25899FA425D1A98C00C7F043 /* ListView.storyboard */; };
 		25CBE70A25CE4FBA00598C28 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CBE70925CE4FBA00598C28 /* AppDelegate.swift */; };
 		25CBE71425CE4FBA00598C28 /* AFinder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 25CBE71225CE4FBA00598C28 /* AFinder.xcdatamodeld */; };
 		25CBE71625CE4FBB00598C28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25CBE71525CE4FBB00598C28 /* Assets.xcassets */; };
@@ -167,6 +175,14 @@
 		25899F8325D19B2500C7F043 /* connection_lost.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = connection_lost.json; sourceTree = "<group>"; };
 		25899F8825D1A3FB00C7F043 /* AFPrimaryCircularButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFPrimaryCircularButton.swift; sourceTree = "<group>"; };
 		25899F8D25D1A86200C7F043 /* AFSecondaryCircularButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFSecondaryCircularButton.swift; sourceTree = "<group>"; };
+		25899F9325D1A98100C7F043 /* ListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPresenter.swift; sourceTree = "<group>"; };
+		25899F9425D1A98100C7F043 /* ListLocalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListLocalDataManager.swift; sourceTree = "<group>"; };
+		25899F9525D1A98100C7F043 /* ListProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListProtocols.swift; sourceTree = "<group>"; };
+		25899F9625D1A98100C7F043 /* ListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListInteractor.swift; sourceTree = "<group>"; };
+		25899F9725D1A98100C7F043 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		25899F9825D1A98100C7F043 /* ListRemoteDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRemoteDataManager.swift; sourceTree = "<group>"; };
+		25899F9925D1A98100C7F043 /* ListWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListWireFrame.swift; sourceTree = "<group>"; };
+		25899FA425D1A98C00C7F043 /* ListView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ListView.storyboard; sourceTree = "<group>"; };
 		25CBE70625CE4FBA00598C28 /* AFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25CBE70925CE4FBA00598C28 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		25CBE71325CE4FBA00598C28 /* AFinder.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AFinder.xcdatamodel; sourceTree = "<group>"; };
@@ -372,6 +388,21 @@
 			path = Range;
 			sourceTree = "<group>";
 		};
+		25899F9225D1A97600C7F043 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				25899F9325D1A98100C7F043 /* ListPresenter.swift */,
+				25899F9425D1A98100C7F043 /* ListLocalDataManager.swift */,
+				25899F9525D1A98100C7F043 /* ListProtocols.swift */,
+				25899F9625D1A98100C7F043 /* ListInteractor.swift */,
+				25899F9725D1A98100C7F043 /* ListView.swift */,
+				25899FA425D1A98C00C7F043 /* ListView.storyboard */,
+				25899F9825D1A98100C7F043 /* ListRemoteDataManager.swift */,
+				25899F9925D1A98100C7F043 /* ListWireFrame.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
 		25CBE6FD25CE4FBA00598C28 = {
 			isa = PBXGroup;
 			children = (
@@ -441,6 +472,7 @@
 		25CBE74625CE552800598C28 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				25899F9225D1A97600C7F043 /* List */,
 				2561441325D0C2E700F851E7 /* Map */,
 				2548275525CFB1B300268327 /* Onboarding */,
 				25CBE74725CE552C00598C28 /* Welcome */,
@@ -578,6 +610,7 @@
 				256143F125D059E600F851E7 /* no_gps.json in Resources */,
 				256143E825D059AF00F851E7 /* no_airports_found.json in Resources */,
 				2561442C25D0C37700F851E7 /* MapView.storyboard in Resources */,
+				25899FA525D1A98C00C7F043 /* ListView.storyboard in Resources */,
 				25899F8425D19B2500C7F043 /* connection_lost.json in Resources */,
 				25CBE75A25CE559C00598C28 /* WelcomeView.storyboard in Resources */,
 				2548271425CF994000268327 /* Localizable.strings in Resources */,
@@ -632,21 +665,27 @@
 				2548272025CF9C6800268327 /* AFPrimaryButton.swift in Sources */,
 				2561444C25D0E7DB00F851E7 /* LocationHelper.swift in Sources */,
 				2561441F25D0C2F200F851E7 /* MapView.swift in Sources */,
+				25899F9F25D1A98100C7F043 /* ListRemoteDataManager.swift in Sources */,
 				2561440925D09B8B00F851E7 /* RangeCircleView.swift in Sources */,
 				254827BE25CFCDF700268327 /* OBStepTwoView.swift in Sources */,
 				2548272825CF9DE600268327 /* FontHelper.swift in Sources */,
 				254827BB25CFCDF700268327 /* OBStepTwoLocalDataManager.swift in Sources */,
 				2561442125D0C2F200F851E7 /* MapWireFrame.swift in Sources */,
+				25899F9A25D1A98100C7F043 /* ListPresenter.swift in Sources */,
 				256143F725D0610400F851E7 /* NotiNames.swift in Sources */,
+				25899F9D25D1A98100C7F043 /* ListInteractor.swift in Sources */,
 				2548276325CFB1C400268327 /* OnboardingWireFrame.swift in Sources */,
 				254827D525CFCE1000268327 /* OBStepThreeWireFrame.swift in Sources */,
 				2548275E25CFB1C400268327 /* OnboardingLocalDataManager.swift in Sources */,
+				25899FA025D1A98100C7F043 /* ListWireFrame.swift in Sources */,
+				25899F9C25D1A98100C7F043 /* ListProtocols.swift in Sources */,
 				2561445225D1053500F851E7 /* RadiusRangeValues.swift in Sources */,
 				254827A925CFCCC200268327 /* OBStepOneView.swift in Sources */,
 				25CBE75325CE553F00598C28 /* WelcomeView.swift in Sources */,
 				25CBE74F25CE553F00598C28 /* WelcomePresenter.swift in Sources */,
 				25899F8E25D1A86200C7F043 /* AFSecondaryCircularButton.swift in Sources */,
 				254827CF25CFCE1000268327 /* OBStepThreePresenter.swift in Sources */,
+				25899F9E25D1A98100C7F043 /* ListView.swift in Sources */,
 				2548276225CFB1C400268327 /* OnboardingRemoteDataManager.swift in Sources */,
 				254827D425CFCE1000268327 /* OBStepThreeRemoteDataManager.swift in Sources */,
 				25CBE75425CE553F00598C28 /* WelcomeRemoteDataManager.swift in Sources */,
@@ -657,6 +696,7 @@
 				254827BD25CFCDF700268327 /* OBStepTwoInteractor.swift in Sources */,
 				254827D225CFCE1000268327 /* OBStepThreeInteractor.swift in Sources */,
 				2561441B25D0C2F200F851E7 /* MapPresenter.swift in Sources */,
+				25899F9B25D1A98100C7F043 /* ListLocalDataManager.swift in Sources */,
 				254827BF25CFCDF700268327 /* OBStepTwoRemoteDataManager.swift in Sources */,
 				2548275F25CFB1C400268327 /* OnboardingProtocols.swift in Sources */,
 				2548275D25CFB1C400268327 /* OnboardingPresenter.swift in Sources */,
