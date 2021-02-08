@@ -9,4 +9,5 @@ import Foundation
 
 struct UserPreferences {
     static let RangeKey = "RangeKey"
+    static let OnboardingAvailableKey = "OnboardingAvailableKey"
 }

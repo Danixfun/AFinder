@@ -37,6 +37,7 @@ class OnboardingInteractor: OnboardingInteractorInputProtocol {
     }
     
     @objc func finish(n: Notification){
+        self.presenter?.finish()
     }
 
 }

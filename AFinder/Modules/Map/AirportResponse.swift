@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Airport: Codable {
+struct AirportResponse: Codable {
     var data: [AirportData]
     struct AirportData: Codable {
         

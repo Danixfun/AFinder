@@ -14,7 +14,6 @@ class WelcomePresenter  {
     weak var view: WelcomeViewProtocol?
     var interactor: WelcomeInteractorInputProtocol?
     var wireFrame: WelcomeWireFrameProtocol?
-    
 }
 
 extension WelcomePresenter: WelcomePresenterProtocol {
@@ -22,6 +21,7 @@ extension WelcomePresenter: WelcomePresenterProtocol {
     func viewDidLoad() {
         self.view?.setUpLabels()
         self.view?.setUpButtons()
+        self.interactor?.setUpNotifications()
     }
     
     func viewDidLayoutSubviews() {
@@ -35,4 +35,7 @@ extension WelcomePresenter: WelcomePresenterProtocol {
 
 extension WelcomePresenter: WelcomeInteractorOutputProtocol {
     // TODO: implement interactor output methods
+    func openMapView() {
+        self.wireFrame?.openMapView(from: self.view!)
+    }
 }

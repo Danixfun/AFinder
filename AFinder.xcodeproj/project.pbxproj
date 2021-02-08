@@ -62,7 +62,10 @@
 		2561442125D0C2F200F851E7 /* MapWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2561441A25D0C2F200F851E7 /* MapWireFrame.swift */; };
 		2561442C25D0C37700F851E7 /* MapView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2561442B25D0C37700F851E7 /* MapView.storyboard */; };
 		2561443425D0D84800F851E7 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2561443325D0D84800F851E7 /* Token.swift */; };
-		2561443925D0DEF600F851E7 /* Airport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2561443825D0DEF600F851E7 /* Airport.swift */; };
+		2561443925D0DEF600F851E7 /* AirportResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2561443825D0DEF600F851E7 /* AirportResponse.swift */; };
+		2561443E25D0E0AB00F851E7 /* AirportFetchError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2561443D25D0E0AB00F851E7 /* AirportFetchError.swift */; };
+		2561444325D0E1E300F851E7 /* AirportPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2561444225D0E1E300F851E7 /* AirportPin.swift */; };
+		2561444C25D0E7DB00F851E7 /* LocationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2561444B25D0E7DB00F851E7 /* LocationHelper.swift */; };
 		25CBE70A25CE4FBA00598C28 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CBE70925CE4FBA00598C28 /* AppDelegate.swift */; };
 		25CBE71425CE4FBA00598C28 /* AFinder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 25CBE71225CE4FBA00598C28 /* AFinder.xcdatamodeld */; };
 		25CBE71625CE4FBB00598C28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25CBE71525CE4FBB00598C28 /* Assets.xcassets */; };
@@ -152,7 +155,10 @@
 		2561441A25D0C2F200F851E7 /* MapWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapWireFrame.swift; sourceTree = "<group>"; };
 		2561442B25D0C37700F851E7 /* MapView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MapView.storyboard; sourceTree = "<group>"; };
 		2561443325D0D84800F851E7 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
-		2561443825D0DEF600F851E7 /* Airport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Airport.swift; sourceTree = "<group>"; };
+		2561443825D0DEF600F851E7 /* AirportResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportResponse.swift; sourceTree = "<group>"; };
+		2561443D25D0E0AB00F851E7 /* AirportFetchError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportFetchError.swift; sourceTree = "<group>"; };
+		2561444225D0E1E300F851E7 /* AirportPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportPin.swift; sourceTree = "<group>"; };
+		2561444B25D0E7DB00F851E7 /* LocationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHelper.swift; sourceTree = "<group>"; };
 		25CBE70625CE4FBA00598C28 /* AFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25CBE70925CE4FBA00598C28 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		25CBE71325CE4FBA00598C28 /* AFinder.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AFinder.xcdatamodel; sourceTree = "<group>"; };
@@ -332,9 +338,19 @@
 				2561441925D0C2F200F851E7 /* MapRemoteDataManager.swift */,
 				2561441A25D0C2F200F851E7 /* MapWireFrame.swift */,
 				2561443325D0D84800F851E7 /* Token.swift */,
-				2561443825D0DEF600F851E7 /* Airport.swift */,
+				2561443825D0DEF600F851E7 /* AirportResponse.swift */,
+				2561443D25D0E0AB00F851E7 /* AirportFetchError.swift */,
+				2561444225D0E1E300F851E7 /* AirportPin.swift */,
 			);
 			path = Map;
+			sourceTree = "<group>";
+		};
+		2561444A25D0E7D100F851E7 /* LocationHelper */ = {
+			isa = PBXGroup;
+			children = (
+				2561444B25D0E7DB00F851E7 /* LocationHelper.swift */,
+			);
+			path = LocationHelper;
 			sourceTree = "<group>";
 		};
 		25CBE6FD25CE4FBA00598C28 = {
@@ -393,6 +409,7 @@
 		25CBE74525CE552200598C28 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				2561444A25D0E7D100F851E7 /* LocationHelper */,
 				2561440D25D09DC600F851E7 /* UserPreferences */,
 				256143F525D060F100F851E7 /* Notifications */,
 				2548271E25CF9AB100268327 /* UIComponents */,
@@ -582,14 +599,16 @@
 				256143FF25D0616900F851E7 /* OnboardingSteps.swift in Sources */,
 				25CBE75025CE553F00598C28 /* WelcomeLocalDataManager.swift in Sources */,
 				2561442025D0C2F200F851E7 /* MapRemoteDataManager.swift in Sources */,
+				2561444325D0E1E300F851E7 /* AirportPin.swift in Sources */,
 				2548271025CF989100268327 /* LocalizableHelper.swift in Sources */,
 				25CBE75225CE553F00598C28 /* WelcomeInteractor.swift in Sources */,
 				25CBE75525CE553F00598C28 /* WelcomeWireFrame.swift in Sources */,
 				2561441D25D0C2F200F851E7 /* MapProtocols.swift in Sources */,
 				2548274825CFAA9100268327 /* AFSecondaryButton.swift in Sources */,
 				2561440F25D09DD100F851E7 /* UserPreferences.swift in Sources */,
-				2561443925D0DEF600F851E7 /* Airport.swift in Sources */,
+				2561443925D0DEF600F851E7 /* AirportResponse.swift in Sources */,
 				2548272025CF9C6800268327 /* AFPrimaryButton.swift in Sources */,
+				2561444C25D0E7DB00F851E7 /* LocationHelper.swift in Sources */,
 				2561441F25D0C2F200F851E7 /* MapView.swift in Sources */,
 				2561440925D09B8B00F851E7 /* RangeCircleView.swift in Sources */,
 				254827BE25CFCDF700268327 /* OBStepTwoView.swift in Sources */,
@@ -608,6 +627,7 @@
 				254827D425CFCE1000268327 /* OBStepThreeRemoteDataManager.swift in Sources */,
 				25CBE75425CE553F00598C28 /* WelcomeRemoteDataManager.swift in Sources */,
 				254827A525CFCCC200268327 /* OBStepOnePresenter.swift in Sources */,
+				2561443E25D0E0AB00F851E7 /* AirportFetchError.swift in Sources */,
 				254827AB25CFCCC200268327 /* OBStepOneWireFrame.swift in Sources */,
 				2548277025CFB25C00268327 /* OnboardingView.swift in Sources */,
 				254827BD25CFCDF700268327 /* OBStepTwoInteractor.swift in Sources */,

@@ -37,8 +37,8 @@ class AnimationWrapper {
         
         // Start the animation
         animationView.loopMode = .repeat(repeatMode)
+        animationView.backgroundBehavior = .pauseAndRestore
         animationView.play()
-        
     }
 }
 

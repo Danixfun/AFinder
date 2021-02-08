@@ -14,6 +14,14 @@ class WelcomeInteractor: WelcomeInteractorInputProtocol {
     weak var presenter: WelcomeInteractorOutputProtocol?
     var localDatamanager: WelcomeLocalDataManagerInputProtocol?
     var remoteDatamanager: WelcomeRemoteDataManagerInputProtocol?
+    
+    func setUpNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(self.openMapView(n:)), name: NotiNames.openMapView, object: nil)
+    }
+    
+    @objc private func openMapView(n: Notification){
+        self.presenter?.openMapView()
+    }
 
 }
 

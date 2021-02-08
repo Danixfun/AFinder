@@ -8,33 +8,6 @@
 import UIKit
 import CoreData
 
-
-/*
- 
- curl "https://test.api.amadeus.com/v1/security/oauth2/token" \
-      -H "Content-Type: application/x-www-form-urlencoded" \
-      -d "grant_type=client_credentials&client_id=FmoKSdrMksCAoAAxTaWhF0FmXubXuZWr&client_secret=5v5AAlWUYEdPM5F5"
- 
- 
- 
- {
-             "type": "amadeusOAuth2Token",
-             "username": "juandanieltd@gmail.com",
-             "application_name": "AFinder",
-             "client_id": "FmoKSdrMksCAoAAxTaWhF0FmXubXuZWr",
-             "token_type": "Bearer",
-             "access_token": "XvVgPoROJcLJoEQsbSKKoSSioS9U",
-             "expires_in": 1799,
-             "state": "approved",
-             "scope": ""
-         }
-
- 
- 
- */
-
-
-
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -43,9 +16,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        let welcomeView = MapWireFrame.createMapModule()
+        var firstView: UIViewController
+        
+        // Check wheter or not Onboarding is available
+        if let onboardingAvailable = UserDefaults.standard.object(forKey: UserPreferences.OnboardingAvailableKey) as? Bool {
+            if onboardingAvailable {
+                // Not the first type opening the app, but onboarding is available
+                firstView = WelcomeWireFrame.createWelcomeModule()
+            }
+            else{
+                // Onboarding not available AKA go straight to MapView
+                firstView = MapWireFrame.createMapModule()
+            }
+        }
+        else{
+            // This is the first time the user opens the app
+            UserDefaults.standard.set(true, forKey: UserPreferences.OnboardingAvailableKey)
+            firstView = WelcomeWireFrame.createWelcomeModule()
+            
+        }
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = welcomeView
+        window?.rootViewController = firstView
         window?.makeKeyAndVisible()
         
         return true

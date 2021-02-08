@@ -48,4 +48,12 @@ class WelcomeWireFrame: WelcomeWireFrameProtocol {
         }
     }
     
+    func openMapView(from view: WelcomeViewProtocol) {
+        let destination = MapWireFrame.createMapModule()
+        if let newView = view as? UIViewController{
+            destination.modalPresentationStyle = .fullScreen
+            newView.present(destination, animated: true, completion: nil)
+        }
+    }
+    
 }

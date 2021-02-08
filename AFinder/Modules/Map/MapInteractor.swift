@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreLocation
 
 class MapInteractor: MapInteractorInputProtocol {
     // MARK: Properties
@@ -14,15 +15,17 @@ class MapInteractor: MapInteractorInputProtocol {
     var localDatamanager: MapLocalDataManagerInputProtocol?
     var remoteDatamanager: MapRemoteDataManagerInputProtocol?
     
-    func findAirports() {
-        self.remoteDatamanager?.findAirports()
+    func findAirports(location: CLLocation) {
+        if let radius = UserDefaults.standard.value(forKey: UserPreferences.RangeKey) as? Int {
+            self.remoteDatamanager?.findAirports(location: location, radius: radius)
+        }
     }
 
 }
 
 extension MapInteractor: MapRemoteDataManagerOutputProtocol {
     // TODO: Implement use case methods
-    func foundAirports() {
-        self.presenter?.foundAirports()
+    func foundAirports(airports: AirportResponse?, error: AirportFetchError) {
+        self.presenter?.foundAirports(airports: airports, error: error)
     }
 }

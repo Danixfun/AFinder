@@ -21,6 +21,7 @@ protocol OnboardingWireFrameProtocol: class {
     // PRESENTER -> WIREFRAME
     static func createOnboardingModule() -> UIViewController
     func dismiss(view: OnboardingViewProtocol)
+    func finish(view: OnboardingViewProtocol)
 }
 
 protocol OnboardingPresenterProtocol: class {
@@ -37,6 +38,7 @@ protocol OnboardingInteractorOutputProtocol: class {
 // INTERACTOR -> PRESENTER
     func updateStep(index: Int, direction: UIPageViewController.NavigationDirection)
     func dismiss()
+    func finish()
 }
 
 protocol OnboardingInteractorInputProtocol: class {

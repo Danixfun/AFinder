@@ -7,9 +7,7 @@
 //
 
 import Foundation
-
-
-
+import CoreLocation
 
 class MapRemoteDataManager:MapRemoteDataManagerInputProtocol {
     
@@ -31,35 +29,50 @@ class MapRemoteDataManager:MapRemoteDataManagerInputProtocol {
     
     
     // MARK: Functions
-    func findAirports() {
+    func findAirports(location: CLLocation, radius: Int) {
         self.requestToken(completion: {token in
             // Do something with the token
             if let foundToken = token{
                 self.token = foundToken
-                self.fetchAirports(completion: {airports in
+                self.fetchAirports(location: location, radius: radius, completion: {airports in
                     if let foundAirports = airports {
-                        //
+                        // Success
+                        if foundAirports.data.count > 0{
+                            self.remoteRequestHandler?.foundAirports(airports: foundAirports, error: .None)
+                        }
+                        // Empty
+                        else{
+                            self.remoteRequestHandler?.foundAirports(airports: foundAirports, error: .Empty)
+                        }
                     }
                     else{
-
+                        // ServerError
+                        self.remoteRequestHandler?.foundAirports(airports: nil, error: .ServerError)
                     }
                 })
             }
             else{
-                // return error to interactor
+                // ServerError
+                self.remoteRequestHandler?.foundAirports(airports: nil, error: .ServerError)
             }
         })
     }
     
-    private func fetchAirports(completion: @escaping ([Airport]?)->Void){
+    private func fetchAirports(location: CLLocation, radius: Int, completion: @escaping (AirportResponse?)->Void){
+        /// Prepare parameters
+        let coordinate2D = location.coordinate
+        let latitude = String(coordinate2D.latitude)
+        let longitude = String(coordinate2D.longitude)
         
+        /// Prepare URL
         var url = URLComponents(string: "https://test.api.amadeus.com/v1/reference-data/locations/airports")!
         url.queryItems = [
-            URLQueryItem(name: "latitude", value: "32.728295"),
-            URLQueryItem(name: "longitude", value: "-117.069553"),
-            URLQueryItem(name: "radius", value: "500")
+            URLQueryItem(name: "latitude", value: latitude),
+            URLQueryItem(name: "longitude", value: longitude),
+            URLQueryItem(name: "radius", value: String(radius))
         ]
   
+        /// Request
         var request = URLRequest(url: url.url!)
         request.httpMethod = "GET"
         request.setValue("application/json; charset=utf8", forHTTPHeaderField: "Content-Type")
@@ -70,24 +83,24 @@ class MapRemoteDataManager:MapRemoteDataManagerInputProtocol {
         session.dataTask(with: request){(data, response, error) in
             guard let data = data, error == nil, let response = response as? HTTPURLResponse else {
                 print("An error has ocurred while fetching token: \(error!)")
-                completion?(nil)
+                completion(nil)
                 return
             }
             
             if response.statusCode == 200 {
                 do {
                     let decoder = JSONDecoder()
-                    let airportData = try decoder.decode(Airport.self, from: data)
-                    print(airportData)
+                    let airportData = try decoder.decode(AirportResponse.self, from: data)
+                    completion(airportData)
                 }
                 catch{
                     print("Error parsing json: \(error.localizedDescription)")
-                    completion?(nil)
+                    completion(nil)
                 }
             }
             else{
                 print("Error en respuesta del servidor: \(response.statusCode)")
-                completion?(nil)
+                completion(nil)
             }
             
         }.resume()

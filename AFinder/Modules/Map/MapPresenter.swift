@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreLocation
 
 class MapPresenter  {
     
@@ -21,12 +22,15 @@ extension MapPresenter: MapPresenterProtocol {
     // TODO: implement presenter methods
     func viewDidLoad() {
         self.view?.setUpMap()
-        self.interactor?.findAirports()
+    }
+    
+    func findAirports(location: CLLocation){
+        self.interactor?.findAirports(location: location)
     }
 }
 
 extension MapPresenter: MapInteractorOutputProtocol {
-    func foundAirports() {
-        
+    func foundAirports(airports: AirportResponse?, error: AirportFetchError) {
+        self.view?.foundAirports(airports: airports, error: error)
     }
 }
