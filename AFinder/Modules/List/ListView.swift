@@ -10,17 +10,56 @@ import Foundation
 import UIKit
 
 class ListView: UIViewController {
-
+    
+    // MARK: Properties
+    var airports: AirportResponse?
+    let listTableViewCellID = "ListTableViewCell"
+    let rowHeight: CGFloat = 80.0
+    
+    // MARK: IBOutlet
+    @IBOutlet weak var tableView: UITableView!
+    
     // MARK: Properties
     var presenter: ListPresenterProtocol?
 
     // MARK: Lifecycle
-
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.presenter?.viewDidLoad()
     }
 }
 
 extension ListView: ListViewProtocol {
     // TODO: implement view output methods
+    func setUpTableView(){
+        let nib = UINib(nibName: listTableViewCellID, bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: listTableViewCellID)
+        tableView.delegate = self
+        tableView.dataSource = self
+    }
 }
+
+extension ListView: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return rowHeight
+    }
+}
+
+extension ListView: UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return airports?.data.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: listTableViewCellID, for: indexPath) as! ListTableViewCell
+        cell.airportData = airports?.data[indexPath.row]
+        return cell
+    }
+    
+}
+

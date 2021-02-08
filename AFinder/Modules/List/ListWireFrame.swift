@@ -11,8 +11,8 @@ import UIKit
 
 class ListWireFrame: ListWireFrameProtocol {
 
-    class func createListModule() -> UIViewController {
-        let navController = mainStoryboard.instantiateViewController(withIdentifier: "ListView")
+    class func createListModule(airports: AirportResponse?) -> UIViewController {
+        let navController = mainStoryboard.instantiateViewController(withIdentifier: "ListNavigationView")
         if let view = navController.children.first as? ListView {
             let presenter: ListPresenterProtocol & ListInteractorOutputProtocol = ListPresenter()
             let interactor: ListInteractorInputProtocol & ListRemoteDataManagerOutputProtocol = ListInteractor()
@@ -21,6 +21,7 @@ class ListWireFrame: ListWireFrameProtocol {
             let wireFrame: ListWireFrameProtocol = ListWireFrame()
             
             view.presenter = presenter
+            view.airports = airports
             presenter.view = view
             presenter.wireFrame = wireFrame
             presenter.interactor = interactor

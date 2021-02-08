@@ -46,4 +46,12 @@ class MapWireFrame: MapWireFrameProtocol {
         }
     }
     
+    func openList(from view:MapViewProtocol, airports: AirportResponse?) {
+        let listView = ListWireFrame.createListModule(airports: airports)
+        if let actualView = view as? UIViewController{
+            actualView.present(listView, animated: true, completion: nil)
+        }
+    }
+    
+    
 }

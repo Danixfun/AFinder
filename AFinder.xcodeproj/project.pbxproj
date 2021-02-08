@@ -78,6 +78,8 @@
 		25899F9F25D1A98100C7F043 /* ListRemoteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25899F9825D1A98100C7F043 /* ListRemoteDataManager.swift */; };
 		25899FA025D1A98100C7F043 /* ListWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25899F9925D1A98100C7F043 /* ListWireFrame.swift */; };
 		25899FA525D1A98C00C7F043 /* ListView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25899FA425D1A98C00C7F043 /* ListView.storyboard */; };
+		25899FB425D1B0E900C7F043 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25899FB225D1B0E900C7F043 /* ListTableViewCell.swift */; };
+		25899FB525D1B0E900C7F043 /* ListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25899FB325D1B0E900C7F043 /* ListTableViewCell.xib */; };
 		25CBE70A25CE4FBA00598C28 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CBE70925CE4FBA00598C28 /* AppDelegate.swift */; };
 		25CBE71425CE4FBA00598C28 /* AFinder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 25CBE71225CE4FBA00598C28 /* AFinder.xcdatamodeld */; };
 		25CBE71625CE4FBB00598C28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25CBE71525CE4FBB00598C28 /* Assets.xcassets */; };
@@ -183,6 +185,8 @@
 		25899F9825D1A98100C7F043 /* ListRemoteDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRemoteDataManager.swift; sourceTree = "<group>"; };
 		25899F9925D1A98100C7F043 /* ListWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListWireFrame.swift; sourceTree = "<group>"; };
 		25899FA425D1A98C00C7F043 /* ListView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ListView.storyboard; sourceTree = "<group>"; };
+		25899FB225D1B0E900C7F043 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
+		25899FB325D1B0E900C7F043 /* ListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListTableViewCell.xib; sourceTree = "<group>"; };
 		25CBE70625CE4FBA00598C28 /* AFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25CBE70925CE4FBA00598C28 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		25CBE71325CE4FBA00598C28 /* AFinder.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AFinder.xcdatamodel; sourceTree = "<group>"; };
@@ -399,6 +403,8 @@
 				25899FA425D1A98C00C7F043 /* ListView.storyboard */,
 				25899F9825D1A98100C7F043 /* ListRemoteDataManager.swift */,
 				25899F9925D1A98100C7F043 /* ListWireFrame.swift */,
+				25899FB225D1B0E900C7F043 /* ListTableViewCell.swift */,
+				25899FB325D1B0E900C7F043 /* ListTableViewCell.xib */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -618,6 +624,7 @@
 				2561440425D099FC00F851E7 /* airplane_landing.json in Resources */,
 				25CBE71625CE4FBB00598C28 /* Assets.xcassets in Resources */,
 				2548274025CFA8A200268327 /* welcome_airplane.json in Resources */,
+				25899FB525D1B0E900C7F043 /* ListTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -691,6 +698,7 @@
 				25CBE75425CE553F00598C28 /* WelcomeRemoteDataManager.swift in Sources */,
 				254827A525CFCCC200268327 /* OBStepOnePresenter.swift in Sources */,
 				2561443E25D0E0AB00F851E7 /* AirportFetchError.swift in Sources */,
+				25899FB425D1B0E900C7F043 /* ListTableViewCell.swift in Sources */,
 				254827AB25CFCCC200268327 /* OBStepOneWireFrame.swift in Sources */,
 				2548277025CFB25C00268327 /* OnboardingView.swift in Sources */,
 				254827BD25CFCDF700268327 /* OBStepTwoInteractor.swift in Sources */,

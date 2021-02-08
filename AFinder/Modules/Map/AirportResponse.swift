@@ -12,6 +12,8 @@ struct AirportResponse: Codable {
     struct AirportData: Codable {
         
         var name: String
+        var iataCode: String?
+        var timeZoneOffset: String?
         var geoCode: GeoCode
         
         struct GeoCode: Codable {

@@ -18,6 +18,7 @@ class MapView: UIViewController {
     // MARK: Properties
     var presenter: MapPresenterProtocol?
     var locationManager = CLLocationManager()
+    var airports: AirportResponse?
     
     // MARK: IBOutlet
     @IBOutlet weak var mapContainer: MKMapView!
@@ -45,6 +46,7 @@ class MapView: UIViewController {
     }
     
     @IBAction func listButtonAction(_ sender: Any) {
+        self.presenter?.listButtonAction(airports: self.airports)
     }
     
     
@@ -58,10 +60,8 @@ class MapView: UIViewController {
 extension MapView: MapViewProtocol {
     
     func setUpButtons() {
-        
         self.listButton.setQuick(icon: "clipboard")
         self.radiusButton.setQuick(icon: "radius")
-        
     }
     
     func setUpNoGPSContainer() {
@@ -103,9 +103,12 @@ extension MapView: MapViewProtocol {
     // Populate the map with airports
     func foundAirports(airports: AirportResponse) {
         // Remove all current annotations
-        mapContainer.removeAnnotations(mapContainer.annotations)
-        // Add new annotations
+        DispatchQueue.main.async {
+            self.mapContainer.removeAnnotations(self.mapContainer.annotations)
+        }
         
+        // Add new annotations
+        self.airports = airports
         for a in airports.data {
             let newAirportPin = AirportPin(
                 title: a.name,
@@ -126,6 +129,8 @@ extension MapView: MapViewProtocol {
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: {
             self.mapContainer.isHidden = true
             self.noGPSContainer.isHidden = true
+            self.listButton.isHidden = true
+            self.radiusButton.isHidden = true
             self.noWiFiContainer.isHidden = false
         })
     }
@@ -134,7 +139,10 @@ extension MapView: MapViewProtocol {
         DispatchQueue.main.async {
             self.mapContainer.isHidden = true
             self.noWiFiContainer.isHidden = true
+            self.listButton.isHidden = true
+            self.radiusButton.isHidden = true
             self.noGPSContainer.isHidden = false
+
         }
     }
     
@@ -142,6 +150,8 @@ extension MapView: MapViewProtocol {
         DispatchQueue.main.async {
             self.noGPSContainer.isHidden = true
             self.noWiFiContainer.isHidden = true
+            self.listButton.isHidden = false
+            self.radiusButton.isHidden = false
             self.mapContainer.isHidden = false
         }
     }
@@ -157,11 +167,13 @@ extension MapView: CLLocationManagerDelegate{
             self.presenter?.deniedMap()
         case .authorizedAlways, .authorizedWhenInUse:
             self.presenter?.grantMap()
+            if let location = manager.location {
+                self.presenter?.findAirports(location: location)
+            }
+            
         @unknown default:
             break
         }
-        
-        print("Status did change")
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {

@@ -20,6 +20,7 @@ class ListPresenter  {
 extension ListPresenter: ListPresenterProtocol {
     // TODO: implement presenter methods
     func viewDidLoad() {
+        self.view?.setUpTableView()
     }
 }
 

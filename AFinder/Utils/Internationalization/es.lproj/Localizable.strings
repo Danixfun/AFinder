@@ -21,3 +21,6 @@
 "CantFindYouLabel" = "No podemos encontrarte";
 "CantFindYouInstructionsLabel" = "Ve a la configuración de tu dispositivo, luego busca la app AFinder y otórgale permiso para usar la localización.";
 "ConnectionLostLabel" = "Conexión perdida";
+"Unknown code" = "Código desconocido";
+"Time zone" = "Huso horario";
+"Unknown time zone" = "Huso horario desconocido";

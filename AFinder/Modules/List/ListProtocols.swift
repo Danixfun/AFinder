@@ -12,11 +12,12 @@ import UIKit
 protocol ListViewProtocol: class {
     // PRESENTER -> VIEW
     var presenter: ListPresenterProtocol? { get set }
+    func setUpTableView()
 }
 
 protocol ListWireFrameProtocol: class {
     // PRESENTER -> WIREFRAME
-    static func createListModule() -> UIViewController
+    static func createListModule(airports: AirportResponse?) -> UIViewController
 }
 
 protocol ListPresenterProtocol: class {

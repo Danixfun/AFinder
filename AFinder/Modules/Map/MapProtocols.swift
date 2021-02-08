@@ -27,6 +27,7 @@ protocol MapWireFrameProtocol: class {
     // PRESENTER -> WIREFRAME
     static func createMapModule() -> UIViewController
     func openSettingsAction()
+    func openList(from view:MapViewProtocol, airports: AirportResponse?)
 }
 
 protocol MapPresenterProtocol: class {
@@ -41,6 +42,8 @@ protocol MapPresenterProtocol: class {
     func grantMap()
     func openSettingsAction()
     func refreshAction()
+    func listButtonAction(airports: AirportResponse?)
+    func radiusButtonAction()
 }
 
 protocol MapInteractorOutputProtocol: class {

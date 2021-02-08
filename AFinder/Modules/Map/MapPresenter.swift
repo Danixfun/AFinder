@@ -19,6 +19,7 @@ class MapPresenter  {
 }
 
 extension MapPresenter: MapPresenterProtocol {
+    
     // TODO: implement presenter methods
     func viewDidLoad() {
         self.interactor?.getCurrentRange()
@@ -44,6 +45,14 @@ extension MapPresenter: MapPresenterProtocol {
     
     func refreshAction() {
         self.interactor?.getCurrentRange()
+    }
+    
+    func listButtonAction(airports: AirportResponse?) {
+        self.wireFrame?.openList(from: self.view!, airports: airports)
+    }
+    
+    func radiusButtonAction() {
+        
     }
 }
 
