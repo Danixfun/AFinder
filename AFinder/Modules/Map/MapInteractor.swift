@@ -16,9 +16,18 @@ class MapInteractor: MapInteractorInputProtocol {
     var remoteDatamanager: MapRemoteDataManagerInputProtocol?
     
     func findAirports(location: CLLocation) {
-        if let radius = UserDefaults.standard.value(forKey: UserPreferences.RangeKey) as? Int {
-            self.remoteDatamanager?.findAirports(location: location, radius: radius)
+        self.remoteDatamanager?.findAirports(location: location, radius: rangeFromUserDefaults())
+    }
+    
+    func getCurrentRange() {
+        self.presenter?.currentRange(range: rangeFromUserDefaults())
+    }
+        
+    private func rangeFromUserDefaults()->Int{
+        if let range = UserDefaults.standard.value(forKey: UserPreferences.RangeKey) as? Int{
+            return range
         }
+        return RadiusRangeValues.defaultValue//Default value to prevent errors
     }
 
 }

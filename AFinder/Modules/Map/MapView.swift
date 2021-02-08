@@ -30,25 +30,6 @@ class MapView: UIViewController {
 
 extension MapView: MapViewProtocol {
     
-    func setUpMap() {
-        if !isLocationServiceEnabled() {
-            // Show no services enabled animation and open settings button
-            print("Location service is disabled")
-            return
-        }
-        mapContainer.delegate = self
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-        
-        guard let currentLocation = locationManager.location else {
-            return
-        }
-        
-        mapContainer.centerToLocation(currentLocation)
-        self.presenter?.findAirports(location: currentLocation)
-        
-    }
-    
     // Populate the map with airports
     func foundAirports(airports: AirportResponse?, error: AirportFetchError) {
         // Remove all current annotations
@@ -62,9 +43,28 @@ extension MapView: MapViewProtocol {
             let newAirportPin = AirportPin(
                 title: a.name,
                 coordinate: CLLocationCoordinate2D(latitude: a.geoCode.latitude, longitude: a.geoCode.longitude))
-            
-            mapContainer.addAnnotation(newAirportPin)
+            DispatchQueue.main.async {
+                self.mapContainer.addAnnotation(newAirportPin)
+            }
         }
+    }
+    
+    func centerMapWith(range: Int) {
+        print("setup")
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+        
+        if !isLocationServiceEnabled() {
+            // Show no services enabled animation and open settings button
+            print("Location service is disabled")
+            return
+        }
+        mapContainer.delegate = self
+        guard let currentLocation = locationManager.location else {
+            return
+        }
+        self.presenter?.findAirports(location: currentLocation)
+        mapContainer.centerToLocation(currentLocation, regionRadius: CLLocationDistance(range*1000))
     }
 }
 
@@ -73,6 +73,7 @@ extension MapView: CLLocationManagerDelegate{
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         // Update UI based on status
+        print(status)
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {

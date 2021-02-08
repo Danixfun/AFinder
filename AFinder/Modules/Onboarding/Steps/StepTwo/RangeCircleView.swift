@@ -19,7 +19,7 @@ class RangeCircleView: UIView {
     
     lazy var circleSizes: [CGFloat] = {
         var temp = [CGFloat]()
-        for i in (0...20).reversed(){
+        for i in (0...RadiusRangeValues.defaultValue).reversed(){
             temp.append(CGFloat(i+2))
         }
         return temp
@@ -53,7 +53,7 @@ class RangeCircleView: UIView {
             
             // Create Circle
             let center = CGPoint(x: frame.size.width/2, y: frame.size.height/2)
-            let radius = (frame.size.width - 10) / circleSizes[Int(circleRadius)]
+            let radius = (frame.size.width - 10) / circleSizes[Int(circleRadius/2.0)]
             context.addArc(center: center, radius: radius, startAngle: 0.0, endAngle: .pi * 2.0, clockwise: true)
                 
             // Draw

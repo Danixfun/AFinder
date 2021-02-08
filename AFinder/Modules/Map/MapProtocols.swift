@@ -13,7 +13,7 @@ import CoreLocation
 protocol MapViewProtocol: class {
     // PRESENTER -> VIEW
     var presenter: MapPresenterProtocol? { get set }
-    func setUpMap()
+    func centerMapWith(range: Int)
     func foundAirports(airports:AirportResponse?, error: AirportFetchError)
 }
 
@@ -35,6 +35,7 @@ protocol MapPresenterProtocol: class {
 protocol MapInteractorOutputProtocol: class {
     // INTERACTOR -> PRESENTER
     func foundAirports(airports:AirportResponse?, error: AirportFetchError)
+    func currentRange(range: Int)
 }
 
 protocol MapInteractorInputProtocol: class {
@@ -44,6 +45,7 @@ protocol MapInteractorInputProtocol: class {
     var remoteDatamanager: MapRemoteDataManagerInputProtocol? { get set }
     
     func findAirports(location: CLLocation)
+    func getCurrentRange()
 }
 
 protocol MapRemoteDataManagerInputProtocol: class {

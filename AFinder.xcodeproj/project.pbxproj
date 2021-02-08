@@ -66,6 +66,7 @@
 		2561443E25D0E0AB00F851E7 /* AirportFetchError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2561443D25D0E0AB00F851E7 /* AirportFetchError.swift */; };
 		2561444325D0E1E300F851E7 /* AirportPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2561444225D0E1E300F851E7 /* AirportPin.swift */; };
 		2561444C25D0E7DB00F851E7 /* LocationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2561444B25D0E7DB00F851E7 /* LocationHelper.swift */; };
+		2561445225D1053500F851E7 /* RadiusRangeValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2561445125D1053500F851E7 /* RadiusRangeValues.swift */; };
 		25CBE70A25CE4FBA00598C28 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CBE70925CE4FBA00598C28 /* AppDelegate.swift */; };
 		25CBE71425CE4FBA00598C28 /* AFinder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 25CBE71225CE4FBA00598C28 /* AFinder.xcdatamodeld */; };
 		25CBE71625CE4FBB00598C28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25CBE71525CE4FBB00598C28 /* Assets.xcassets */; };
@@ -159,6 +160,7 @@
 		2561443D25D0E0AB00F851E7 /* AirportFetchError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportFetchError.swift; sourceTree = "<group>"; };
 		2561444225D0E1E300F851E7 /* AirportPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportPin.swift; sourceTree = "<group>"; };
 		2561444B25D0E7DB00F851E7 /* LocationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHelper.swift; sourceTree = "<group>"; };
+		2561445125D1053500F851E7 /* RadiusRangeValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadiusRangeValues.swift; sourceTree = "<group>"; };
 		25CBE70625CE4FBA00598C28 /* AFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25CBE70925CE4FBA00598C28 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		25CBE71325CE4FBA00598C28 /* AFinder.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AFinder.xcdatamodel; sourceTree = "<group>"; };
@@ -353,6 +355,14 @@
 			path = LocationHelper;
 			sourceTree = "<group>";
 		};
+		2561445025D1052600F851E7 /* Range */ = {
+			isa = PBXGroup;
+			children = (
+				2561445125D1053500F851E7 /* RadiusRangeValues.swift */,
+			);
+			path = Range;
+			sourceTree = "<group>";
+		};
 		25CBE6FD25CE4FBA00598C28 = {
 			isa = PBXGroup;
 			children = (
@@ -409,6 +419,7 @@
 		25CBE74525CE552200598C28 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				2561445025D1052600F851E7 /* Range */,
 				2561444A25D0E7D100F851E7 /* LocationHelper */,
 				2561440D25D09DC600F851E7 /* UserPreferences */,
 				256143F525D060F100F851E7 /* Notifications */,
@@ -619,6 +630,7 @@
 				2548276325CFB1C400268327 /* OnboardingWireFrame.swift in Sources */,
 				254827D525CFCE1000268327 /* OBStepThreeWireFrame.swift in Sources */,
 				2548275E25CFB1C400268327 /* OnboardingLocalDataManager.swift in Sources */,
+				2561445225D1053500F851E7 /* RadiusRangeValues.swift in Sources */,
 				254827A925CFCCC200268327 /* OBStepOneView.swift in Sources */,
 				25CBE75325CE553F00598C28 /* WelcomeView.swift in Sources */,
 				25CBE74F25CE553F00598C28 /* WelcomePresenter.swift in Sources */,

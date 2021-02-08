@@ -15,9 +15,9 @@ class OBStepTwoView: UIViewController, OnboardingStepProtocol {
     var presenter: OBStepTwoPresenterProtocol?
     var index: Int = 0
     var rangeCircle = RangeCircleView()
-    var currentRange: Int = 10
-    let minRange: Int = 1
-    let maxRange: Int = 20
+    var currentRange: Int = RadiusRangeValues.defaultValue
+    let minRange: Int = RadiusRangeValues.min
+    let maxRange: Int = RadiusRangeValues.max
     var currentRangeString: String {
         if currentRange == 1 {
             return "\(currentRange) km"

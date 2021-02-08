@@ -21,7 +21,7 @@ class MapPresenter  {
 extension MapPresenter: MapPresenterProtocol {
     // TODO: implement presenter methods
     func viewDidLoad() {
-        self.view?.setUpMap()
+        self.interactor?.getCurrentRange()
     }
     
     func findAirports(location: CLLocation){
@@ -32,5 +32,9 @@ extension MapPresenter: MapPresenterProtocol {
 extension MapPresenter: MapInteractorOutputProtocol {
     func foundAirports(airports: AirportResponse?, error: AirportFetchError) {
         self.view?.foundAirports(airports: airports, error: error)
+    }
+    
+    func currentRange(range: Int) {
+        self.view?.centerMapWith(range: range)
     }
 }
