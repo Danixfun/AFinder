@@ -19,10 +19,10 @@ class ListPresenter  {
 
 extension ListPresenter: ListPresenterProtocol {
     // TODO: implement presenter methods
-    func viewDidLoad() {
+    func viewDidLoad(airports: AirportResponse?) {
         self.view?.setUpButtons()
         self.view?.setUpNavigationBarTitle()
-        self.view?.setUpTableView()
+        self.interactor?.handleNumberOfAirports(airports: airports)
     }
 
     func backButtonAction() {
@@ -31,5 +31,12 @@ extension ListPresenter: ListPresenterProtocol {
 }
 
 extension ListPresenter: ListInteractorOutputProtocol {
-    // TODO: implement interactor output methods
+    func handleNumberOfAirports(isEmpty: Bool) {
+        if isEmpty {
+            self.view?.setUpEmptyTableView()
+        }
+        else {
+            self.view?.setUpTableView()
+        }
+    }
 }

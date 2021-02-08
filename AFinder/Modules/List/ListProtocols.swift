@@ -12,9 +12,10 @@ import UIKit
 protocol ListViewProtocol: class {
     // PRESENTER -> VIEW
     var presenter: ListPresenterProtocol? { get set }
-    func setUpTableView()
     func setUpButtons()
     func setUpNavigationBarTitle()
+    func setUpTableView()
+    func setUpEmptyTableView()
 }
 
 protocol ListWireFrameProtocol: class {
@@ -29,12 +30,13 @@ protocol ListPresenterProtocol: class {
     var interactor: ListInteractorInputProtocol? { get set }
     var wireFrame: ListWireFrameProtocol? { get set }
     
-    func viewDidLoad()
+    func viewDidLoad(airports: AirportResponse?)
     func backButtonAction()
 }
 
 protocol ListInteractorOutputProtocol: class {
-// INTERACTOR -> PRESENTER
+    // INTERACTOR -> PRESENTER
+    func handleNumberOfAirports(isEmpty: Bool)
 }
 
 protocol ListInteractorInputProtocol: class {
@@ -42,6 +44,8 @@ protocol ListInteractorInputProtocol: class {
     var presenter: ListInteractorOutputProtocol? { get set }
     var localDatamanager: ListLocalDataManagerInputProtocol? { get set }
     var remoteDatamanager: ListRemoteDataManagerInputProtocol? { get set }
+    
+    func handleNumberOfAirports(airports: AirportResponse?)
 }
 
 protocol ListRemoteDataManagerInputProtocol: class {

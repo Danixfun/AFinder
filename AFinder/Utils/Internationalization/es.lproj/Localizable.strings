@@ -25,3 +25,5 @@
 "Time zone" = "Huso horario";
 "Unknown time zone" = "Huso horario desconocido";
 "Airports found" = "Encontrados";
+"No results" = "Sin resultados";
+"No results message" = "Nuestra API no pudo encontrar aeropuertos cercanos a tu ubicación. Intenta ampliando el rango de búsqueda o contacta al equipo de AFind para agregar un aeropuerto a la lista.";

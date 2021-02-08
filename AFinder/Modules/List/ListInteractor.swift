@@ -14,6 +14,11 @@ class ListInteractor: ListInteractorInputProtocol {
     weak var presenter: ListInteractorOutputProtocol?
     var localDatamanager: ListLocalDataManagerInputProtocol?
     var remoteDatamanager: ListRemoteDataManagerInputProtocol?
+    
+    func handleNumberOfAirports(airports: AirportResponse?) {
+        let isEmpty = (airports?.data.count == 0 || airports == nil)
+        self.presenter?.handleNumberOfAirports(isEmpty: isEmpty)
+    }
 
 }
 

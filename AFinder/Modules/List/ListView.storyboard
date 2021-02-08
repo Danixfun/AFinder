@@ -42,11 +42,42 @@
                     </navigationItem>
                     <connections>
                         <outlet property="backButton" destination="et8-nS-XaM" id="RZ7-HE-8hU"/>
+                        <outlet property="emptySearchContainer" destination="BGS-24-pPJ" id="xko-gb-rzy"/>
                         <outlet property="navigationBarComponent" destination="zrv-uf-boE" id="hAH-qg-pi3"/>
+                        <outlet property="noResultsLabel" destination="PPd-k7-y3L" id="DH7-Fc-L6t"/>
+                        <outlet property="noResultsMessageLabel" destination="dt3-jC-tsG" id="eix-kv-t5A"/>
                         <outlet property="tableView" destination="paF-vQ-5zq" id="laS-PE-qqT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CgL-Mo-b97" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="BGS-24-pPJ">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="292"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No results" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PPd-k7-y3L">
+                            <rect key="frame" x="32" y="16" width="311" height="41.5"/>
+                            <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="36"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No results message" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dt3-jC-tsG">
+                            <rect key="frame" x="32" y="65.5" width="311" height="20"/>
+                            <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <viewLayoutGuide key="safeArea" id="2zs-t7-tPf"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="2zs-t7-tPf" firstAttribute="trailing" secondItem="PPd-k7-y3L" secondAttribute="trailing" constant="32" id="8EL-Ab-yGY"/>
+                        <constraint firstItem="PPd-k7-y3L" firstAttribute="leading" secondItem="2zs-t7-tPf" secondAttribute="leading" constant="32" id="B1P-R3-Bgb"/>
+                        <constraint firstItem="dt3-jC-tsG" firstAttribute="leading" secondItem="PPd-k7-y3L" secondAttribute="leading" id="C7N-gr-CmW"/>
+                        <constraint firstItem="dt3-jC-tsG" firstAttribute="trailing" secondItem="PPd-k7-y3L" secondAttribute="trailing" id="T5J-hx-nQs"/>
+                        <constraint firstItem="PPd-k7-y3L" firstAttribute="top" secondItem="BGS-24-pPJ" secondAttribute="top" constant="16" id="Zkc-wf-EKy"/>
+                        <constraint firstItem="dt3-jC-tsG" firstAttribute="top" secondItem="PPd-k7-y3L" secondAttribute="bottom" constant="8" id="z3l-I7-lzx"/>
+                    </constraints>
+                </view>
             </objects>
             <point key="canvasLocation" x="640.57971014492762" y="-103.125"/>
         </scene>

@@ -20,6 +20,9 @@ class ListView: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var backButton: UIBarButtonItem!
     @IBOutlet weak var navigationBarComponent: UINavigationItem!
+    @IBOutlet var emptySearchContainer: UIView!
+    @IBOutlet weak var noResultsLabel: UILabel!
+    @IBOutlet weak var noResultsMessageLabel: UILabel!
     
     // MARK: IBAction
     @IBAction func backButtonAction(_ sender: Any) {
@@ -32,7 +35,7 @@ class ListView: UIViewController {
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.presenter?.viewDidLoad()
+        self.presenter?.viewDidLoad(airports: airports)
     }
 }
 
@@ -52,6 +55,13 @@ extension ListView: ListViewProtocol {
         tableView.register(nib, forCellReuseIdentifier: listTableViewCellID)
         tableView.delegate = self
         tableView.dataSource = self
+    }
+    
+    func setUpEmptyTableView() {
+        tableView.backgroundView = emptySearchContainer
+        tableView.separatorStyle = .none
+        noResultsLabel.text = "No results".localized()
+        noResultsMessageLabel.text = "No results message".localized()
     }
 }
 
