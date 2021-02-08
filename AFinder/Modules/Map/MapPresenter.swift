@@ -25,6 +25,7 @@ extension MapPresenter: MapPresenterProtocol {
         self.view?.setUpMap()
         self.view?.setUpNoGPSContainer()
         self.view?.setUpNoWiFiContainer()
+        self.view?.setUpHints()
         self.interactor?.setUpLocationManager()
         self.interactor?.setUpNotifications()
     }
@@ -61,13 +62,15 @@ extension MapPresenter: MapPresenterProtocol {
 
 extension MapPresenter: MapInteractorOutputProtocol {
     
-    func foundAirports(airports: AirportResponse) {
+    func foundAirports(airports: AirportResponse, hint: String) {
         self.view?.grantMap()
+        self.view?.updateHintWithSearchResult(searchResultHint: hint)
         self.view?.foundAirports(airports: airports)
     }
     
-    func emptyAirports() {
+    func emptyAirports(hint: String) {
         self.view?.grantMap()
+        self.view?.updateHintWithSearchResult(searchResultHint: hint)
         self.view?.emptyAirports()
     }
     
@@ -89,6 +92,10 @@ extension MapPresenter: MapInteractorOutputProtocol {
     
     func hideMap() {
         self.view?.deniedMap()
+    }
+    
+    func updateHintWith(hint: String) {
+        self.view?.updateHintWith(hint: hint)
     }
 
 }

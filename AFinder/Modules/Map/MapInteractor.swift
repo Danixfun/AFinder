@@ -56,27 +56,37 @@ class MapInteractor:NSObject, MapInteractorInputProtocol {
     }
     
     @objc func updateMapWithNewRange(n: Notification) {
+        self.presenter?.updateHintWith(hint: "Searching...".localized())
         self.refreshAction()
+    }
+    
+    private func makeSearchResultHint(foundNumber: Int)->String{
+        let foundTranslation = "Found".localized()
+        var airportsTranslation = "airports".localized()
+        if foundNumber == 1{
+            airportsTranslation = "airport".localized()
+        }
+        return "\(foundTranslation) \(foundNumber) \(airportsTranslation)"
     }
 }
 
 extension MapInteractor: MapRemoteDataManagerOutputProtocol {
     // TODO: Implement use case methods
     func foundAirports(airports: AirportResponse?, error: AirportFetchError) {
+        let searchHint = makeSearchResultHint(foundNumber: airports?.data.count ?? 0)
         if error == .None{
             guard let airports = airports else {
-                self.presenter?.emptyAirports()
+                self.presenter?.emptyAirports(hint: searchHint)
                 return
             }
-            self.presenter?.foundAirports(airports: airports)
+            self.presenter?.foundAirports(airports: airports, hint: searchHint)
         }
         else if error == .Empty{
-            self.presenter?.emptyAirports()
+            self.presenter?.emptyAirports(hint: searchHint)
         }
         else if error == .ServerError {
             self.presenter?.errorLoadingAirports()
         }
-        
     }
 }
 

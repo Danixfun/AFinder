@@ -21,7 +21,10 @@ protocol MapViewProtocol: class {
     func grantMap()
     func setUpNoGPSContainer()
     func setUpNoWiFiContainer()
+    func setUpHints()
     func setUpMap()
+    func updateHintWithSearchResult(searchResultHint: String)
+    func updateHintWith(hint: String)
 }
 
 protocol MapWireFrameProtocol: class {
@@ -50,13 +53,14 @@ protocol MapPresenterProtocol: class {
 
 protocol MapInteractorOutputProtocol: class {
     // INTERACTOR -> PRESENTER
-    func foundAirports(airports:AirportResponse)
-    func emptyAirports()
+    func foundAirports(airports:AirportResponse, hint: String)
+    func emptyAirports(hint: String)
     func errorLoadingAirports()
     func locationDisabled()
     func centerMapWith(location: CLLocation, range: Int)
     func showMap()
     func hideMap()
+    func updateHintWith(hint: String)
 }
 
 protocol MapInteractorInputProtocol: class {

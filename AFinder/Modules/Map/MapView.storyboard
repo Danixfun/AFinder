@@ -40,11 +40,31 @@
                                     <action selector="listButtonAction:" destination="zgd-r5-elH" eventType="touchUpInside" id="GOc-Jf-kyo"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LjI-bu-c5h">
+                                <rect key="frame" x="366" y="60" width="16" height="40"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fcx-Dk-ny5">
+                                        <rect key="frame" x="8" y="8" width="0.0" height="24"/>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="13"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="0e5-0k-nLQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="fcx-Dk-ny5" secondAttribute="trailing" constant="8" id="8S9-Ch-Fyf"/>
+                                    <constraint firstAttribute="bottom" secondItem="fcx-Dk-ny5" secondAttribute="bottom" constant="8" id="neT-Kl-aii"/>
+                                    <constraint firstItem="fcx-Dk-ny5" firstAttribute="leading" secondItem="LjI-bu-c5h" secondAttribute="leading" constant="8" id="teC-rN-lBb"/>
+                                    <constraint firstItem="fcx-Dk-ny5" firstAttribute="top" secondItem="LjI-bu-c5h" secondAttribute="top" constant="8" id="x9v-kn-mwI"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Gjq-kV-N96"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Gjq-kV-N96" firstAttribute="trailing" secondItem="hF3-wb-JTQ" secondAttribute="trailing" constant="16" id="CPL-Af-uUB"/>
+                            <constraint firstItem="Gjq-kV-N96" firstAttribute="trailing" secondItem="LjI-bu-c5h" secondAttribute="trailing" constant="32" id="JAf-1N-xoR"/>
                             <constraint firstItem="K3O-WZ-b2K" firstAttribute="leading" secondItem="Gjq-kV-N96" secondAttribute="leading" id="UIW-pZ-nFE"/>
                             <constraint firstItem="K3O-WZ-b2K" firstAttribute="trailing" secondItem="Gjq-kV-N96" secondAttribute="trailing" id="UOV-sg-omV"/>
                             <constraint firstItem="Gjq-kV-N96" firstAttribute="trailing" secondItem="rHl-Ad-64y" secondAttribute="trailing" constant="16" id="Ug7-go-F6G"/>
@@ -52,6 +72,7 @@
                             <constraint firstAttribute="bottom" secondItem="K3O-WZ-b2K" secondAttribute="bottom" id="cV4-GY-pn3"/>
                             <constraint firstItem="hF3-wb-JTQ" firstAttribute="top" secondItem="rHl-Ad-64y" secondAttribute="bottom" constant="16" id="en0-cL-xaG"/>
                             <constraint firstItem="K3O-WZ-b2K" firstAttribute="top" secondItem="vKN-H7-up3" secondAttribute="top" id="fjf-hh-YIl"/>
+                            <constraint firstItem="LjI-bu-c5h" firstAttribute="top" secondItem="Gjq-kV-N96" secondAttribute="top" constant="16" id="nm6-Mp-Odp"/>
                         </constraints>
                     </view>
                     <connections>
@@ -60,6 +81,8 @@
                         <outlet property="cantFindYouLabel" destination="viL-e9-4RT" id="9iZ-gr-0Dy"/>
                         <outlet property="connectionLostAnimationContainer" destination="5CK-N5-vEX" id="2oH-aq-WU9"/>
                         <outlet property="connectionLostLabel" destination="6rJ-Yw-DFF" id="bi6-sQ-n7x"/>
+                        <outlet property="hintContainer" destination="LjI-bu-c5h" id="qQ2-Yt-6qH"/>
+                        <outlet property="hintLabel" destination="fcx-Dk-ny5" id="y74-4l-AhK"/>
                         <outlet property="listButton" destination="rHl-Ad-64y" id="dZd-Vx-FML"/>
                         <outlet property="mapContainer" destination="K3O-WZ-b2K" id="b8Q-2Q-SBe"/>
                         <outlet property="noGPSContainer" destination="ynO-O1-bnm" id="Xw4-QV-Tke"/>

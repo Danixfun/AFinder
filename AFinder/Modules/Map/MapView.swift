@@ -33,6 +33,9 @@ class MapView: UIViewController {
     @IBOutlet weak var refreshButton: AFSecondaryButton!
     @IBOutlet weak var appSettingsButton: AFSecondaryCircularButton!
     @IBOutlet weak var listButton: AFPrimaryCircularButton!
+    @IBOutlet weak var hintContainer: UIView!
+    @IBOutlet weak var hintLabel: UILabel!
+    
     
     // MARK: IBAction
     @IBAction func openDeviceSettingsAction(_ sender: Any) {
@@ -56,6 +59,7 @@ class MapView: UIViewController {
         super.viewDidLoad()
         self.presenter?.viewDidLoad()
     }
+    
 }
 
 extension MapView: MapViewProtocol {
@@ -83,6 +87,12 @@ extension MapView: MapViewProtocol {
             MKMapViewDefaultAnnotationViewReuseIdentifier)
     }
     
+    func setUpHints(){
+        hintLabel.text = "Searching...".localized()
+        hintContainer.layer.cornerRadius = 8.0
+        hintContainer.layer.masksToBounds = true
+    }
+    
     func setUpNoWiFiContainer() {
         connectionLostLabel.text = "ConnectionLostLabel".localized()
         refreshButton.setQuick(title: "Refresh")
@@ -90,6 +100,18 @@ extension MapView: MapViewProtocol {
         AnimationWrapper.setUpAnimation(in: connectionLostAnimationContainer, withFile: "connection_lost")
         self.view.addSubview(noWiFiContainer)
         self.noWiFiContainer.center = self.view.center
+    }
+    
+    func updateHintWithSearchResult(searchResultHint: String){
+        DispatchQueue.main.async {
+            self.hintLabel.text = searchResultHint
+        }
+    }
+    
+    func updateHintWith(hint: String){
+        DispatchQueue.main.async {
+            self.hintLabel.text = hint
+        }
     }
     
     // Center the user based on its location and fetch airports
@@ -123,7 +145,7 @@ extension MapView: MapViewProtocol {
         }
         self.airports = nil
     }
-    
+
     // Show no connection message
     func errorLoadingAirports() {
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: {
@@ -131,6 +153,7 @@ extension MapView: MapViewProtocol {
             self.noGPSContainer.isHidden = true
             self.listButton.isHidden = true
             self.appSettingsButton.isHidden = true
+            self.hintContainer.isHidden = true
             self.noWiFiContainer.isHidden = false
         })
     }
@@ -141,6 +164,7 @@ extension MapView: MapViewProtocol {
             self.noWiFiContainer.isHidden = true
             self.listButton.isHidden = true
             self.appSettingsButton.isHidden = true
+            self.hintContainer.isHidden = true
             self.noGPSContainer.isHidden = false
         }
     }
@@ -152,6 +176,7 @@ extension MapView: MapViewProtocol {
             self.listButton.isHidden = false
             self.appSettingsButton.isHidden = false
             self.mapContainer.isHidden = false
+            self.hintContainer.isHidden = false
         }
     }
     
@@ -182,13 +207,6 @@ extension MapView: MKMapViewDelegate {
         }
         return view
     }
-
-    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-        guard let airportPin = view.annotation as? AirportPin else {
-            return
-        }
-    }
-    
 }
 
 // MARK: - MapKitHelper
