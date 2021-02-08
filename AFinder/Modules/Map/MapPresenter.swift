@@ -40,8 +40,8 @@ extension MapPresenter: MapPresenterProtocol {
         self.view?.grantMap()
     }
     
-    func openSettingsAction() {
-        self.wireFrame?.openSettingsAction()
+    func openDeviceSettingsAction() {
+        self.wireFrame?.openDeviceSettingsAction()
     }
     
     func refreshAction() {
@@ -52,9 +52,10 @@ extension MapPresenter: MapPresenterProtocol {
         self.wireFrame?.openList(from: self.view!, airports: airports)
     }
     
-    func radiusButtonAction() {
-        
+    func openAppSettings() {
+        self.wireFrame?.openAppSettings(from: self.view!)
     }
+    
 }
 
 extension MapPresenter: MapInteractorOutputProtocol {

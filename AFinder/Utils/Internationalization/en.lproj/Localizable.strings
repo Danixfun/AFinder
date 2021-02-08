@@ -27,5 +27,6 @@
 "Airports found" = "Found";
 "No results" = "No results";
 "No results message" = "Our API could not find airports near your location. Try widening the search range or contact the AFind team to add an airport to the list.";
-
+"Range" = "Range";
+"Update" = "Update";
 

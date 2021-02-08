@@ -20,9 +20,27 @@ class SettingsPresenter  {
 extension SettingsPresenter: SettingsPresenterProtocol {
     // TODO: implement presenter methods
     func viewDidLoad() {
+        self.view?.setUpLabels()
+        self.view?.setUpButtons()
+        self.interactor?.loadCurrentRange()
+    }
+    
+    func updateRange(range: Float) {
+        self.interactor?.updateRange(range: range)
+    }
+    
+    func updateMapAction(range: Float) {
+        self.interactor?.saveNewRange(range: range)
+        self.wireFrame?.dismiss(from: self.view!, range: range)
     }
 }
 
 extension SettingsPresenter: SettingsInteractorOutputProtocol {
-    // TODO: implement interactor output methods
+    func currentRange(range: Float, rangeText: String) {
+        self.view?.loadCurrentRange(range: range, rangeText: rangeText)
+    }
+    
+    func newRangeString(rangeText: String) {
+        self.view?.updateRangeLabel(rangeText: rangeText)
+    }
 }

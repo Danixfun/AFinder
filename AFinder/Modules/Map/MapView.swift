@@ -32,33 +32,24 @@ class MapView: UIViewController {
     @IBOutlet weak var connectionLostLabel: UILabel!
     @IBOutlet weak var connectionLostAnimationContainer: UIView!
     @IBOutlet weak var refreshButton: AFSecondaryButton!
-    @IBOutlet weak var radiusButton: AFSecondaryCircularButton!
+    @IBOutlet weak var appSettingsButton: AFSecondaryCircularButton!
     @IBOutlet weak var listButton: AFPrimaryCircularButton!
     
-    @IBOutlet weak var updateRangeButton: AFPrimaryButton!
-    @IBOutlet weak var rangeSlider: UISlider!
-    @IBOutlet weak var rangeLabel: UILabel!
-    @IBOutlet var updateRangeContainer: UIView!
-    
-    
     // MARK: IBAction
-    @IBAction func openSettingsAction(_ sender: Any) {
-        self.presenter?.openSettingsAction()
+    @IBAction func openDeviceSettingsAction(_ sender: Any) {
+        self.presenter?.openDeviceSettingsAction()
     }
     
     @IBAction func refreshAction(_ sender: Any) {
         self.presenter?.refreshAction()
     }
     
-    @IBAction func radiusButtonAction(_ sender: Any) {
-        
+    @IBAction func appSettingsButtonAction(_ sender: Any) {
+        self.presenter?.openAppSettings()
     }
     
     @IBAction func listButtonAction(_ sender: Any) {
         self.presenter?.listButtonAction(airports: self.airports)
-    }
-    
-    @IBAction func updateRangeButtonAction(_ sender: Any) {
     }
     
     // MARK: Lifecycle
@@ -72,7 +63,7 @@ extension MapView: MapViewProtocol {
     
     func setUpButtons() {
         self.listButton.setQuick(icon: "clipboard")
-        self.radiusButton.setQuick(icon: "radius")
+        self.appSettingsButton.setQuick(icon: "radius")
     }
     
     func setUpNoGPSContainer() {
@@ -148,7 +139,7 @@ extension MapView: MapViewProtocol {
             self.mapContainer.isHidden = true
             self.noGPSContainer.isHidden = true
             self.listButton.isHidden = true
-            self.radiusButton.isHidden = true
+            self.appSettingsButton.isHidden = true
             self.noWiFiContainer.isHidden = false
         })
     }
@@ -158,7 +149,7 @@ extension MapView: MapViewProtocol {
             self.mapContainer.isHidden = true
             self.noWiFiContainer.isHidden = true
             self.listButton.isHidden = true
-            self.radiusButton.isHidden = true
+            self.appSettingsButton.isHidden = true
             self.noGPSContainer.isHidden = false
 
         }
@@ -169,7 +160,7 @@ extension MapView: MapViewProtocol {
             self.noGPSContainer.isHidden = true
             self.noWiFiContainer.isHidden = true
             self.listButton.isHidden = false
-            self.radiusButton.isHidden = false
+            self.appSettingsButton.isHidden = false
             self.mapContainer.isHidden = false
         }
     }

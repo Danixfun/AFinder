@@ -12,11 +12,16 @@ import UIKit
 protocol SettingsViewProtocol: class {
     // PRESENTER -> VIEW
     var presenter: SettingsPresenterProtocol? { get set }
+    func setUpLabels()
+    func setUpButtons()
+    func loadCurrentRange(range: Float, rangeText: String)
+    func updateRangeLabel(rangeText: String)
 }
 
 protocol SettingsWireFrameProtocol: class {
     // PRESENTER -> WIREFRAME
     static func createSettingsModule() -> UIViewController
+    func dismiss(from view: SettingsViewProtocol, range: Float)
 }
 
 protocol SettingsPresenterProtocol: class {
@@ -26,10 +31,14 @@ protocol SettingsPresenterProtocol: class {
     var wireFrame: SettingsWireFrameProtocol? { get set }
     
     func viewDidLoad()
+    func updateRange(range: Float)
+    func updateMapAction(range: Float)
 }
 
 protocol SettingsInteractorOutputProtocol: class {
-// INTERACTOR -> PRESENTER
+    // INTERACTOR -> PRESENTER
+    func currentRange(range: Float, rangeText:String)
+    func newRangeString(rangeText: String)
 }
 
 protocol SettingsInteractorInputProtocol: class {
@@ -37,11 +46,15 @@ protocol SettingsInteractorInputProtocol: class {
     var presenter: SettingsInteractorOutputProtocol? { get set }
     var localDatamanager: SettingsLocalDataManagerInputProtocol? { get set }
     var remoteDatamanager: SettingsRemoteDataManagerInputProtocol? { get set }
+    func loadCurrentRange()
+    func updateRange(range: Float)
+    func saveNewRange(range: Float)
 }
 
 protocol SettingsRemoteDataManagerInputProtocol: class {
     // INTERACTOR -> REMOTEDATAMANAGER
     var remoteRequestHandler: SettingsRemoteDataManagerOutputProtocol? { get set }
+    
 }
 
 protocol SettingsRemoteDataManagerOutputProtocol: class {
@@ -51,8 +64,11 @@ protocol SettingsRemoteDataManagerOutputProtocol: class {
 protocol SettingsLocalDataManagerInputProtocol: class {
     // INTERACTOR -> LOCALDATAMANAGER
     var localRequestHandler: SettingsLocalDataManagerOutputProtocol? { get set }
+    func loadCurrentRange()
+    func saveNewRange(range: Float)
 }
 
 protocol SettingsLocalDataManagerOutputProtocol: class {
     // LOCALDATAMANAGER -> INTERACTOR
+    func currentRange(range: Int)
 }

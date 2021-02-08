@@ -10,12 +10,11 @@ import Foundation
 import UIKit
 
 class SettingsWireFrame: SettingsWireFrameProtocol {
-
     // MARK: Init
     class func createSettingsModule() -> UIViewController {
         if let view = mainStoryboard.instantiateViewController(withIdentifier: "SettingsView") as? SettingsView {
             let presenter: SettingsPresenterProtocol & SettingsInteractorOutputProtocol = SettingsPresenter()
-            let interactor: SettingsInteractorInputProtocol & SettingsRemoteDataManagerOutputProtocol = SettingsInteractor()
+            let interactor: SettingsInteractorInputProtocol & SettingsLocalDataManagerOutputProtocol & SettingsRemoteDataManagerOutputProtocol = SettingsInteractor()
             let localDataManager: SettingsLocalDataManagerInputProtocol = SettingsLocalDataManager()
             let remoteDataManager: SettingsRemoteDataManagerInputProtocol = SettingsRemoteDataManager()
             let wireFrame: SettingsWireFrameProtocol = SettingsWireFrame()
@@ -28,6 +27,7 @@ class SettingsWireFrame: SettingsWireFrameProtocol {
             interactor.localDatamanager = localDataManager
             interactor.remoteDatamanager = remoteDataManager
             remoteDataManager.remoteRequestHandler = interactor
+            localDataManager.localRequestHandler = interactor
             return view
         }
         return UIViewController()
@@ -39,5 +39,12 @@ class SettingsWireFrame: SettingsWireFrameProtocol {
     
     
     // MARK: Functions
+    func dismiss(from view: SettingsViewProtocol, range: Float) {
+        if let actualView = view as? SettingsView {
+            actualView.dismiss(animated: true, completion: {
+                // Send notification here
+            })
+        }
+    }
     
 }
