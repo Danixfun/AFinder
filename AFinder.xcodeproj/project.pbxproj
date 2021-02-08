@@ -60,6 +60,9 @@
 		2561441F25D0C2F200F851E7 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2561441825D0C2F200F851E7 /* MapView.swift */; };
 		2561442025D0C2F200F851E7 /* MapRemoteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2561441925D0C2F200F851E7 /* MapRemoteDataManager.swift */; };
 		2561442125D0C2F200F851E7 /* MapWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2561441A25D0C2F200F851E7 /* MapWireFrame.swift */; };
+		2561442C25D0C37700F851E7 /* MapView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2561442B25D0C37700F851E7 /* MapView.storyboard */; };
+		2561443425D0D84800F851E7 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2561443325D0D84800F851E7 /* Token.swift */; };
+		2561443925D0DEF600F851E7 /* Airport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2561443825D0DEF600F851E7 /* Airport.swift */; };
 		25CBE70A25CE4FBA00598C28 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CBE70925CE4FBA00598C28 /* AppDelegate.swift */; };
 		25CBE71425CE4FBA00598C28 /* AFinder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 25CBE71225CE4FBA00598C28 /* AFinder.xcdatamodeld */; };
 		25CBE71625CE4FBB00598C28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25CBE71525CE4FBB00598C28 /* Assets.xcassets */; };
@@ -147,6 +150,9 @@
 		2561441825D0C2F200F851E7 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		2561441925D0C2F200F851E7 /* MapRemoteDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRemoteDataManager.swift; sourceTree = "<group>"; };
 		2561441A25D0C2F200F851E7 /* MapWireFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapWireFrame.swift; sourceTree = "<group>"; };
+		2561442B25D0C37700F851E7 /* MapView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MapView.storyboard; sourceTree = "<group>"; };
+		2561443325D0D84800F851E7 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		2561443825D0DEF600F851E7 /* Airport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Airport.swift; sourceTree = "<group>"; };
 		25CBE70625CE4FBA00598C28 /* AFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25CBE70925CE4FBA00598C28 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		25CBE71325CE4FBA00598C28 /* AFinder.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AFinder.xcdatamodel; sourceTree = "<group>"; };
@@ -322,8 +328,11 @@
 				2561441625D0C2F200F851E7 /* MapProtocols.swift */,
 				2561441725D0C2F200F851E7 /* MapInteractor.swift */,
 				2561441825D0C2F200F851E7 /* MapView.swift */,
+				2561442B25D0C37700F851E7 /* MapView.storyboard */,
 				2561441925D0C2F200F851E7 /* MapRemoteDataManager.swift */,
 				2561441A25D0C2F200F851E7 /* MapWireFrame.swift */,
+				2561443325D0D84800F851E7 /* Token.swift */,
+				2561443825D0DEF600F851E7 /* Airport.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -531,6 +540,7 @@
 				2548276825CFB1D300268327 /* OnboardingView.storyboard in Resources */,
 				256143F125D059E600F851E7 /* no_gps.json in Resources */,
 				256143E825D059AF00F851E7 /* no_airports_found.json in Resources */,
+				2561442C25D0C37700F851E7 /* MapView.storyboard in Resources */,
 				25CBE75A25CE559C00598C28 /* WelcomeView.storyboard in Resources */,
 				2548271425CF994000268327 /* Localizable.strings in Resources */,
 				25CBE71925CE4FBB00598C28 /* LaunchScreen.storyboard in Resources */,
@@ -578,6 +588,7 @@
 				2561441D25D0C2F200F851E7 /* MapProtocols.swift in Sources */,
 				2548274825CFAA9100268327 /* AFSecondaryButton.swift in Sources */,
 				2561440F25D09DD100F851E7 /* UserPreferences.swift in Sources */,
+				2561443925D0DEF600F851E7 /* Airport.swift in Sources */,
 				2548272025CF9C6800268327 /* AFPrimaryButton.swift in Sources */,
 				2561441F25D0C2F200F851E7 /* MapView.swift in Sources */,
 				2561440925D09B8B00F851E7 /* RangeCircleView.swift in Sources */,
@@ -612,6 +623,7 @@
 				254827BA25CFCDF700268327 /* OBStepTwoPresenter.swift in Sources */,
 				254827C025CFCDF700268327 /* OBStepTwoWireFrame.swift in Sources */,
 				25CBE71425CE4FBA00598C28 /* AFinder.xcdatamodeld in Sources */,
+				2561443425D0D84800F851E7 /* Token.swift in Sources */,
 				25CBE70A25CE4FBA00598C28 /* AppDelegate.swift in Sources */,
 				254827A725CFCCC200268327 /* OBStepOneProtocols.swift in Sources */,
 				2548276025CFB1C400268327 /* OnboardingInteractor.swift in Sources */,

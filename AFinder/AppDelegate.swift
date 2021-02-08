@@ -8,6 +8,33 @@
 import UIKit
 import CoreData
 
+
+/*
+ 
+ curl "https://test.api.amadeus.com/v1/security/oauth2/token" \
+      -H "Content-Type: application/x-www-form-urlencoded" \
+      -d "grant_type=client_credentials&client_id=FmoKSdrMksCAoAAxTaWhF0FmXubXuZWr&client_secret=5v5AAlWUYEdPM5F5"
+ 
+ 
+ 
+ {
+             "type": "amadeusOAuth2Token",
+             "username": "juandanieltd@gmail.com",
+             "application_name": "AFinder",
+             "client_id": "FmoKSdrMksCAoAAxTaWhF0FmXubXuZWr",
+             "token_type": "Bearer",
+             "access_token": "XvVgPoROJcLJoEQsbSKKoSSioS9U",
+             "expires_in": 1799,
+             "state": "approved",
+             "scope": ""
+         }
+
+ 
+ 
+ */
+
+
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -16,7 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        let welcomeView = WelcomeWireFrame.createWelcomeModule()
+        let welcomeView = MapWireFrame.createMapModule()
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = welcomeView
         window?.makeKeyAndVisible()

@@ -20,9 +20,13 @@ class MapPresenter  {
 extension MapPresenter: MapPresenterProtocol {
     // TODO: implement presenter methods
     func viewDidLoad() {
+        self.view?.setUpMap()
+        self.interactor?.findAirports()
     }
 }
 
 extension MapPresenter: MapInteractorOutputProtocol {
-    // TODO: implement interactor output methods
+    func foundAirports() {
+        
+    }
 }

@@ -12,6 +12,8 @@ import UIKit
 protocol MapViewProtocol: class {
     // PRESENTER -> VIEW
     var presenter: MapPresenterProtocol? { get set }
+    
+    func setUpMap()
 }
 
 protocol MapWireFrameProtocol: class {
@@ -29,7 +31,8 @@ protocol MapPresenterProtocol: class {
 }
 
 protocol MapInteractorOutputProtocol: class {
-// INTERACTOR -> PRESENTER
+    // INTERACTOR -> PRESENTER
+    func foundAirports()
 }
 
 protocol MapInteractorInputProtocol: class {
@@ -37,15 +40,20 @@ protocol MapInteractorInputProtocol: class {
     var presenter: MapInteractorOutputProtocol? { get set }
     var localDatamanager: MapLocalDataManagerInputProtocol? { get set }
     var remoteDatamanager: MapRemoteDataManagerInputProtocol? { get set }
+    
+    func findAirports()
 }
 
 protocol MapRemoteDataManagerInputProtocol: class {
     // INTERACTOR -> REMOTEDATAMANAGER
     var remoteRequestHandler: MapRemoteDataManagerOutputProtocol? { get set }
+    
+    func findAirports()
 }
 
 protocol MapRemoteDataManagerOutputProtocol: class {
     // REMOTEDATAMANAGER -> INTERACTOR
+    func foundAirports()
 }
 
 protocol MapLocalDataManagerInputProtocol: class {

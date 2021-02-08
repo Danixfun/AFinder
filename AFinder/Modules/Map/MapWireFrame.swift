@@ -12,8 +12,7 @@ import UIKit
 class MapWireFrame: MapWireFrameProtocol {
 
     class func createMapModule() -> UIViewController {
-        let navController = mainStoryboard.instantiateViewController(withIdentifier: "MapView")
-        if let view = navController.children.first as? MapView {
+        if let view = mainStoryboard.instantiateViewController(withIdentifier: "MapView") as? MapView {
             let presenter: MapPresenterProtocol & MapInteractorOutputProtocol = MapPresenter()
             let interactor: MapInteractorInputProtocol & MapRemoteDataManagerOutputProtocol = MapInteractor()
             let localDataManager: MapLocalDataManagerInputProtocol = MapLocalDataManager()
@@ -28,9 +27,9 @@ class MapWireFrame: MapWireFrameProtocol {
             interactor.localDatamanager = localDataManager
             interactor.remoteDatamanager = remoteDataManager
             remoteDataManager.remoteRequestHandler = interactor
-            
-            return navController
+            return view
         }
+        
         return UIViewController()
     }
     
