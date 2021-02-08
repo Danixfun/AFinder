@@ -12,13 +12,21 @@ import UIKit
 protocol WelcomeViewProtocol: class {
     // PRESENTER -> VIEW
     var presenter: WelcomePresenterProtocol? { get set }
+<<<<<<< HEAD
     
     func setUpBackground()
+=======
+    func setUpLabels()
+    func setUpButtons()
+    func setUpAnimation()
+>>>>>>> develop
 }
 
 protocol WelcomeWireFrameProtocol: class {
     // PRESENTER -> WIREFRAME
     static func createWelcomeModule() -> UIViewController
+    func openOnboardingAction(from view: WelcomeViewProtocol)
+    func openMapView(from view: WelcomeViewProtocol)
 }
 
 protocol WelcomePresenterProtocol: class {
@@ -28,10 +36,13 @@ protocol WelcomePresenterProtocol: class {
     var wireFrame: WelcomeWireFrameProtocol? { get set }
     
     func viewDidLoad()
+    func viewDidLayoutSubviews()
+    func openOnboardingAction()
 }
 
 protocol WelcomeInteractorOutputProtocol: class {
-// INTERACTOR -> PRESENTER
+    // INTERACTOR -> PRESENTER
+    func openMapView()
 }
 
 protocol WelcomeInteractorInputProtocol: class {
@@ -39,6 +50,8 @@ protocol WelcomeInteractorInputProtocol: class {
     var presenter: WelcomeInteractorOutputProtocol? { get set }
     var localDatamanager: WelcomeLocalDataManagerInputProtocol? { get set }
     var remoteDatamanager: WelcomeRemoteDataManagerInputProtocol? { get set }
+    
+    func setUpNotifications()
 }
 
 protocol WelcomeRemoteDataManagerInputProtocol: class {

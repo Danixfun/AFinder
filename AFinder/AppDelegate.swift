@@ -16,9 +16,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        let welcomeView = WelcomeWireFrame.createWelcomeModule()
+        var firstView: UIViewController
+        
+        // Check wheter or not Onboarding is available
+        if let onboardingAvailable = UserDefaults.standard.object(forKey: UserPreferences.OnboardingAvailableKey) as? Bool {
+            if onboardingAvailable {
+                // Not the first type opening the app, but onboarding is available
+                firstView = WelcomeWireFrame.createWelcomeModule()
+            }
+            else{
+                // Onboarding not available AKA go straight to MapView
+                firstView = MapWireFrame.createMapModule()
+            }
+        }
+        else{
+            // This is the first time the user opens the app
+            UserDefaults.standard.set(true, forKey: UserPreferences.OnboardingAvailableKey)
+            firstView = WelcomeWireFrame.createWelcomeModule()
+            
+        }
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = welcomeView
+        window?.rootViewController = firstView
         window?.makeKeyAndVisible()
         
         return true

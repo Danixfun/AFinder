@@ -10,7 +10,8 @@ import Foundation
 import UIKit
 
 class WelcomeWireFrame: WelcomeWireFrameProtocol {
-
+    
+    // MARK: Init
     class func createWelcomeModule() -> UIViewController {
         if let view = mainStoryboard.instantiateViewController(withIdentifier: "WelcomeView") as? WelcomeView {
         
@@ -36,6 +37,23 @@ class WelcomeWireFrame: WelcomeWireFrameProtocol {
     
     static var mainStoryboard: UIStoryboard {
         return UIStoryboard(name: "WelcomeView", bundle: Bundle.main)
+    }
+    
+    // MARK: Functions
+    func openOnboardingAction(from view: WelcomeViewProtocol) {
+        let destination = OnboardingWireFrame.createOnboardingModule()
+        if let newView = view as? UIViewController{
+            destination.modalPresentationStyle = .fullScreen
+            newView.present(destination, animated: true, completion: nil)
+        }
+    }
+    
+    func openMapView(from view: WelcomeViewProtocol) {
+        let destination = MapWireFrame.createMapModule()
+        if let newView = view as? UIViewController{
+            destination.modalPresentationStyle = .fullScreen
+            newView.present(destination, animated: true, completion: nil)
+        }
     }
     
 }
