@@ -32,6 +32,7 @@ class AFPrimaryButton: UIButton {
         titleLabel?.font = FontHelper.shared.primaryButton
         layer.cornerRadius = 8.0
         layer.masksToBounds = true
+        tintColor = UIColor(named: "PrimaryButtonTextColor")
     }
     
     //MARK: - API

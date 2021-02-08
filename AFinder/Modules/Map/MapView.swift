@@ -6,6 +6,9 @@
 //  
 //
 
+// Radius free icon by FreePik from flaticons.com
+// Clipboard (AKA list) icon By dmitri13 from flaticons.com
+
 import Foundation
 import UIKit
 import MapKit
@@ -26,9 +29,10 @@ class MapView: UIViewController {
     @IBOutlet weak var connectionLostLabel: UILabel!
     @IBOutlet weak var connectionLostAnimationContainer: UIView!
     @IBOutlet weak var refreshButton: AFSecondaryButton!
+    @IBOutlet weak var radiusButton: AFSecondaryCircularButton!
+    @IBOutlet weak var listButton: AFPrimaryCircularButton!
     
     // MARK: IBAction
-    
     @IBAction func openSettingsAction(_ sender: Any) {
         self.presenter?.openSettingsAction()
     }
@@ -36,6 +40,13 @@ class MapView: UIViewController {
     @IBAction func refreshAction(_ sender: Any) {
         self.presenter?.refreshAction()
     }
+    
+    @IBAction func radiusButtonAction(_ sender: Any) {
+    }
+    
+    @IBAction func listButtonAction(_ sender: Any) {
+    }
+    
     
     // MARK: Lifecycle
     override func viewDidLoad() {
@@ -46,6 +57,13 @@ class MapView: UIViewController {
 
 extension MapView: MapViewProtocol {
     
+    func setUpButtons() {
+        
+        self.listButton.setQuick(icon: "clipboard")
+        self.radiusButton.setQuick(icon: "radius")
+        
+    }
+    
     func setUpNoGPSContainer() {
         cantFindYouLabel.text = "CantFindYouLabel".localized()
         cantFindYouInstructionsLabel.text = "CantFindYouInstructionsLabel".localized()
@@ -53,12 +71,14 @@ extension MapView: MapViewProtocol {
         noGPSContainer.isHidden = true
         self.view.addSubview(noGPSContainer)
         self.noGPSContainer.center = self.view.center
+        setUpButtons()
     }
     
     func setUpNoWiFiContainer() {
         connectionLostLabel.text = "ConnectionLostLabel".localized()
         refreshButton.setQuick(title: "Refresh")
         noWiFiContainer.isHidden = true
+        AnimationWrapper.setUpAnimation(in: connectionLostAnimationContainer, withFile: "connection_lost")
         self.view.addSubview(noWiFiContainer)
         self.noWiFiContainer.center = self.view.center
     }
@@ -69,7 +89,6 @@ extension MapView: MapViewProtocol {
         locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
         
         if !isLocationServiceEnabled() {
-            // Show no services enabled animation and open settings button
             self.presenter?.deniedMap()
             return
         }

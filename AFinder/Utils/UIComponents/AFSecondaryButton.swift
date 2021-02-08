@@ -34,6 +34,7 @@ class AFSecondaryButton: UIButton {
         layer.borderWidth = 2.0
         layer.borderColor = UIColor(named: "SecondaryButtonBorderLineColor")?.cgColor
         layer.masksToBounds = true
+        tintColor = UIColor(named: "SecondaryButtonTextColor")
     }
     
     // MARK: API

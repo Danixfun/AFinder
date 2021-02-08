@@ -67,6 +67,9 @@
 		2561444325D0E1E300F851E7 /* AirportPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2561444225D0E1E300F851E7 /* AirportPin.swift */; };
 		2561444C25D0E7DB00F851E7 /* LocationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2561444B25D0E7DB00F851E7 /* LocationHelper.swift */; };
 		2561445225D1053500F851E7 /* RadiusRangeValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2561445125D1053500F851E7 /* RadiusRangeValues.swift */; };
+		25899F8425D19B2500C7F043 /* connection_lost.json in Resources */ = {isa = PBXBuildFile; fileRef = 25899F8325D19B2500C7F043 /* connection_lost.json */; };
+		25899F8925D1A3FB00C7F043 /* AFPrimaryCircularButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25899F8825D1A3FB00C7F043 /* AFPrimaryCircularButton.swift */; };
+		25899F8E25D1A86200C7F043 /* AFSecondaryCircularButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25899F8D25D1A86200C7F043 /* AFSecondaryCircularButton.swift */; };
 		25CBE70A25CE4FBA00598C28 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CBE70925CE4FBA00598C28 /* AppDelegate.swift */; };
 		25CBE71425CE4FBA00598C28 /* AFinder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 25CBE71225CE4FBA00598C28 /* AFinder.xcdatamodeld */; };
 		25CBE71625CE4FBB00598C28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25CBE71525CE4FBB00598C28 /* Assets.xcassets */; };
@@ -161,6 +164,9 @@
 		2561444225D0E1E300F851E7 /* AirportPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportPin.swift; sourceTree = "<group>"; };
 		2561444B25D0E7DB00F851E7 /* LocationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHelper.swift; sourceTree = "<group>"; };
 		2561445125D1053500F851E7 /* RadiusRangeValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadiusRangeValues.swift; sourceTree = "<group>"; };
+		25899F8325D19B2500C7F043 /* connection_lost.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = connection_lost.json; sourceTree = "<group>"; };
+		25899F8825D1A3FB00C7F043 /* AFPrimaryCircularButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFPrimaryCircularButton.swift; sourceTree = "<group>"; };
+		25899F8D25D1A86200C7F043 /* AFSecondaryCircularButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFSecondaryCircularButton.swift; sourceTree = "<group>"; };
 		25CBE70625CE4FBA00598C28 /* AFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25CBE70925CE4FBA00598C28 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		25CBE71325CE4FBA00598C28 /* AFinder.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AFinder.xcdatamodel; sourceTree = "<group>"; };
@@ -225,6 +231,8 @@
 				2548274725CFAA9100268327 /* AFSecondaryButton.swift */,
 				2548272725CF9DE600268327 /* FontHelper.swift */,
 				254827DC25CFCF2B00268327 /* AnimationWrapper.swift */,
+				25899F8825D1A3FB00C7F043 /* AFPrimaryCircularButton.swift */,
+				25899F8D25D1A86200C7F043 /* AFSecondaryCircularButton.swift */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";
@@ -232,6 +240,7 @@
 		2548273E25CFA88A00268327 /* LottieAnimations */ = {
 			isa = PBXGroup;
 			children = (
+				25899F8325D19B2500C7F043 /* connection_lost.json */,
 				2561440325D099FC00F851E7 /* airplane_landing.json */,
 				256143F025D059E600F851E7 /* no_gps.json */,
 				256143E725D059AF00F851E7 /* gps_permission.json */,
@@ -569,6 +578,7 @@
 				256143F125D059E600F851E7 /* no_gps.json in Resources */,
 				256143E825D059AF00F851E7 /* no_airports_found.json in Resources */,
 				2561442C25D0C37700F851E7 /* MapView.storyboard in Resources */,
+				25899F8425D19B2500C7F043 /* connection_lost.json in Resources */,
 				25CBE75A25CE559C00598C28 /* WelcomeView.storyboard in Resources */,
 				2548271425CF994000268327 /* Localizable.strings in Resources */,
 				25CBE71925CE4FBB00598C28 /* LaunchScreen.storyboard in Resources */,
@@ -611,6 +621,7 @@
 				25CBE75025CE553F00598C28 /* WelcomeLocalDataManager.swift in Sources */,
 				2561442025D0C2F200F851E7 /* MapRemoteDataManager.swift in Sources */,
 				2561444325D0E1E300F851E7 /* AirportPin.swift in Sources */,
+				25899F8925D1A3FB00C7F043 /* AFPrimaryCircularButton.swift in Sources */,
 				2548271025CF989100268327 /* LocalizableHelper.swift in Sources */,
 				25CBE75225CE553F00598C28 /* WelcomeInteractor.swift in Sources */,
 				25CBE75525CE553F00598C28 /* WelcomeWireFrame.swift in Sources */,
@@ -634,6 +645,7 @@
 				254827A925CFCCC200268327 /* OBStepOneView.swift in Sources */,
 				25CBE75325CE553F00598C28 /* WelcomeView.swift in Sources */,
 				25CBE74F25CE553F00598C28 /* WelcomePresenter.swift in Sources */,
+				25899F8E25D1A86200C7F043 /* AFSecondaryCircularButton.swift in Sources */,
 				254827CF25CFCE1000268327 /* OBStepThreePresenter.swift in Sources */,
 				2548276225CFB1C400268327 /* OnboardingRemoteDataManager.swift in Sources */,
 				254827D425CFCE1000268327 /* OBStepThreeRemoteDataManager.swift in Sources */,

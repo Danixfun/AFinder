@@ -17,16 +17,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K3O-WZ-b2K">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" showsBuildings="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K3O-WZ-b2K">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hF3-wb-JTQ" customClass="AFSecondaryCircularButton" customModule="AFinder" customModuleProvider="target">
+                                <rect key="frame" x="348" y="780" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="BBf-Vw-6Sd"/>
+                                    <constraint firstAttribute="height" constant="50" id="qML-rF-nyx"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="radiusButtonAction:" destination="zgd-r5-elH" eventType="touchUpInside" id="gFA-r2-g2F"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rHl-Ad-64y" customClass="AFPrimaryCircularButton" customModule="AFinder" customModuleProvider="target">
+                                <rect key="frame" x="348" y="714" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="N61-1l-ZgP"/>
+                                    <constraint firstAttribute="height" constant="50" id="yYx-h3-rAN"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="listButtonAction:" destination="zgd-r5-elH" eventType="touchUpInside" id="GOc-Jf-kyo"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Gjq-kV-N96"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Gjq-kV-N96" firstAttribute="trailing" secondItem="hF3-wb-JTQ" secondAttribute="trailing" constant="16" id="CPL-Af-uUB"/>
                             <constraint firstItem="K3O-WZ-b2K" firstAttribute="leading" secondItem="Gjq-kV-N96" secondAttribute="leading" id="UIW-pZ-nFE"/>
                             <constraint firstItem="K3O-WZ-b2K" firstAttribute="trailing" secondItem="Gjq-kV-N96" secondAttribute="trailing" id="UOV-sg-omV"/>
+                            <constraint firstItem="Gjq-kV-N96" firstAttribute="trailing" secondItem="rHl-Ad-64y" secondAttribute="trailing" constant="16" id="Ug7-go-F6G"/>
+                            <constraint firstItem="Gjq-kV-N96" firstAttribute="bottom" secondItem="hF3-wb-JTQ" secondAttribute="bottom" constant="32" id="cAx-O1-yfG"/>
                             <constraint firstAttribute="bottom" secondItem="K3O-WZ-b2K" secondAttribute="bottom" id="cV4-GY-pn3"/>
+                            <constraint firstItem="hF3-wb-JTQ" firstAttribute="top" secondItem="rHl-Ad-64y" secondAttribute="bottom" constant="16" id="en0-cL-xaG"/>
                             <constraint firstItem="K3O-WZ-b2K" firstAttribute="top" secondItem="vKN-H7-up3" secondAttribute="top" id="fjf-hh-YIl"/>
                         </constraints>
                     </view>
@@ -35,10 +59,12 @@
                         <outlet property="cantFindYouLabel" destination="viL-e9-4RT" id="9iZ-gr-0Dy"/>
                         <outlet property="connectionLostAnimationContainer" destination="5CK-N5-vEX" id="2oH-aq-WU9"/>
                         <outlet property="connectionLostLabel" destination="6rJ-Yw-DFF" id="bi6-sQ-n7x"/>
+                        <outlet property="listButton" destination="rHl-Ad-64y" id="dZd-Vx-FML"/>
                         <outlet property="mapContainer" destination="K3O-WZ-b2K" id="b8Q-2Q-SBe"/>
                         <outlet property="noGPSContainer" destination="ynO-O1-bnm" id="Xw4-QV-Tke"/>
                         <outlet property="noWiFiContainer" destination="Kru-A7-80C" id="amR-6A-71L"/>
                         <outlet property="openSettingsButton" destination="uv8-Af-Y39" id="tXj-CC-JaT"/>
+                        <outlet property="radiusButton" destination="hF3-wb-JTQ" id="gQF-tR-Pd9"/>
                         <outlet property="refreshButton" destination="Jnk-8V-5xs" id="JHZ-E0-GRv"/>
                     </connections>
                 </viewController>
